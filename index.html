@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ظهير — منصة حقوق موظفي القطاع الخاص في اليمن</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1F2A5C; --ink-2:#2E3C7A; --ink-3:#E7EAF5;
+  --paper:#F5F6FA; --white:#FFFFFF;
+  --amber:#E8A33D; --amber-2:#FBEFD9;
+  --teal:#1C8C7E; --teal-2:#DDF1EE;
+  --pom:#C2364B; --pom-2:#F8E1E5;
+  --slate:#5B6478; --line:#DDE1EC; --text:#1A1F33;
+  --r-s:8px; --r-m:14px; --r-l:28px;
+  --f-head:"Alexandria", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans Arabic", system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.75}
+h1,h2,h3,h4{font-family:var(--f-head);color:var(--ink);line-height:1.35;margin:0 0 .5em}
+h1{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,2.6vw,2rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:600}
+h4{font-size:1rem;font-weight:600}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--ink-2)}
+button,input,select,textarea{font:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.muted{color:var(--slate)}
+.small{font-size:.875rem}
+.tiny{font-size:.78rem}
+
+/* header */
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand b{font-family:var(--f-head);font-size:1.5rem;color:var(--ink);font-weight:800}
+nav.main{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+nav.main::-webkit-scrollbar{display:none}
+nav.main a svg{width:17px;height:17px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+nav.main a{display:inline-flex;align-items:center;gap:7px}
+.role-chip{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:999px;margin-inline-start:4px}
+.locked{max-width:620px;margin:40px auto;text-align:center}
+.locked .ico{width:72px;height:72px;border-radius:50%;background:var(--ink-3);display:grid;place-items:center;margin:0 auto 16px}
+.locked ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 0}
+.perm-table td,.perm-table th{text-align:center}
+.perm-table td:first-child,.perm-table th:first-child{text-align:start}
+.yes{color:var(--teal);font-weight:700}.no{color:#B7BDD0}
+nav.main a{padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--slate);font-size:.93rem;white-space:nowrap;font-weight:500}
+nav.main a:hover{color:var(--ink);background:var(--ink-3)}
+nav.main a[aria-current="page"]{background:var(--ink);color:#fff}
+.role{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.role select{border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:#fff;color:var(--ink);font-size:.88rem}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 22px;font-weight:600;cursor:pointer;text-decoration:none;font-size:.97rem;transition:transform .12s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:var(--ink-2)}
+.btn-amber{background:var(--amber);color:var(--ink)}.btn-amber:hover{background:#f0b250}
+.btn-pom{background:var(--pom);color:#fff}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{padding:7px 14px;font-size:.86rem}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;color:var(--ink);font-size:.92rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.78rem;font-weight:600}
+.tag-amber{background:var(--amber-2);color:#8a5a0f}
+.tag-teal{background:var(--teal-2);color:#0f5c52}
+.tag-pom{background:var(--pom-2);color:#8f1f31}
+.tag-ink{background:var(--ink-3);color:var(--ink)}
+
+/* views */
+section.view{display:none;padding:40px 0 80px}
+section.view.on{display:block}
+.view-head{margin-bottom:28px}
+.view-head p{font-size:1.05rem}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;border-radius:0 0 var(--r-l) var(--r-l);margin-top:-40px;padding:56px 0 64px;overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{color:#fff}
+.hero p.lead{font-size:1.15rem;color:#D5DAEE;max-width:52ch}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero .ctas .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+.hero .ctas .btn-ghost:hover{border-color:#fff}
+.hero-trust{display:flex;gap:22px;margin-top:30px;flex-wrap:wrap;color:#BFC6E4;font-size:.9rem}
+.hero-trust span{display:flex;align-items:center;gap:8px}
+.hero-trust i{width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block}
+.arch-art{width:100%;max-width:420px;justify-self:center}
+.arch-art .glass{transform-origin:210px 250px;animation:glow 7s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:1}50%{opacity:.78}}
+
+/* situation picker */
+.picker{background:#fff;border-radius:var(--r-m);padding:28px;margin-top:-34px;position:relative;box-shadow:0 18px 40px -24px rgba(31,42,92,.35);border:1px solid var(--line)}
+.picker .chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 6px}
+.answer{margin-top:18px;border-top:1px dashed var(--line);padding-top:18px;display:none}
+.answer.on{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}
+.answer .law{font-size:.85rem;color:var(--teal);font-weight:600}
+.answer .acts{display:flex;flex-direction:column;gap:8px;min-width:200px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;counter-reset:s}
+.step{padding:22px 20px 22px 22px;border-inline-start:2px solid var(--line);position:relative}
+.step:first-child{border-inline-start:2px solid var(--amber)}
+.step .n{font-family:var(--f-head);font-size:2.2rem;font-weight:800;color:var(--amber);line-height:1}
+.step h3{margin-top:10px}
+
+/* parties */
+.parties{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.party{background:#fff;border:1px solid var(--line);border-radius:var(--r-s);padding:18px 18px 16px;display:flex;gap:14px}
+.party .ico{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-family:var(--f-head);font-weight:700;font-size:1.05rem}
+.party p{margin:0;font-size:.92rem;color:var(--slate)}
+
+/* band */
+.band{border-radius:var(--r-l);padding:38px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;margin-top:56px}
+.band-pom{background:var(--pom);color:#fff}
+.band-pom h2{color:#fff}
+.band-pom p{color:#F7D3D9}
+.block{margin-top:64px}
+
+/* rights */
+.rights-layout{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start}
+.cats{position:sticky;top:86px;display:flex;flex-direction:column;gap:4px}
+.cats button{text-align:start;border:0;background:transparent;padding:9px 14px;border-radius:var(--r-s);cursor:pointer;color:var(--slate);font-weight:500}
+.cats button[aria-pressed="true"]{background:var(--ink-3);color:var(--ink);font-weight:600}
+.search{display:flex;gap:10px;margin-bottom:18px}
+.search input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:12px 18px;background:#fff}
+.article{background:#fff;border:1px solid var(--line);border-radius:var(--r-s);margin-bottom:10px}
+.article summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.article summary::-webkit-details-marker{display:none}
+.article summary h3{margin:0;font-size:1.02rem}
+.article summary .plus{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;flex-shrink:0;color:var(--ink);font-weight:700;transition:transform .2s}
+.article[open] summary .plus{transform:rotate(45deg);border-color:var(--ink)}
+.article .body{padding:0 20px 18px}
+.article .ref{font-size:.82rem;color:var(--teal);font-weight:600}
+.timeline{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:26px;margin-top:26px}
+.tl{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:18px}
+.tl .t{padding:0 10px 0 14px;border-top:3px solid var(--ink);padding-top:14px;position:relative}
+.tl .t::before{content:"";position:absolute;top:-9px;inset-inline-start:0;width:15px;height:15px;border-radius:50%;background:var(--amber);border:3px solid #fff;box-shadow:0 0 0 2px var(--ink)}
+.tl .t b{display:block;font-family:var(--f-head);color:var(--ink);font-size:.98rem}
+.tl .t span{font-size:.86rem;color:var(--slate);display:block}
+.tl .t em{font-style:normal;font-size:.78rem;color:var(--teal);font-weight:600}
+.note{background:var(--amber-2);border-radius:var(--r-s);padding:14px 18px;font-size:.88rem;color:#6d4709;margin-top:20px}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:26px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px;color:var(--ink)}
+.field .hint{font-size:.8rem;color:var(--slate);margin-top:4px}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:var(--r-s);padding:11px 14px;background:#fff;color:var(--text)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ink);outline:none}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{display:flex;align-items:center;gap:10px;margin:8px 0;cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--ink)}
+.result{background:var(--ink);color:#fff;border-radius:var(--r-m);padding:26px;position:sticky;top:86px}
+.result h3{color:#fff}
+.lines{margin:14px 0}
+.line{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.94rem}
+.line small{display:block;color:#AEB6D8;font-size:.76rem}
+.line b{font-family:var(--f-head);white-space:nowrap}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px}
+.total b{font-family:var(--f-head);font-size:2rem;color:var(--amber)}
+.result .tiny{color:#AEB6D8}
+
+/* report */
+.report-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:start}
+.wizard-steps{display:flex;gap:6px;margin-bottom:22px}
+.wizard-steps span{flex:1;height:5px;border-radius:999px;background:var(--line)}
+.wizard-steps span.done{background:var(--pom)}
+.wstep{display:none}.wstep.on{display:block}
+.opt{display:flex;gap:12px;padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--r-s);margin-bottom:10px;cursor:pointer;background:#fff}
+.opt:has(input:checked){border-color:var(--pom);background:var(--pom-2)}
+.opt input{accent-color:var(--pom);margin-top:5px}
+.opt p{margin:0;font-size:.88rem;color:var(--slate)}
+.shield{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:22px}
+.shield li{margin-bottom:10px;font-size:.92rem}
+.shield ul{padding-inline-start:18px;margin:10px 0 0}
+.code-box{background:var(--ink);color:#fff;border-radius:var(--r-m);padding:24px;text-align:center}
+.code-box .code{font-family:var(--f-head);font-size:2rem;letter-spacing:.08em;color:var(--amber);direction:ltr;margin:8px 0}
+.track{display:flex;gap:8px;margin-top:10px}
+.track input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;direction:ltr;text-align:center}
+.index{margin-top:40px}
+.bars{display:grid;gap:12px;margin-top:16px}
+.bar{display:grid;grid-template-columns:170px 1fr 52px;gap:12px;align-items:center;font-size:.9rem}
+.bar .track-b{height:12px;background:var(--ink-3);border-radius:999px;overflow:hidden}
+.bar .fill{height:100%;background:var(--pom);border-radius:999px}
+.bar b{font-family:var(--f-head);color:var(--ink);text-align:start}
+
+/* cases / chat */
+.chat-shell{display:grid;grid-template-columns:280px 1fr 300px;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;height:min(720px,calc(100vh - 140px));min-height:560px}
+.threads{border-inline-end:1px solid var(--line);overflow-y:auto}
+.threads .th-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.thread{display:flex;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);cursor:pointer;background:#fff;border-inline-start:3px solid transparent;width:100%;text-align:start;border-top:0;border-inline-end:0}
+.thread[aria-selected="true"]{background:var(--paper);border-inline-start-color:var(--amber)}
+.av{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-weight:700;font-family:var(--f-head);color:#fff;font-size:.95rem}
+.thread .meta{flex:1;min-width:0}
+.thread .meta b{display:block;font-size:.93rem;color:var(--ink)}
+.thread .meta span{display:block;font-size:.8rem;color:var(--slate);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.unread{background:var(--pom);color:#fff;border-radius:999px;font-size:.72rem;padding:0 7px;height:20px;display:grid;place-items:center;align-self:center}
+.convo{display:flex;flex-direction:column;min-width:0}
+.convo-head{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.convo-head .meta{flex:1}
+.convo-head .meta b{display:block;color:var(--ink)}
+.convo-head .meta span{font-size:.8rem;color:var(--slate)}
+.msgs{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px;background:linear-gradient(var(--paper),var(--paper))}
+.msg{max-width:76%;padding:11px 15px;border-radius:16px;font-size:.94rem;line-height:1.65}
+.msg .who{font-size:.74rem;font-weight:600;display:block;margin-bottom:2px;opacity:.75}
+.msg .time{font-size:.7rem;opacity:.55;display:block;margin-top:4px}
+.msg.me{align-self:flex-start;background:var(--ink);color:#fff;border-end-start-radius:4px}
+.msg.them{align-self:flex-end;background:#fff;border:1px solid var(--line);border-end-end-radius:4px}
+.msg.sys{align-self:center;background:var(--amber-2);color:#6d4709;font-size:.82rem;border-radius:999px;padding:6px 14px;max-width:90%;text-align:center}
+.msg.card{align-self:flex-end;background:#fff;border:1.5px solid var(--teal);max-width:84%}
+.msg.card .acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.quick{display:flex;gap:6px;flex-wrap:wrap;padding:8px 20px 0}
+.quick button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;font-size:.82rem;cursor:pointer;color:var(--ink)}
+.composer{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--line);align-items:center}
+.composer input[type=text]{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:11px 18px}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--ink);flex-shrink:0}
+.send{background:var(--ink);border-color:var(--ink);color:#fff}
+.case-side{border-inline-start:1px solid var(--line);overflow-y:auto;padding:18px}
+.case-side h4{margin-top:18px}
+.stages{list-style:none;padding:0;margin:10px 0}
+.stages li{display:flex;gap:10px;padding:6px 0;font-size:.88rem;align-items:flex-start}
+.stages li i{width:14px;height:14px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;margin-top:6px}
+.stages li.done i{background:var(--teal);border-color:var(--teal)}
+.stages li.now i{background:var(--amber);border-color:var(--amber)}
+.stages li.now{font-weight:600;color:var(--ink)}
+.docs a{display:flex;justify-content:space-between;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-s);margin-bottom:6px;font-size:.85rem;text-decoration:none;color:var(--ink)}
+.parts{display:flex;flex-direction:column;gap:8px}
+.parts div{display:flex;gap:8px;align-items:center;font-size:.86rem}
+.parts .av{width:28px;height:28px;font-size:.75rem}
+.typing{align-self:flex-end;font-size:.8rem;color:var(--slate);padding:4px 10px}
+.mobile-back{display:none}
+
+/* academy */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.course{background:#fff;border:1px solid var(--line);border-radius:var(--r-s);overflow:hidden;display:flex;flex-direction:column}
+.course .cover{height:96px;position:relative;overflow:hidden}
+.course .in{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.course .in p{font-size:.88rem;color:var(--slate)}
+.course .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.progress{height:6px;background:var(--ink-3);border-radius:999px;margin:6px 0 12px}
+.progress i{display:block;height:100%;background:var(--teal);border-radius:999px}
+.sched{background:#fff;border:1px solid var(--line);border-radius:var(--r-m)}
+.sched .item{display:grid;grid-template-columns:76px 1fr auto;gap:16px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.sched .item:last-child{border-bottom:0}
+.date{text-align:center;border-radius:var(--r-s);background:var(--ink-3);padding:6px 0}
+.date b{display:block;font-family:var(--f-head);font-size:1.4rem;color:var(--ink);line-height:1.2}
+.date span{font-size:.76rem;color:var(--slate)}
+.tabs{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px;margin-bottom:22px;flex-wrap:wrap}
+.tabs button{border:0;background:transparent;padding:8px 18px;border-radius:999px;cursor:pointer;color:var(--slate);font-weight:500}
+.tabs button[aria-selected="true"]{background:var(--ink);color:#fff}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.plan{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:22px 18px;display:flex;flex-direction:column}
+.plan.feat{border:2px solid var(--ink);position:relative}
+.plan.feat::before{content:"الأكثر اختياراً";position:absolute;top:-12px;inset-inline-start:16px;background:var(--amber);color:var(--ink);font-size:.74rem;font-weight:700;padding:2px 10px;border-radius:999px}
+.plan .price{font-family:var(--f-head);font-size:1.7rem;color:var(--ink);font-weight:700;margin:6px 0 0}
+.plan .per{font-size:.8rem;color:var(--slate);margin-bottom:12px}
+.plan ul{list-style:none;padding:0;margin:0 0 18px;font-size:.87rem;flex:1}
+.plan li{padding:5px 0;padding-inline-start:20px;position:relative}
+.plan li::before{content:"";position:absolute;inset-inline-start:0;top:13px;width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.toggle{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;cursor:pointer}
+.switch{width:46px;height:26px;border-radius:999px;background:var(--line);position:relative;transition:background .2s;border:0;cursor:pointer}
+.switch::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:inset-inline-start .2s}
+.switch[aria-checked="true"]{background:var(--teal)}
+.switch[aria-checked="true"]::after{inset-inline-start:23px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.svc{background:#fff;border:1px dashed #C4CADB;border-radius:var(--r-s);padding:16px}
+.svc b{font-family:var(--f-head);color:var(--ink);display:block;margin-top:4px}
+.pane{display:none}.pane.on{display:block}
+
+/* portals */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:var(--r-s);padding:16px 18px}
+.kpi b{display:block;font-family:var(--f-head);font-size:1.7rem;color:var(--ink);line-height:1.3}
+.kpi span{font-size:.85rem;color:var(--slate)}
+.table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;font-size:.9rem}
+.table th{text-align:start;font-weight:600;color:var(--slate);font-size:.82rem;padding:12px 16px;background:var(--paper);border-bottom:1px solid var(--line)}
+.table td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+.table tr:last-child td{border-bottom:0}
+.two{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:start}
+.badge-big{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:22px}
+.score{font-family:var(--f-head);font-size:2.6rem;font-weight:800;color:var(--teal);line-height:1}
+.meter{height:10px;background:var(--ink-3);border-radius:999px;overflow:hidden;margin:10px 0}
+.meter i{display:block;height:100%;background:var(--teal);transition:width .3s}
+
+/* jobs */
+.job{background:#fff;border:1px solid var(--line);border-radius:var(--r-s);padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;margin-bottom:10px}
+.job h3{margin:0 0 4px;font-size:1.02rem}
+.fair{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--teal)}
+
+/* brand */
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.sw{border-radius:var(--r-s);overflow:hidden;border:1px solid var(--line);background:#fff}
+.sw i{display:block;height:92px}
+.sw div{padding:10px 12px;font-size:.82rem}
+.sw b{display:block;font-family:var(--f-head);color:var(--ink);font-size:.9rem}
+.logo-board{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px}
+.lb{border-radius:var(--r-m);padding:34px;display:grid;place-items:center;min-height:220px}
+
+/* AI center */
+.ai-hero{background:linear-gradient(180deg,#fff,var(--paper));border:1px solid var(--line);border-radius:var(--r-l);padding:30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-bottom:24px}
+.ai-hero .stats{display:flex;gap:26px}
+.ai-hero .stats div b{display:block;font-family:var(--f-head);font-size:1.6rem;color:var(--ink);line-height:1.2}
+.ai-hero .stats div span{font-size:.8rem;color:var(--slate)}
+.draft-layout{display:grid;grid-template-columns:300px 1fr 280px;gap:16px;align-items:start}
+.doc{background:#fff;border:1px solid var(--line);border-radius:var(--r-s);padding:34px 38px;min-height:560px;font-family:"Noto Naskh Arabic","IBM Plex Sans Arabic",serif;font-size:1.02rem;line-height:2.05;box-shadow:0 1px 0 var(--line),0 12px 30px -24px rgba(31,42,92,.4)}
+.doc h3{text-align:center;font-family:var(--f-head);margin:6px 0 4px}
+.doc .center{text-align:center;color:var(--slate);font-size:.9rem;margin-bottom:16px}
+.doc h4{margin:18px 0 4px;color:var(--ink)}
+.doc p{max-width:none;margin:0 0 .6em}
+.doc ol{padding-inline-start:22px;margin:0 0 .8em}
+.cite{display:inline-block;font-family:var(--f-body);font-size:.74rem;font-weight:600;border-radius:6px;padding:0 7px;margin:0 2px;cursor:pointer;border:1px solid transparent;line-height:1.7;vertical-align:1px}
+.cite.law{background:var(--teal-2);color:#0f5c52;border-color:#bfe3dd}
+.cite.prec{background:var(--ink-3);color:var(--ink);border-color:#cfd5ea}
+.cite.check{background:var(--amber-2);color:#8a5a0f;border-color:#f0d7a8}
+.cite:hover,.cite:focus-visible{border-color:currentColor}
+.empty-doc{display:grid;place-items:center;text-align:center;min-height:480px;color:var(--slate);font-family:var(--f-body)}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--ink);vertical-align:middle;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.insp{background:#fff;border:1px solid var(--line);border-radius:var(--r-s);padding:18px;position:sticky;top:86px}
+.insp .q{background:var(--paper);border-radius:var(--r-s);padding:12px 14px;font-size:.88rem;margin:8px 0}
+.flag{display:flex;gap:8px;font-size:.84rem;padding:8px 0;border-bottom:1px solid var(--line)}
+.flag:last-child{border-bottom:0}
+.flag i{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:9px}
+.lib{display:grid;grid-template-columns:320px 1fr;gap:16px;align-items:start}
+.law-item{display:flex;justify-content:space-between;gap:10px;width:100%;text-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--r-s);padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.law-item[aria-selected="true"]{border-color:var(--ink);box-shadow:inset 3px 0 0 var(--amber)}
+.law-item b{display:block;color:var(--ink);font-size:.92rem}
+.prec-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-s);padding:18px 20px;margin-bottom:10px}
+.prec-card .hd{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.prec-card .principle{border-inline-start:3px solid var(--amber);padding-inline-start:12px;margin:10px 0;font-size:.94rem}
+.bench{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.donut{width:120px;height:120px}
+.guard{background:var(--ink);color:#D5DAEE;border-radius:var(--r-m);padding:24px;margin-top:22px}
+.guard h3{color:#fff}
+.guard ul{padding-inline-start:18px;margin:8px 0 0;font-size:.9rem}
+.guard li{margin-bottom:6px}
+@media (max-width:1020px){.draft-layout{grid-template-columns:1fr}.insp{position:static}.lib,.bench,.ai-hero{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--ink);color:#C8CEE8;padding:44px 0 30px;margin-top:40px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+footer h4{color:#fff}
+footer a{color:#C8CEE8;text-decoration:none;display:block;font-size:.9rem;padding:3px 0}
+footer a:hover{color:#fff}
+.legal{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px;font-size:.8rem;color:#9AA3CC}
+
+/* toast & modal */
+.toast{position:fixed;bottom:22px;inset-inline-start:50%;transform:translateX(50%) translateY(120px);background:var(--ink);color:#fff;padding:12px 22px;border-radius:999px;z-index:60;transition:transform .3s;font-size:.92rem;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.toast.on{transform:translateX(50%) translateY(0)}
+.modal{position:fixed;inset:0;background:rgba(20,26,56,.55);display:none;place-items:center;z-index:50;padding:20px}
+.modal.on{display:grid}
+.modal .box{background:#fff;border-radius:var(--r-m);padding:28px;max-width:520px;width:100%;max-height:90vh;overflow:auto}
+.demo-flag{background:var(--amber);color:var(--ink);text-align:center;font-size:.82rem;padding:6px 12px;font-weight:600}
+
+/* responsive */
+@media (max-width:1020px){
+  .plans{grid-template-columns:repeat(2,1fr)}
+  .chat-shell{grid-template-columns:240px 1fr}
+  .case-side{display:none}
+  .services{grid-template-columns:repeat(2,1fr)}
+  .swatches{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:820px){
+  .hero .wrap,.calc,.report-layout,.rights-layout,.two,.answer.on,.band{grid-template-columns:1fr}
+  .arch-art{max-width:260px}
+  .steps,.tl{grid-template-columns:1fr 1fr;row-gap:22px}
+  .parties,.grid3{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .cats{position:static;flex-direction:row;overflow-x:auto}
+  .cats button{white-space:nowrap}
+  .result{position:static}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  .logo-board{grid-template-columns:1fr}
+  .chat-shell{grid-template-columns:1fr;height:calc(100vh - 120px)}
+  .chat-shell .threads{display:block}
+  .chat-shell .convo{display:none}
+  .chat-shell.open .threads{display:none}
+  .chat-shell.open .convo{display:flex}
+  .mobile-back{display:grid}
+  .role span{display:none}
+  .bar{grid-template-columns:110px 1fr 44px}
+  .table{display:block;overflow-x:auto}
+}
+@media (max-width:520px){
+  .plans,.services,.kpis,.steps,.tl,.row2{grid-template-columns:1fr}
+  .swatches{grid-template-columns:1fr 1fr}
+  .picker{padding:20px}
+  .band{padding:26px}
+}
+</style>
+</head>
+<body>
+<div class="demo-flag">نسخة عرض تجريبية — البيانات والأسماء الواردة توضيحية</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="ظهير — الصفحة الرئيسية">
+      <svg width="36" height="40" viewBox="0 0 36 40" aria-hidden="true"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#1F2A5C" stroke-width="5" stroke-linecap="round"/><circle cx="18" cy="21" r="5.5" fill="#E8A33D"/></svg>
+      <b>ظهير</b>
+    </a>
+    <nav class="main" aria-label="التنقل الرئيسي" id="mainNav"></nav>
+    <label class="role"><span class="small muted">عرض كـ</span>
+      <select id="roleSel" aria-label="عرض المنصة بصفة">
+        <option value="v">زائر</option>
+        <option value="e">موظف</option>
+        <option value="l">محامٍ</option>
+        <option value="c">منشأة</option>
+        <option value="a">مشرف المنصة</option>
+      </select>
+    </label>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<section class="view" data-view="home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>حقك في العمل محفوظ،<br>وظهيرك حاضر عند النزاع</h1>
+        <p class="lead">اعرف حقوقك في قانون العمل اليمني، واسأل محامياً معتمداً من هاتفك، وبلّغ عن الانتهاكات دون أن يُكشف اسمك.</p>
+        <div class="ctas">
+          <a class="btn btn-amber" href="#cases">اسأل محامياً الآن</a>
+          <a class="btn btn-ghost" href="#calculator">احسب مستحقاتك</a>
+        </div>
+        <div class="hero-trust">
+          <span><i></i>محامون مقيّدون في نقابة المحامين</span>
+          <span><i></i>محادثات مشفّرة وسرّية</span>
+          <span><i></i>يغطي كل المحافظات</span>
+        </div>
+      </div>
+      <svg class="arch-art" viewBox="0 0 420 470" role="img" aria-label="نافذة قمرية صنعانية تحتضن نقطة تمثل الموظف">
+        <defs><clipPath id="archClip"><path d="M40 470V230a170 170 0 0 1 340 0v240z"/></clipPath></defs>
+        <g clip-path="url(#archClip)">
+          <rect width="420" height="470" fill="#2E3C7A"/>
+          <g class="glass">
+            <path d="M210 230 L40 230 A170 170 0 0 1 60 150 Z" fill="#1C8C7E"/>
+            <path d="M210 230 L60 150 A170 170 0 0 1 120 85 Z" fill="#E8A33D"/>
+            <path d="M210 230 L120 85 A170 170 0 0 1 210 60 Z" fill="#C2364B"/>
+            <path d="M210 230 L210 60 A170 170 0 0 1 300 85 Z" fill="#E8A33D"/>
+            <path d="M210 230 L300 85 A170 170 0 0 1 360 150 Z" fill="#1C8C7E"/>
+            <path d="M210 230 L360 150 A170 170 0 0 1 380 230 Z" fill="#C2364B"/>
+          </g>
+          <g stroke="#FFFFFF" stroke-width="5" fill="none">
+            <path d="M210 230 L40 230M210 230 L60 150M210 230 L120 85M210 230 L210 60M210 230 L300 85M210 230 L360 150M210 230 L380 230"/>
+            <path d="M120 230 a90 90 0 0 1 180 0"/>
+          </g>
+          <rect x="40" y="230" width="340" height="240" fill="#F5F6FA"/>
+          <g stroke="#DDE1EC" stroke-width="2"><path d="M40 300h340M40 370h340M40 440h340M153 230v240M267 230v240"/></g>
+        </g>
+        <path d="M40 470V230a170 170 0 0 1 340 0v240" fill="none" stroke="#FFFFFF" stroke-width="14"/>
+        <circle cx="210" cy="300" r="38" fill="#E8A33D" stroke="#1F2A5C" stroke-width="8"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="picker" id="picker">
+      <h2>ماذا حدث لك في العمل؟</h2>
+      <p class="muted">اختر حالتك لتعرف موقف القانون منها وما الخطوة التالية.</p>
+      <div class="chips" id="sitChips" role="group" aria-label="اختر حالتك"></div>
+      <div class="answer" id="sitAnswer" aria-live="polite"></div>
+    </div>
+
+    <div class="block">
+      <h2>كيف تعمل ظهير</h2>
+      <p class="muted">من أول سؤال حتى قرار لجنة التحكيم، يبقى ملفك ومحاميك ومحادثاتك في مكان واحد.</p>
+      <div class="steps">
+        <div class="step"><div class="n">١</div><h3>اشرح مشكلتك</h3><p class="muted small">يطرح عليك مساعد ظهير أسئلة بسيطة ويجهّز ملفاً منظماً بالتواريخ والمستندات.</p></div>
+        <div class="step"><div class="n">٢</div><h3>يرد مستشار خلال ٢٤ ساعة</h3><p class="muted small">مستشار قانوني يقيّم موقفك ويحدد مستحقاتك والمهلة القانونية المتبقية لك.</p></div>
+        <div class="step"><div class="n">٣</div><h3>تسوية ودية داخل المنصة</h3><p class="muted small">ندعو صاحب العمل إلى غرفة وساطة رقمية، فالقانون يشترط محاولة التسوية خلال شهر.</p></div>
+        <div class="step"><div class="n">٤</div><h3>تمثيلك أمام لجنة التحكيم</h3><p class="muted small">إن فشلت الوساطة، يرفع محاميك الدعوى خلال المهلة ويتابعها حتى القرار والاستئناف.</p></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>من يلتقي على ظهير</h2>
+      <p class="muted">المنصة مصممة لتجمع كل أطراف علاقة العمل، فأغلب النزاعات تُحل عندما يجلس الجميع إلى طاولة واحدة.</p>
+      <div class="parties" id="partiesGrid"></div>
+    </div>
+
+    <div class="band band-pom">
+      <div>
+        <h2>رأيت انتهاكاً؟ بلّغ دون أن يُعرف اسمك</h2>
+        <p>تأخير رواتب، فصل جماعي، عمل بلا عقود، تحرش. بلاغك يصل إلى فريق التحقق برمز سري، ولا نحفظ رقمك أو جهازك معه.</p>
+      </div>
+      <a class="btn btn-amber" href="#report">قدّم بلاغاً سرياً</a>
+    </div>
+
+    <div class="block two">
+      <div>
+        <h2>تعلّم حقوقك قبل أن تحتاجها</h2>
+        <p class="muted">دورات قصيرة بالصوت والفيديو، تعمل حتى مع الإنترنت الضعيف، وتنتهي بشهادة من ظهير.</p>
+        <div class="grid3" id="homeCourses" style="grid-template-columns:1fr 1fr"></div>
+      </div>
+      <div class="panel">
+        <h3>للمنشآت: كن «منشأة عادلة»</h3>
+        <p class="muted small">تقييم امتثال لقانون العمل، تدريب لفرق الموارد البشرية، وشارة تظهر في إعلانات وظائفك وتجذب أفضل المرشحين.</p>
+        <a class="btn btn-ink btn-sm" href="#verify">سجّل منشأتك</a>
+        <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+        <h3>للمحامين: انضم إلى شبكة ظهير</h3>
+        <p class="muted small">قضايا عمالية موثّقة الملفات تصلك مباشرة، مع جدولة الجلسات وأدوات المتابعة.</p>
+        <a class="btn btn-ghost btn-sm" href="#verify">قدّم طلب الانضمام</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RIGHTS CENTER ============ -->
+<section class="view" data-view="rights">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>مركز الحقوق</h1>
+      <p class="muted">شرح مبسّط لأحكام قانون العمل رقم (٥) لسنة ١٩٩٥م وتعديلاته، مع رقم المادة لكل حق.</p>
+    </div>
+    <div class="rights-layout">
+      <div class="cats" id="cats" role="group" aria-label="أبواب الحقوق"></div>
+      <div>
+        <div class="search">
+          <input id="rSearch" type="search" placeholder="ابحث: إجازة، راتب، فصل، عقد…" aria-label="ابحث في الحقوق">
+        </div>
+        <div id="articles"></div>
+        <div class="timeline" id="disputePath">
+          <h2>مسار النزاع العمالي ومهله القانونية</h2>
+          <p class="muted small">تفوتك حقوق كثيرة إذا تجاوزت هذه المهل، ولذلك تحسبها ظهير لك تلقائياً في كل قضية.</p>
+          <div class="tl">
+            <div class="t"><b>التسوية الودية</b><span>محاولة إلزامية بين الطرفين</span><em>خلال شهر — م ١٢٩</em></div>
+            <div class="t"><b>استدعاء الوزارة</b><span>بعد إحالة النزاع إليها</span><em>خلال أسبوعين — م ١٢٩</em></div>
+            <div class="t"><b>الرفع للجنة التحكيم</b><span>من تاريخ محضر فشل الوساطة</span><em>خلال أسبوعين — م ١٣٠</em></div>
+            <div class="t"><b>الجلسة والقرار</b><span>أول جلسة ثم صدور القرار</span><em>١٠ أيام ثم ٣٠ يوماً — م ١٣٧</em></div>
+            <div class="t"><b>الاستئناف</b><span>أمام الشعبة العمالية</span><em>خلال شهر من الإبلاغ — م ١٣٩</em></div>
+          </div>
+        </div>
+        <div class="note">المحتوى توعوي ولا يغني عن استشارة محامٍ. عُدّل القانون بعدة قوانين لاحقة (١٩٩٧، ٢٠٠١، ٢٠٠٣، ٢٠٠٨)، ويراجع الفريق القانوني لظهير كل مادة قبل نشرها.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULATOR ============ -->
+<section class="view" data-view="calculator">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>حاسبة المستحقات</h1>
+      <p class="muted">أدخل بياناتك لتعرف تقديراً لما يحق لك عند انتهاء الخدمة أو الفصل. النتيجة تقديرية ويؤكدها المستشار.</p>
+    </div>
+    <div class="calc">
+      <form class="panel" id="calcForm" onsubmit="return false">
+        <div class="row2">
+          <div class="field"><label for="cWage">آخر أجر شهري كامل (ريال)</label><input id="cWage" type="number" min="0" value="120000" inputmode="numeric"><div class="hint">الأجر مع البدلات الثابتة</div></div>
+          <div class="field"><label for="cYears">مدة الخدمة (سنوات)</label><input id="cYears" type="number" min="0" step="0.5" value="4"></div>
+        </div>
+        <div class="field"><label for="cReason">كيف انتهت علاقة العمل؟</label>
+          <select id="cReason">
+            <option value="arbitrary">فُصلت دون سبب مشروع</option>
+            <option value="ended">انتهى العقد أو فُصلت بسبب مشروع</option>
+            <option value="resigned">استقلت</option>
+            <option value="still">ما زلت على رأس العمل</option>
+          </select>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="cLeave">أيام إجازة سنوية لم تأخذها</label><input id="cLeave" type="number" min="0" value="18"></div>
+          <div class="field"><label for="cUnpaid">أشهر رواتب متأخرة</label><input id="cUnpaid" type="number" min="0" value="2"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="cOt">ساعات إضافية غير مدفوعة</label><input id="cOt" type="number" min="0" value="40"></div>
+          <div class="field"><label for="cOtType">نوع الساعات الإضافية</label>
+            <select id="cOtType"><option value="1.5">أيام العمل العادية</option><option value="2">ليلاً أو أيام الراحة والعطل</option></select>
+          </div>
+        </div>
+        <label class="check"><input type="checkbox" id="cNotice" checked> لم أحصل على مهلة إشعار مدتها ٣٠ يوماً</label>
+        <label class="check"><input type="checkbox" id="cInsured"> أنا مشترك في التأمينات الاجتماعية</label>
+      </form>
+      <div class="result" aria-live="polite">
+        <h3>التقدير الأولي لمستحقاتك</h3>
+        <div class="lines" id="calcLines"></div>
+        <div class="total"><span>الإجمالي التقريبي</span><b id="calcTotal">0</b></div>
+        <p class="tiny" style="margin-top:12px">الحساب على أساس أن الشهر ٣٠ يوماً (م ٩) وساعات العمل ٨ يومياً. تقدير تعويض الفصل التعسفي من اختصاص لجنة التحكيم.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <button class="btn btn-amber btn-sm" id="calcToCase">أرسل النتيجة لمستشار</button>
+          <button class="btn btn-ghost btn-sm" style="color:#fff;border-color:rgba(255,255,255,.35)" id="calcCopy">انسخ الملخص</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASES / CHAT ============ -->
+<section class="view" data-view="cases">
+  <div class="wrap">
+    <div class="view-head" style="margin-bottom:18px;display:flex;justify-content:space-between;gap:16px;align-items:end;flex-wrap:wrap">
+      <div><h1 style="margin:0" id="casesH">قضاياي والمحادثات</h1><p class="muted" style="margin:0" id="casesP">كل التواصل مع المستشار والمحامي وصاحب العمل يتم هنا، موثّقاً ومحفوظاً كدليل.</p></div>
+      <button class="btn btn-ink btn-sm" id="newCase" data-roles="ea">قضية جديدة</button>
+    </div>
+    <div class="chat-shell" id="chatShell">
+      <div class="threads">
+        <div class="th-head"><b style="font-family:var(--f-head);color:var(--ink)">المحادثات</b><span class="tag tag-teal">مشفّرة</span></div>
+        <div id="threadList" role="tablist" aria-label="المحادثات"></div>
+      </div>
+      <div class="convo">
+        <div class="convo-head">
+          <button class="icon-btn mobile-back" id="backThreads" aria-label="رجوع إلى المحادثات">›</button>
+          <div class="av" id="cAv"></div>
+          <div class="meta"><b id="cName"></b><span id="cSub"></span></div>
+          <button class="icon-btn" aria-label="طلب مكالمة صوتية" id="callBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></button>
+        </div>
+        <div class="msgs" id="msgs" aria-live="polite"></div>
+        <div class="quick" id="quick"></div>
+        <form class="composer" id="composer">
+          <label class="icon-btn" aria-label="إرفاق مستند" style="cursor:pointer"><input type="file" id="attach" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.4 11-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></svg></label>
+          <input type="text" id="msgInput" placeholder="اكتب رسالتك…" aria-label="اكتب رسالتك" autocomplete="off">
+          <button class="icon-btn send" aria-label="إرسال"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform:scaleX(-1)"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></button>
+        </form>
+      </div>
+      <aside class="case-side" id="caseSide" aria-label="تفاصيل القضية"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REPORT ============ -->
+<section class="view" data-view="report">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>بلاغ سري عن ممارسة مخالفة</h1>
+      <p class="muted">بلاغك يحمي زملاءك أيضاً. لن نطلب اسمك، وستحصل على رمز تتابع به البلاغ.</p>
+    </div>
+    <div class="report-layout">
+      <div class="panel">
+        <div class="wizard-steps" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <form id="repForm" onsubmit="return false">
+          <div class="wstep on" data-s="0">
+            <h3>ما نوع المخالفة؟</h3>
+            <p class="muted small">يمكنك اختيار أكثر من نوع.</p>
+            <div class="chips" id="vioChips" role="group" aria-label="نوع المخالفة" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+            <div class="field" style="margin-top:18px"><label for="rDesc">صف ما حدث باختصار</label><textarea id="rDesc" rows="4" placeholder="مثال: لم تُصرف رواتب الموظفين منذ ثلاثة أشهر، ويُطلب منا التوقيع على استلامها."></textarea><div class="hint">تجنّب ذكر تفاصيل تكشف هويتك، مثل اسمك أو منصبك الدقيق.</div></div>
+          </div>
+          <div class="wstep" data-s="1">
+            <h3>عن المنشأة</h3>
+            <div class="field"><label for="rCo">اسم المنشأة</label><input id="rCo" placeholder="اسم الشركة أو المؤسسة"></div>
+            <div class="row2">
+              <div class="field"><label for="rGov">المحافظة</label><select id="rGov"></select></div>
+              <div class="field"><label for="rSec">القطاع</label><select id="rSec"></select></div>
+            </div>
+            <div class="field"><label for="rCount">كم موظفاً تقريباً تأثر؟</label><select id="rCount"><option>أنا فقط</option><option>٢–١٠</option><option>١١–٥٠</option><option>أكثر من ٥٠</option></select></div>
+            <div class="field"><label for="rFile">أدلة (اختياري)</label><input id="rFile" type="file" multiple><div class="hint">نحذف بيانات الموقع والجهاز من الصور والملفات تلقائياً قبل حفظها.</div></div>
+          </div>
+          <div class="wstep" data-s="2">
+            <h3>ماذا تريد بعد البلاغ؟</h3>
+            <label class="opt"><input type="radio" name="rMode" value="stat" checked><div><b>بلاغ مجهول فقط</b><p>يُضاف إلى مؤشر بيئة العمل وقد يبدأ تحققاً عن المنشأة. لا أحد يعرف من أنت، ولا حتى نحن.</p></div></label>
+            <label class="opt"><input type="radio" name="rMode" value="help"><div><b>أريد مساعدة قانونية أيضاً</b><p>يتواصل معك محامٍ عبر المحادثة باسم مستعار. لا تُكشف هويتك لصاحب العمل إلا بموافقتك الكتابية.</p></div></label>
+            <label class="opt"><input type="radio" name="rMode" value="group"><div><b>أريد الانضمام لشكوى جماعية</b><p>إن وصلت بلاغات مشابهة عن المنشأة نفسها، نجمعكم في قضية واحدة بمحامٍ واحد.</p></div></label>
+          </div>
+          <div class="wstep" data-s="3">
+            <div class="code-box">
+              <p style="margin:0;color:#C8CEE8">رمز متابعة بلاغك</p>
+              <div class="code" id="rCode">—</div>
+              <p class="small" style="color:#C8CEE8;margin:0 auto">احفظ الرمز في مكان آمن. لن نستطيع استرجاعه لأننا لا نعرف من أنت.</p>
+              <button class="btn btn-amber btn-sm" style="margin-top:14px" id="copyCode">انسخ الرمز</button>
+            </div>
+            <h3 style="margin-top:22px">ما الذي سيحدث الآن</h3>
+            <ul class="small muted" style="padding-inline-start:18px">
+              <li>يراجع فريق التحقق البلاغ خلال ٧٢ ساعة.</li>
+              <li>إذا تكررت بلاغات مستقلة عن المنشأة نفسها نتواصل معها رسمياً ونمنحها حق الرد.</li>
+              <li>اسم المنشأة لا يُنشر أبداً بناءً على بلاغ واحد.</li>
+            </ul>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:20px">
+            <button class="btn btn-ghost" id="rPrev" type="button">السابق</button>
+            <button class="btn btn-pom" id="rNext" type="button">التالي</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <div class="shield">
+          <h3>كيف نحمي هويتك</h3>
+          <ul>
+            <li><b>لا حساب ولا رقم هاتف.</b> البلاغ مرتبط برمز عشوائي فقط.</li>
+            <li><b>لا نسجّل عنوان جهازك</b> ولا موقعك مع البلاغ.</li>
+            <li><b>تنظيف الملفات</b> من بيانات الموقع والكاميرا قبل حفظها.</li>
+            <li><b>تأخير ذكي:</b> لا نتواصل مع المنشأة فور البلاغ، حتى لا يُربط التوقيت بك.</li>
+            <li><b>النشر المجمّع فقط:</b> المؤشر العام يعرض أنماطاً حسب القطاع والمحافظة، ولا يعرض أسماء.</li>
+            <li><b>الحماية من الانتقام:</b> القانون يمنع فصلك أثناء نزاع عمالي قائم، ومحاميك يتابع ذلك.</li>
+          </ul>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>تابع بلاغاً سابقاً</h3>
+          <div class="track"><input id="trackIn" placeholder="ZH-XXXX-XX" aria-label="رمز المتابعة"><button class="btn btn-ink btn-sm" id="trackBtn">تابع</button></div>
+          <p class="small muted" id="trackOut" style="margin-top:10px"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="index panel">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline">
+        <h2 style="margin:0">مؤشر بيئة العمل</h2>
+        <span class="tag tag-amber">بيانات توضيحية</span>
+      </div>
+      <p class="muted small">أكثر المخالفات المبلّغ عنها خلال آخر ٩٠ يوماً بعد التحقق، دون أسماء منشآت. يساعد النقابات والجهات الرقابية والمنظمات على توجيه جهودها.</p>
+      <div class="tabs" role="tablist" id="idxTabs" style="margin:10px 0 0"></div>
+      <div class="bars" id="idxBars"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACADEMY ============ -->
+<section class="view" data-view="academy">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>أكاديمية ظهير</h1>
+      <p class="muted">دورات وورش عمل يقدمها محامون ومختصو موارد بشرية يمنيون، للموظفين وللمنشآت.</p>
+    </div>
+    <div class="tabs" role="tablist" id="acTabs">
+      <button role="tab" aria-selected="true" data-p="ac-emp" data-roles="vela">للموظفين</button>
+      <button role="tab" aria-selected="false" data-p="ac-hr" data-roles="vca">للموارد البشرية والمنشآت</button>
+      <button role="tab" aria-selected="false" data-p="ac-ws" data-roles="velca">ورش العمل المباشرة</button>
+    </div>
+    <div class="pane on" id="ac-emp"><div class="grid3" id="coursesEmp"></div></div>
+    <div class="pane" id="ac-hr">
+      <div class="panel" data-roles="c" style="margin-bottom:16px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center">
+        <div><h3>أهّل موظفيك عبر الأكاديمية</h3>
+        <p class="small muted" style="margin:0">اشترِ مقاعد تدريب لموظفيك، وتصلهم دعوة شخصية. ترى المنشأة نسبة الإنجاز والشهادات فقط، ولا ترى أي نشاط آخر للموظف على ظهير، كالاستشارات أو البلاغات.</p></div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><label class="small" for="seats">عدد المقاعد</label><input id="seats" type="number" min="1" value="20" style="width:80px;border:1.5px solid var(--line);border-radius:var(--r-s);padding:8px"><button class="btn btn-ink btn-sm" id="buySeats">اشترِ المقاعد</button></div>
+      </div>
+      <div class="kpis" data-roles="c"><div class="kpi"><b>٢٠</b><span>مقعداً مفعّلاً</span></div><div class="kpi"><b>٦٥٪</b><span>متوسط الإنجاز</span></div><div class="kpi"><b>١١</b><span>شهادة صدرت</span></div><div class="kpi"><b>٣</b><span>دعوات لم تُقبل بعد</span></div></div>
+      <div class="grid3" id="coursesHr"></div></div>
+    <div class="pane" id="ac-ws"><div class="sched" id="workshops"></div></div>
+    <div class="block two">
+      <div class="panel">
+        <h3>شهادة «واعٍ بحقوقه»</h3>
+        <p class="muted small">أكمل أربع دورات أساسية واجتز الاختبار القصير لتحصل على شهادة رقمية يمكن التحقق منها، وتظهر شارتها في ملفك ضمن قاعدة المواهب.</p>
+        <div class="meter"><i style="width:50%"></i></div>
+        <p class="small muted">أكملت ٢ من ٤ دورات</p>
+      </div>
+      <div class="panel">
+        <h3>تعمل مع الإنترنت الضعيف</h3>
+        <p class="muted small">كل درس متاح كصوت قصير يمكن تنزيله، ونص مكتوب، وملخص يُرسل عبر الرسائل.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOBS ============ -->
+<section class="view" data-view="jobs">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>الوظائف وقاعدة المواهب</h1>
+      <p class="muted">وظائف من منشآت التزمت بمعايير «منشأة عادلة»، وملف مهني يجعلك مرئياً لها.</p>
+    </div>
+    <div class="two">
+      <div>
+        <div class="search">
+          <input type="search" id="jobQ" placeholder="ابحث عن وظيفة أو مدينة" aria-label="ابحث عن وظيفة">
+          <label class="check" style="margin:0"><input type="checkbox" id="fairOnly" checked> منشآت عادلة فقط</label>
+        </div>
+        <div id="jobList"></div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3>ملفك المهني</h3>
+          <div style="display:flex;gap:12px;align-items:center;margin:10px 0 14px"><div class="av" style="background:var(--ink-2)">م</div><div><b>محمد ع.</b><div class="small muted">محاسب — ٤ سنوات خبرة — صنعاء</div></div></div>
+          <div class="meter"><i style="width:72%"></i></div>
+          <p class="small muted">اكتمال الملف ٧٢٪ — أضف شهادة واحدة لترتفع فرص ظهورك.</p>
+          <label class="check" style="justify-content:space-between">ملفي مرئي للمنشآت العادلة <button type="button" class="switch" role="switch" aria-checked="true" id="visSw" aria-label="إظهار الملف"></button></label>
+          <p class="tiny muted">لا تظهر بياناتك لصاحب عملك الحالي، ولا يرى أحد أنك قدّمت شكوى أو بلاغاً.</p>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h3>دليل شركات التوظيف</h3>
+          <p class="small muted">شركات توظيف مرخصة من الوزارة، مع تقييمات الموظفين لها.</p>
+          <a href="#jobs" class="btn btn-ghost btn-sm" id="agencyBtn">تصفح الدليل</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLANS ============ -->
+<section class="view" data-view="plans">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>الباقات والخدمات</h1>
+      <p class="muted">المعرفة والحاسبة والبلاغ السري مجانية لكل موظف. الباقات المدفوعة تضيف الاستشارات والتمثيل القانوني.</p>
+    </div>
+    <div class="tabs" role="tablist" id="plTabs">
+      <button role="tab" aria-selected="true" data-p="pl-emp" data-roles="vea">للموظفين</button>
+      <button role="tab" aria-selected="false" data-p="pl-co" data-roles="vca">للمنشآت</button>
+      <button role="tab" aria-selected="false" data-p="pl-sp" data-roles="va">للجهات الداعمة</button>
+    </div>
+    <div class="pane on" id="pl-emp">
+      <div class="toggle"><span>شهري</span><button class="switch" role="switch" aria-checked="false" id="yearSw" aria-label="الدفع السنوي"></button><span>سنوي <span class="tag tag-teal">وفّر ٢٠٪</span></span></div>
+      <div class="plans" id="plansGrid"></div>
+      <h2 class="block" style="margin-top:44px">خدمات عند الحاجة</h2>
+      <p class="muted">بدون اشتراك، تدفع مقابل الخدمة وحدها.</p>
+      <div class="services">
+        <div class="svc"><span class="tag tag-ink">مستند</span><b>مراجعة عقد عمل</b><p class="small muted">ملاحظات المحامي خلال ٤٨ ساعة على البنود المخالفة للقانون.</p></div>
+        <div class="svc"><span class="tag tag-ink">مستند</span><b>صياغة إنذار رسمي</b><p class="small muted">خطاب قانوني لصاحب العمل يطالب بمستحقاتك.</p></div>
+        <div class="svc"><span class="tag tag-ink">جلسة</span><b>حضور جلسة وساطة</b><p class="small muted">محامٍ يمثلك في غرفة الوساطة مع المنشأة.</p></div>
+        <div class="svc"><span class="tag tag-ink">قضية</span><b>تمثيل أمام لجنة التحكيم</b><p class="small muted">أتعاب جزئية مقدماً والباقي نسبة من المبلغ المحكوم به.</p></div>
+      </div>
+      <p class="tiny muted" style="margin-top:16px">الدفع عبر المحافظ الإلكترونية المحلية، أو التحويل البنكي، أو عبر نقاط الوكلاء. الأسعار تجريبية للعرض.</p>
+    </div>
+    <div class="pane" id="pl-co">
+      <div class="two">
+        <div class="panel">
+          <span class="tag tag-teal">عضوية سنوية</span>
+          <h2 style="margin-top:10px">برنامج «منشأة عادلة»</h2>
+          <ul class="small" style="padding-inline-start:18px">
+            <li>تقييم امتثال سنوي لعقود العمل والأجور والإجازات وفق القانون.</li>
+            <li>مراجعة نماذج العقود واللوائح الداخلية من محامٍ.</li>
+            <li>مقاعد تدريب لفريق الموارد البشرية في الأكاديمية.</li>
+            <li>شارة «منشأة عادلة» تظهر في إعلانات الوظائف.</li>
+            <li>نشر وظائف بلا حدود والوصول إلى قاعدة المواهب.</li>
+            <li>قناة مجهولة لملاحظات الموظفين، ملخّصة دون كشف الأسماء.</li>
+            <li>اشتراك ظهير مدفوع لموظفيك كميزة وظيفية.</li>
+          </ul>
+          <a class="btn btn-ink" href="#verify" data-roles="v">سجّل منشأتك للبدء</a><a class="btn btn-ink" href="#employers" data-roles="ca">ابدأ التقييم</a>
+        </div>
+        <div class="panel">
+          <h3>لماذا تشترك المنشأة؟</h3>
+          <p class="small muted">حل الخلاف في غرفة وساطة أقل كلفة من نزاع أمام لجنة التحكيم، والشارة ترفع جودة المتقدمين للوظائف، والتقييم يكشف المخالفات قبل أن تتحول إلى قضايا.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pane" id="pl-sp">
+      <div class="two">
+        <div class="panel">
+          <span class="tag tag-amber">شراكات</span>
+          <h2 style="margin-top:10px">اشتراكات مموّلة للفئات الأكثر هشاشة</h2>
+          <p class="muted">تستطيع المنظمات الدولية والمحلية والنقابات وغرف التجارة تمويل اشتراكات النساء العاملات والشباب والعمالة المؤقتة، مع لوحة أثر مجهولة الهوية.</p>
+          <ul class="small" style="padding-inline-start:18px">
+            <li>تحديد الفئة والمحافظة والقطاع المستهدف.</li>
+            <li>تقارير دورية: عدد الاستشارات، القضايا المحلولة، المبالغ المستردة.</li>
+            <li>رعاية دورات الأكاديمية وحملات التوعية.</li>
+            <li>الوصول إلى مؤشر بيئة العمل المفصّل لدعم برامج المناصرة.</li>
+          </ul>
+          <button class="btn btn-ink" data-modal="sponsor">اطلب عرض شراكة</button>
+        </div>
+        <div class="panel">
+          <h3>مثال: لوحة أثر لجهة داعمة</h3>
+          <div class="kpis" style="grid-template-columns:1fr 1fr;margin:12px 0 0">
+            <div class="kpi"><b>٤٠٠</b><span>مقعد مموّل</span></div>
+            <div class="kpi"><b>٦٢٪</b><span>نساء</span></div>
+            <div class="kpi"><b>٣١٨</b><span>استشارة</span></div>
+            <div class="kpi"><b>٤٧</b><span>قضية حُلّت ودياً</span></div>
+          </div>
+          <p class="tiny muted" style="margin-top:10px">أرقام توضيحية.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMPLOYERS ============ -->
+<section class="view" data-view="employers">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>بوابة المنشآت</h1>
+      <p class="muted">مثال لحساب منشأة: <b>شركة الأفق للتجارة</b> — صنعاء — ٨٥ موظفاً.</p>
+    </div>
+    <div class="two">
+      <div>
+        <div class="panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+            <h3 style="margin:0">تقييم الامتثال لقانون العمل</h3>
+            <span class="score" id="compScore">0٪</span>
+          </div>
+          <div class="meter"><i id="compMeter"></i></div>
+          <p class="small muted" id="compMsg"></p>
+          <div id="compList"></div>
+        </div>
+        <h3 class="block" style="margin-top:30px">ملاحظات الموظفين المجهولة</h3>
+        <p class="small muted">ملخّص لما وصل عبر قناة المنشأة. لا تُعرض أي نصوص يمكن أن تكشف كاتبها.</p>
+        <table class="table">
+          <thead><tr><th>الموضوع</th><th>عدد الملاحظات</th><th>الحالة</th><th></th></tr></thead>
+          <tbody>
+            <tr><td>تأخر صرف الأجر بعد اليوم السادس</td><td>٧</td><td><span class="tag tag-pom">بحاجة لرد</span></td><td><button class="btn btn-ghost btn-sm" data-modal="reply">الرد</button></td></tr>
+            <tr><td>عدم تسليم نسخة من العقد</td><td>٤</td><td><span class="tag tag-amber">قيد المعالجة</span></td><td><button class="btn btn-ghost btn-sm" data-modal="reply">تحديث</button></td></tr>
+            <tr><td>احتساب الساعات الإضافية في رمضان</td><td>٢</td><td><span class="tag tag-teal">تمت المعالجة</span></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="badge-big">
+          <svg width="74" height="84" viewBox="0 0 36 40" aria-hidden="true"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#1C8C7E" stroke-width="5" stroke-linecap="round"/><path d="M12 21l4.5 4.5L25 17" fill="none" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b style="font-family:var(--f-head);color:var(--ink);font-size:1.1rem">شارة منشأة عادلة</b><p class="small muted" style="margin:0">تُمنح عند بلوغ ٨٠٪ في التقييم والرد على كل الملاحظات خلال ١٤ يوماً.</p></div>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h3>دعوات الوساطة</h3>
+          <p class="small muted">موظف سابق يطلب تسوية ودية بشأن مستحقات نهاية الخدمة.</p>
+          <a class="btn btn-teal btn-sm" href="#cases" data-thread="mediation">ادخل غرفة الوساطة</a>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h3>انشر وظيفة</h3>
+          <div class="field"><label for="jT">المسمى الوظيفي</label><input id="jT" placeholder="مثال: مندوب مبيعات"></div>
+          <div class="field"><label for="jC">المدينة</label><input id="jC" placeholder="صنعاء"></div>
+          <button class="btn btn-ink btn-sm" id="postJob">انشر الوظيفة</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAWYERS ============ -->
+<section class="view" data-view="lawyers">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>بوابة المحامين</h1>
+      <p class="muted">مثال لحساب محامية في الشبكة: <b>أ. نادية سالم</b> — محامية مقيّدة — تعز وعدن.</p>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>١٢</b><span>قضية نشطة</span></div>
+      <div class="kpi"><b>٣ س</b><span>متوسط زمن أول رد</span></div>
+      <div class="kpi"><b>٤٫٨</b><span>تقييم الموظفين</span></div>
+      <div class="kpi"><b>٧٨٪</b><span>نسبة الحل الودي</span></div>
+    </div>
+    <div class="two">
+      <div>
+        <h3>طلبات جديدة في محافظاتك</h3>
+        <table class="table" id="queue">
+          <thead><tr><th>الرقم</th><th>النوع</th><th>المحافظة</th><th>المهلة</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <h3 class="block" style="margin-top:30px">جلسات قادمة</h3>
+        <div class="sched">
+          <div class="item"><div class="date"><b>١٦</b><span>نوفمبر</span></div><div><b>وساطة — قضية ZH-2417</b><div class="small muted">غرفة وساطة رقمية مع ممثل الموارد البشرية</div></div><span class="tag tag-teal">أونلاين</span></div>
+          <div class="item"><div class="date"><b>٢٣</b><span>نوفمبر</span></div><div><b>لجنة التحكيم — تعز</b><div class="small muted">قضية ZH-2388 — أجور متأخرة لسبعة موظفين</div></div><span class="tag tag-ink">حضوري</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3>شروط الانضمام للشبكة</h3>
+          <ul class="small" style="padding-inline-start:18px">
+            <li>قيد ساري في نقابة المحامين اليمنيين.</li>
+            <li>خبرة لا تقل عن سنتين في القضايا العمالية.</li>
+            <li>التوقيع على ميثاق السرية وتعارض المصالح.</li>
+            <li>الالتزام بزمن أول رد لا يتجاوز ٢٤ ساعة.</li>
+          </ul>
+          <button class="btn btn-ink btn-sm" data-modal="join">قدّم طلب الانضمام</button>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h3>كيف يحصل المحامي على أتعابه</h3>
+          <p class="small muted">مبلغ ثابت لكل استشارة منجزة من اشتراكات الموظفين، وأتعاب متفق عليها للتمثيل، وحصة من المبالغ المستردة في قضايا الأتعاب المشروطة.</p>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h3>المركز الذكي للمحامي</h3>
+          <p class="small muted">صياغة العرائض والاستئنافات بالذكاء الاصطناعي، مستندة إلى نصوص القوانين اليمنية وقرارات لجان التحكيم السابقة، مع التحقق من كل استشهاد.</p>
+          <a class="btn btn-amber btn-sm" href="#ai">افتح المركز الذكي</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI CENTER ============ -->
+<section class="view" data-view="ai">
+  <div class="wrap">
+    <div class="ai-hero">
+      <div>
+        <span class="tag tag-amber">اشتراك خاص بالمحامين</span>
+        <h1 style="margin-top:10px">المركز الذكي للمحامي</h1>
+        <p class="muted" style="margin:0">مساعد صياغة يعرف القانون اليمني وقرارات لجان التحكيم السابقة. يكتب المسودة الأولى للعريضة أو الاستئناف، ويربط كل حجة بمادة أو قرار يمكنك فتحه والتحقق منه.</p>
+      </div>
+      <div class="stats">
+        <div><b>١٢</b><span>قانوناً ولائحة</span></div>
+        <div><b>٤٨٠</b><span>قراراً سابقاً</span></div>
+        <div><b>٩</b><span>هيئات تحكيم</span></div>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" id="aiTabs">
+      <button role="tab" aria-selected="true" data-p="ai-draft">صياغة المذكرات</button>
+      <button role="tab" aria-selected="false" data-p="ai-lib">المكتبة القانونية</button>
+      <button role="tab" aria-selected="false" data-p="ai-prec">القرارات السابقة</button>
+      <button role="tab" aria-selected="false" data-p="ai-bench">تحليل الهيئات</button>
+      <button role="tab" aria-selected="false" data-p="ai-plans">اشتراكات المحامين</button>
+    </div>
+
+    <!-- drafting -->
+    <div class="pane on" id="ai-draft">
+      <div class="draft-layout">
+        <form class="panel" id="draftForm" onsubmit="return false" style="padding:20px">
+          <h3>ما الذي تريد صياغته؟</h3>
+          <div class="field"><label for="dType">نوع المستند</label>
+            <select id="dType">
+              <option value="petition">عريضة دعوى أمام لجنة التحكيم</option>
+              <option value="appeal">صحيفة استئناف أمام الشعبة العمالية</option>
+              <option value="reply">مذكرة رد على دفوع صاحب العمل</option>
+              <option value="notice">إنذار رسمي لصاحب العمل</option>
+            </select>
+          </div>
+          <div class="field"><label for="dCase">القضية</label>
+            <select id="dCase"><option value="2417">ZH-2417 — فصل دون إشعار (تعز)</option><option value="2388">ZH-2388 — أجور متأخرة لسبعة موظفين (تعز)</option></select>
+            <div class="hint">يقرأ المساعد ملف القضية والمحادثات والمستندات المرفقة.</div>
+          </div>
+          <div class="field"><label>الطلبات</label>
+            <label class="check"><input type="checkbox" checked data-req="notice"> بدل مهلة الإشعار</label>
+            <label class="check"><input type="checkbox" checked data-req="eos"> مكافأة نهاية الخدمة</label>
+            <label class="check"><input type="checkbox" checked data-req="leave"> بدل الإجازات</label>
+            <label class="check"><input type="checkbox" checked data-req="arb"> تعويض الفصل التعسفي</label>
+          </div>
+          <div class="field"><label for="dTone">أسلوب الصياغة</label>
+            <select id="dTone"><option>رسمي مختصر</option><option>تفصيلي بالأدلة</option></select>
+          </div>
+          <button class="btn btn-ink" id="genDraft" style="width:100%;justify-content:center">صُغ المسودة</button>
+          <p class="tiny muted" style="margin-top:10px">المسودة مساعدة للمحامي وليست بديلاً عن مراجعته وتوقيعه.</p>
+        </form>
+        <div>
+          <div class="doc" id="docOut"><div class="empty-doc"><div><svg width="54" height="60" viewBox="0 0 36 40" aria-hidden="true"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#DDE1EC" stroke-width="5" stroke-linecap="round"/><circle cx="18" cy="21" r="5.5" fill="#E8A33D"/></svg><p style="margin:10px auto 0">اختر نوع المستند والقضية، ثم اضغط «صُغ المسودة».</p></div></div></div>
+          <div id="docActs" style="display:none;gap:8px;margin-top:12px;flex-wrap:wrap">
+            <button class="btn btn-teal btn-sm" id="approveDoc">اعتمد المسودة</button>
+            <button class="btn btn-ghost btn-sm" id="copyDoc">انسخ النص</button>
+            <button class="btn btn-ghost btn-sm" id="regenDoc">أعد الصياغة</button>
+          </div>
+        </div>
+        <aside class="insp" id="insp" aria-live="polite">
+          <h3>المراجعة القانونية</h3>
+          <p class="small muted" style="margin:0">اضغط على أي استشهاد في المسودة لترى نصه ومصدره هنا.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px"><span class="cite law">مادة قانونية</span><span class="cite prec">قرار سابق</span><span class="cite check">بحاجة لتحقق</span></div>
+          <div id="inspBody"></div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- library -->
+    <div class="pane" id="ai-lib">
+      <div class="lib">
+        <div>
+          <div class="search" style="margin-bottom:12px"><input type="search" id="libQ" placeholder="ابحث في القوانين" aria-label="ابحث في القوانين"></div>
+          <div id="lawList" role="tablist" aria-label="القوانين"></div>
+          <button class="btn btn-ghost btn-sm" data-upload="law" style="margin-top:6px">أضف قانوناً أو تعديلاً</button>
+        </div>
+        <div class="panel" id="lawView"></div>
+      </div>
+    </div>
+
+    <!-- precedents -->
+    <div class="pane" id="ai-prec">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center">
+        <input type="search" id="precQ" placeholder="ابحث بالموضوع أو المادة: فصل، ١٢٠، أجور…" aria-label="ابحث في القرارات" style="flex:1;min-width:220px;border:1.5px solid var(--line);border-radius:999px;padding:11px 18px">
+        <select id="precBody" aria-label="الجهة" style="border:1.5px solid var(--line);border-radius:999px;padding:10px 14px;background:#fff"></select>
+        <button class="btn btn-ink btn-sm" data-upload="prec">أضف قراراً من قضاياك</button>
+      </div>
+      <div id="precList"></div>
+      <p class="tiny muted">قرارات توضيحية للعرض. في النسخة الفعلية تُحذف أسماء الأطراف من كل قرار قبل إدخاله.</p>
+    </div>
+
+    <!-- bench analytics -->
+    <div class="pane" id="ai-bench">
+      <div class="panel" style="margin-bottom:16px;display:flex;gap:14px;flex-wrap:wrap;align-items:end">
+        <div class="field" style="margin:0;flex:1;min-width:220px"><label for="benchSel">الهيئة</label><select id="benchSel"></select></div>
+        <p class="small muted" style="margin:0;flex:2;min-width:240px">التحليل مبني على القرارات المنشورة في القاعدة فقط: كيف حكمت الهيئة، وعلى ماذا استندت، وما الأدلة التي قبلتها.</p>
+      </div>
+      <div id="benchOut"></div>
+    </div>
+
+    <!-- lawyer plans -->
+    <div class="pane" id="ai-plans">
+      <div class="plans" style="grid-template-columns:repeat(3,1fr)" id="lawyerPlans"></div>
+      <p class="tiny muted" style="margin-top:12px">أسعار تجريبية للعرض. محامو شبكة ظهير الذين يتولون قضايا المنصة يحصلون على الباقة الأساسية مجاناً.</p>
+    </div>
+
+    <div class="guard">
+      <h3>ضوابط المركز الذكي</h3>
+      <ul>
+        <li>كل استشهاد مرتبط بنص محفوظ في المكتبة. إن لم يجد المساعد مصدراً، يضع علامة «بحاجة لتحقق» ولا يخترع رقم مادة.</li>
+        <li>القرارات تُدخل بعد حذف أسماء الأطراف، وبموافقة الموكّل حين تأتي من قضايا المحامين.</li>
+        <li>تحليل الهيئات يقتصر على أحكامها المنشورة. لا معلومات شخصية عن القضاة، ولا تصنيف أو ترتيب لهم.</li>
+        <li>المركز مقصور على المحامين المقيّدين الموثّقين، وكل عملية بحث وتصدير مسجّلة.</li>
+        <li>المسودة لا تُرسل لأي جهة قبل أن يعتمدها المحامي بنفسه.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERIFY (KYC) ============ -->
+<section class="view" data-view="verify">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>التسجيل والتوثيق</h1>
+      <p class="muted">كل حساب على ظهير يُراجع يدوياً من فريق المنصة قبل تفعيله، حتى يثق كل طرف بمن يتحدث معه.</p>
+    </div>
+    <div class="report-layout">
+      <div class="panel">
+        <div class="wizard-steps" id="kSteps" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="wstep k on" data-k="0">
+          <h3>نوع الحساب</h3>
+          <label class="opt"><input type="radio" name="kType" value="emp" checked><div><b>موظف</b><p>للاستشارات ومتابعة القضايا والدورات والوظائف.</p></div></label>
+          <label class="opt"><input type="radio" name="kType" value="law"><div><b>محامٍ</b><p>للانضمام إلى شبكة ظهير واستخدام المركز الذكي.</p></div></label>
+          <label class="opt"><input type="radio" name="kType" value="co"><div><b>منشأة</b><p>لبرنامج «منشأة عادلة» ونشر الوظائف والرد على الملاحظات.</p></div></label>
+        </div>
+        <div class="wstep k" data-k="1">
+          <h3 id="kInfoTitle">بياناتك الأساسية</h3>
+          <div id="kInfo"></div>
+        </div>
+        <div class="wstep k" data-k="2">
+          <h3>الوثائق المطلوبة</h3>
+          <p class="small muted">صور واضحة للوجهين. تُحفظ مشفّرة ولا يراها إلا موظف التوثيق.</p>
+          <div id="kDocs"></div>
+        </div>
+        <div class="wstep k" data-k="3">
+          <div class="code-box" style="background:var(--teal)">
+            <svg width="48" height="54" viewBox="0 0 36 40" aria-hidden="true"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="18" cy="21" r="5.5" fill="#E8A33D"/></svg>
+            <h3 style="color:#fff;margin:8px 0 4px">استلمنا طلبك</h3>
+            <p class="small" style="color:#DDF1EE;margin:0 auto">حالة الحساب: <b>قيد المراجعة اليدوية</b>. نراجع الطلب خلال يومي عمل ونبلغك برسالة نصية.</p>
+          </div>
+          <h3 style="margin-top:20px">ما يمكنك فعله الآن</h3>
+          <ul class="small muted" style="padding-inline-start:18px" id="kNow"></ul>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:20px">
+          <button class="btn btn-ghost" id="kPrev" type="button">السابق</button>
+          <button class="btn btn-ink" id="kNext" type="button">التالي</button>
+        </div>
+      </div>
+      <div>
+        <div class="shield">
+          <h3>لماذا نوثّق كل الحسابات؟</h3>
+          <ul>
+            <li><b>المحامي يعرف موكّله</b> قبل أن يتولى قضيته.</li>
+            <li><b>الموظف يتأكد</b> أن محاميه مقيّد فعلاً في النقابة.</li>
+            <li><b>المنشأة الحقيقية فقط</b> تحصل على الشارة وتنشر الوظائف.</li>
+            <li><b>منع الحسابات الوهمية</b> والبلاغات الكيدية والمنافسة غير الشريفة.</li>
+          </ul>
+        </div>
+        <div class="shield" style="margin-top:14px;border-color:var(--pom)">
+          <h3>التوثيق لا يكشف المبلّغين</h3>
+          <p class="small muted" style="margin:0">الوثائق محفوظة في خزنة منفصلة عن البلاغات والمحادثات. يمكنك تقديم بلاغ سري دون حساب أصلاً، وإذا قدّمته من حسابك الموثّق يظهر للفريق فقط أنه «من موظف موثّق» دون اسمك، فيزيد ذلك من وزن البلاغ.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADMIN ============ -->
+<section class="view" data-view="admin">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>لوحة إدارة المنصة</h1>
+      <p class="muted">لا يُفعّل أي حساب، ولا يُنشر أي قرار أو تواصل بشأن بلاغ، إلا بموافقة مشرف.</p>
+    </div>
+    <div class="kpis" id="adKpis"></div>
+    <div class="tabs" role="tablist" id="adTabs">
+      <button role="tab" aria-selected="true" data-p="ad-kyc">طلبات التوثيق</button>
+      <button role="tab" aria-selected="false" data-p="ad-rep">البلاغات</button>
+      <button role="tab" aria-selected="false" data-p="ad-prec">قرارات للنشر</button>
+      <button role="tab" aria-selected="false" data-p="ad-perm">الصلاحيات</button>
+      <button role="tab" aria-selected="false" data-p="ad-log">سجل العمليات</button>
+    </div>
+    <div class="pane" id="ad-perm">
+      <p class="small muted">ما يراه كل نوع حساب. تُطبَّق الصلاحيات على الخادم أيضاً، فلا يكفي معرفة رابط الصفحة للوصول إليها.</p>
+      <table class="table perm-table" id="permTable"></table>
+    </div>
+    <div class="pane on" id="ad-kyc">
+      <div class="chips" id="kycFilter" style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap"></div>
+      <table class="table" id="kycTable"><thead><tr><th>الاسم</th><th>النوع</th><th>المحافظة</th><th>الوثائق</th><th>منذ</th><th>الحالة</th><th></th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="pane" id="ad-rep">
+      <table class="table"><thead><tr><th>الرمز</th><th>المخالفة</th><th>القطاع / المحافظة</th><th>بلاغات مشابهة</th><th>المصدر</th><th>الإجراء</th></tr></thead><tbody id="repTable"></tbody></table>
+      <p class="tiny muted" style="margin-top:10px">لا يُتواصل مع منشأة إلا بعد ٣ بلاغات مستقلة على الأقل، وموافقة مشرفَين.</p>
+    </div>
+    <div class="pane" id="ad-prec">
+      <table class="table"><thead><tr><th>القرار</th><th>مقدّم من</th><th>حذف الأسماء</th><th>موافقة الموكّل</th><th></th></tr></thead><tbody id="precTable"></tbody></table>
+    </div>
+    <div class="pane" id="ad-log"><div class="panel" id="auditLog" style="font-size:.88rem"></div></div>
+  </div>
+</section>
+
+<!-- ============ LOCKED ============ -->
+<section class="view" data-view="locked">
+  <div class="wrap"><div class="locked panel" id="lockedBox"></div></div>
+</section>
+
+<!-- ============ BRAND ============ -->
+<section class="view" data-view="brand">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>هوية ظهير</h1>
+      <p class="muted">الشعار مستوحى من القمرية الصنعانية: القوس هو «الظهر» الذي يسند ويحمي، والنقطة داخله هي الموظف. ومعاً يشكّلان نقطة حرف الظاء التي تميّز الاسم.</p>
+    </div>
+    <div class="logo-board">
+      <div class="lb" style="background:#fff;border:1px solid var(--line)">
+        <div style="display:flex;align-items:center;gap:16px">
+          <svg width="84" height="94" viewBox="0 0 36 40" aria-hidden="true"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#1F2A5C" stroke-width="5" stroke-linecap="round"/><circle cx="18" cy="21" r="5.5" fill="#E8A33D"/></svg>
+          <div><b style="font-family:var(--f-head);font-size:3.4rem;color:var(--ink);font-weight:800;line-height:1">ظهير</b><div class="muted" style="font-size:.95rem">سندك في العمل</div></div>
+        </div>
+      </div>
+      <div class="lb" style="background:var(--ink)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <svg width="56" height="62" viewBox="0 0 36 40" aria-hidden="true"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="18" cy="21" r="5.5" fill="#E8A33D"/></svg>
+          <b style="font-family:var(--f-head);font-size:2.4rem;color:#fff;font-weight:800">ظهير</b>
+        </div>
+      </div>
+      <div class="lb" style="background:var(--amber)">
+        <svg width="96" height="106" viewBox="0 0 36 40" aria-label="أيقونة التطبيق"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#1F2A5C" stroke-width="5" stroke-linecap="round"/><circle cx="18" cy="21" r="5.5" fill="#fff"/></svg>
+      </div>
+    </div>
+    <h2 class="block" style="margin-top:40px">الألوان</h2>
+    <div class="swatches">
+      <div class="sw"><i style="background:#1F2A5C"></i><div><b>نيلي القانون</b>#1F2A5C — الثقة والجدية</div></div>
+      <div class="sw"><i style="background:#E8A33D"></i><div><b>كهرمان القمرية</b>#E8A33D — الأمل والفعل</div></div>
+      <div class="sw"><i style="background:#1C8C7E"></i><div><b>زجاج أخضر</b>#1C8C7E — الأمان والحل</div></div>
+      <div class="sw"><i style="background:#C2364B"></i><div><b>رمّاني</b>#C2364B — البلاغ والتنبيه</div></div>
+      <div class="sw"><i style="background:#F5F6FA"></i><div><b>جصّ صنعاني</b>#F5F6FA — الخلفية</div></div>
+      <div class="sw"><i style="background:#5B6478"></i><div><b>رمادي الحجر</b>#5B6478 — النص الثانوي</div></div>
+    </div>
+    <div class="two block" style="margin-top:40px">
+      <div class="panel">
+        <h3>الخطوط</h3>
+        <p style="font-family:var(--f-head);font-size:2rem;font-weight:700;color:var(--ink);margin:0">Alexandria — للعناوين</p>
+        <p class="muted">خط هندسي واضح يحمل شخصية حديثة دون أن يفقد هيبة الموضوع.</p>
+        <p style="font-size:1.25rem;margin:0">IBM Plex Sans Arabic — للنصوص</p>
+        <p class="muted">مقروء جداً على الشاشات الصغيرة وبأحجام صغيرة، وهو ما يحتاجه شرح المواد القانونية.</p>
+      </div>
+      <div class="panel">
+        <h3>نبرة الكلام</h3>
+        <ul class="small" style="padding-inline-start:18px">
+          <li>نخاطب الموظف بلغة بسيطة، ونذكر رقم المادة دائماً.</li>
+          <li>نقول للمستخدم ما سيحدث بالضبط، ونتجنّب الوعود المطلقة بالنتائج.</li>
+          <li>لا نهاجم أصحاب العمل؛ نحن في صف القانون والعدل.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <svg width="30" height="34" viewBox="0 0 36 40" aria-hidden="true"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="18" cy="21" r="5.5" fill="#E8A33D"/></svg>
+        <b style="font-family:var(--f-head);font-size:1.4rem;color:#fff">ظهير</b>
+      </div>
+      <p class="small">أول منصة يمنية لحقوق موظفي القطاع الخاص.<br>daheer.com</p>
+    </div>
+    <div><h4>للموظف</h4><a href="#rights">مركز الحقوق</a><a href="#calculator">حاسبة المستحقات</a><a href="#cases">اسأل محامياً</a><a href="#report">بلاغ سري</a></div>
+    <div><h4>للشركاء</h4><a href="#employers">المنشآت</a><a href="#lawyers">المحامون</a><a href="#plans">الجهات الداعمة</a><a href="#academy">الأكاديمية</a></div>
+    <div><h4>ظهير</h4><a href="#brand">الهوية</a><a href="#plans">الباقات</a><a href="#home">سياسة الخصوصية</a><a href="#home">شروط الاستخدام</a></div>
+  </div>
+  <div class="wrap legal">ظهير منصة تقنية تربط الموظفين بمحامين مقيّدين في نقابة المحامين اليمنيين، ولا تقدم المنصة نفسها خدمات المحاماة. المعلومات المنشورة توعوية وتستند إلى قانون العمل رقم (٥) لسنة ١٩٩٥م وتعديلاته.</div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="box" id="mBox"></div></div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),2600)}
+function copy(text,msg){try{navigator.clipboard.writeText(text).then(()=>toast(msg||'تم النسخ'),()=>toast('انسخ النص يدوياً'))}catch(e){toast('انسخ النص يدوياً')}}
+
+/* ---------- roles & permissions ---------- */
+const I={
+ home:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>',
+ dash:'<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>',
+ book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',
+ calc:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/>',
+ chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
+ shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 9v4M12 16h.01"/>',
+ cap:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+ brief:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>',
+ tag:'<path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
+ spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>',
+ user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>',
+ check:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+ hand:'<path d="M7 11l3-3 3 2 4-4"/><path d="M3 13l4 4 3-1 4 4 7-7"/>'
+};
+const ROLES={v:'زائر',e:'موظف',l:'محامٍ',c:'منشأة',a:'مشرف المنصة'};
+const NAV=[
+ ['home','الرئيسية','home','vea'],
+ ['lawyers','لوحتي','dash','l'],
+ ['employers','لوحة المنشأة','dash','c'],
+ ['admin','لوحة الإدارة','dash','a'],
+ ['cases','قضاياي','chat','e'],
+ ['cases','القضايا والمحادثات','chat','la'],
+ ['ai','المركز الذكي','spark','la'],
+ ['rights','مركز الحقوق','book','veal'],
+ ['calculator','حاسبة المستحقات','calc','vea'],
+ ['report','بلاغ سري','shield','vea'],
+ ['academy','الأكاديمية','cap','velca'],
+ ['jobs','الوظائف','brief','vea'],
+ ['jobs','وظائفنا','brief','c'],
+ ['plans','الباقات','tag','veca'],
+ ['verify','أنشئ حساباً','user','v']
+];
+/* which pages each role may open (nav + deep links) */
+const ACCESS={
+ v:['home','rights','calculator','report','academy','jobs','plans','verify','brand'],
+ e:['home','rights','calculator','cases','report','academy','jobs','plans','brand'],
+ l:['lawyers','cases','ai','rights','academy','brand'],
+ c:['employers','academy','jobs','plans','cases','brand'],
+ a:['home','admin','cases','ai','rights','calculator','report','academy','jobs','plans','employers','lawyers','verify','brand']
+};
+const HOME={v:'home',e:'home',l:'lawyers',c:'employers',a:'admin'};
+let role='v';
+try{const r=localStorage.getItem('daheerRole');if(r&&ROLES[r])role=r}catch(e){}
+function buildNav(){
+  $('#mainNav').innerHTML=NAV.filter(n=>n[3].includes(role)).map(n=>`<a href="#${n[0]}"><svg viewBox="0 0 24 24" aria-hidden="true">${I[n[2]]}</svg>${n[1]}</a>`).join('');
+  $('#roleSel').value=role;
+  $('.brand').setAttribute('href','#'+HOME[role]);
+  // role-scoped tabs inside pages
+  $$('[data-roles]').forEach(el=>{el.hidden=!el.dataset.roles.includes(role)});
+  ['plTabs','acTabs'].forEach(id=>{const vis=$$('#'+id+' button').filter(b=>!b.hidden);const sel=$('#'+id+' button[aria-selected="true"]');if(vis.length&&(!sel||sel.hidden))vis[0].click();$('#'+id).style.display=vis.length>1?'':'none'});
+  if(typeof refreshChatRole==='function')refreshChatRole();
+}
+function lockedFor(v){
+  const names={home:'الرئيسية',rights:'مركز الحقوق',calculator:'حاسبة المستحقات',cases:'المحادثات',report:'البلاغ السري',academy:'الأكاديمية',jobs:'الوظائف',plans:'الباقات',employers:'لوحة المنشأة',lawyers:'لوحة المحامي',ai:'المركز الذكي',verify:'إنشاء حساب',admin:'لوحة الإدارة',brand:'الهوية'};
+  const why={ai:'المركز الذكي متاح فقط للمحامين الموثّقين المشتركين.',lawyers:'بيانات المحامين وقضاياهم لا تظهر إلا لهم ولإدارة المنصة.',admin:'لوحة الإدارة لمشرفي المنصة فقط.',report:'البلاغات سرية، ولا تطّلع عليها المنشآت إطلاقاً.',employers:'لوحة المنشأة لحسابات المنشآت الموثّقة فقط.',cases:'المحادثات والقضايا خاصة بأطرافها.'}[v]||'هذه الصفحة غير مشمولة في صلاحيات حسابك.';
+  if(role==='v'&&ACCESS.e.concat(ACCESS.l,ACCESS.c).includes(v)){$('#lockedBox').innerHTML=`<div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div><h2>«${names[v]||v}» تحتاج حساباً موثّقاً</h2><p class="muted" style="margin:0 auto">أنشئ حسابك وارفع وثائقك، وبعد موافقة فريق ظهير تُفتح لك الخدمات المناسبة لنوع حسابك.</p><div style="margin-top:16px"><a class="btn btn-ink" href="#verify">أنشئ حساباً</a></div>`;return}
+  $('#lockedBox').innerHTML=`<div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+  <h2>«${names[v]||v}» غير متاحة لحساب ${ROLES[role]}</h2><p class="muted" style="margin:0 auto">${why}</p>
+  <ul>${ACCESS[role].filter(x=>x!=='brand'&&!(role==='c'&&x==='cases')).map(x=>`<li><a class="chip" href="#${x}">${names[x]}</a></li>`).join('')}</ul>`;
+}
+$('#roleSel').addEventListener('change',e=>{role=e.target.value;try{localStorage.setItem('daheerRole',role)}catch(_){}buildNav();toast('تعرض المنصة الآن كـ '+ROLES[role]);location.hash=HOME[role];route()});
+
+/* ---------- router ---------- */
+const views=$$('section.view').map(s=>s.dataset.view);
+function route(){
+  let v=(location.hash||'#'+HOME[role]).slice(1); if(!views.includes(v)||v==='locked') v=HOME[role];
+  if(!ACCESS[role].includes(v)){lockedFor(v);v='locked'}
+  $$('section.view').forEach(s=>s.classList.toggle('on',s.dataset.view===v));
+  $$('nav.main a').forEach(a=>{if(a.getAttribute('href')==='#'+v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  const cur=$('nav.main a[aria-current]'); if(cur) cur.scrollIntoView({block:'nearest',inline:'center'});
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- situations ---------- */
+const sits=[
+ {k:'fired',l:'فُصلت من العمل',t:'إذا فُصلت دون سبب مشروع',a:'يحق لك تعويض خاص تقدّره لجنة التحكيم بما لا يتجاوز أجر ستة أشهر، إضافة إلى كل مستحقاتك الأخرى: مهلة الإشعار، ومكافأة نهاية الخدمة، وبدل الإجازات غير المستخدمة. ولا يجوز فصلك أثناء إجازتك أو أثناء نزاع عمالي قائم.',law:'قانون العمل، المواد ٣٨ و١٢٠ وأحكام الفصل التعسفي',acts:[['احسب مستحقاتك','#calculator'],['اسأل محامياً','#cases']]},
+ {k:'late',l:'تأخر راتبي',t:'موعد صرف الأجر محدد بالقانون',a:'إذا كنت تتقاضى أجراً شهرياً، يجب أن يُصرف لك في موعد أقصاه اليوم السادس من الشهر التالي. وعند انتهاء العقد تُستحق الأجور في اليوم التالي، أو خلال ستة أيام إذا كنت أنت من استقال.',law:'قانون العمل، المادتان ٦١ و٦٥',acts:[['اسأل محامياً','#cases'],['بلّغ بسرية','#report']]},
+ {k:'leave',l:'لم أحصل على إجازتي',t:'الإجازة السنوية ٣٠ يوماً على الأقل',a:'تستحق إجازة سنوية لا تقل عن ثلاثين يوماً بأجر كامل بعد سنة من الخدمة. ويجوز تأجيل نصفها فقط للسنة التالية، ولا تُستبدل بمال إلا عند انتهاء الخدمة، وحينها يُدفع لك بدل الأيام المتبقية.',law:'قانون العمل، المادتان ٧٩ و٨٨',acts:[['اقرأ عن الإجازات','#rights'],['احسب البدل','#calculator']]},
+ {k:'contract',l:'أعمل بدون عقد مكتوب',t:'غياب العقد لا يسقط حقوقك',a:'يجب أن يكون العقد مكتوباً من ثلاث نسخ، واحدة لك وواحدة لصاحب العمل وواحدة لمكتب الوزارة. وإذا لم يوجد عقد، يحق لك إثبات علاقة العمل وحقوقك بكل طرق الإثبات: شهود، رسائل، تحويلات أجر، بطاقة دوام.',law:'قانون العمل، المواد ١٩–٢٦',acts:[['اجمع أدلتك مع مساعد ظهير','#cases']]},
+ {k:'ot',l:'أعمل ساعات إضافية بلا أجر',t:'الحد ٨ ساعات يومياً و٦ في رمضان',a:'لا تزيد ساعات العمل على ٨ ساعات يومياً أو ٤٨ أسبوعياً، و٦ ساعات يومياً في رمضان. الساعة الإضافية تُدفع بأجر ونصف في الأيام العادية، وبأجر مضاعف ليلاً وفي أيام الراحة والعطل الرسمية.',law:'قانون العمل، المادتان ٥٦ و٧١',acts:[['احسب الساعات الإضافية','#calculator']]},
+ {k:'women',l:'أنا حامل وأخشى الفصل',t:'إجازة وضع ٦٠ يوماً بأجر كامل',a:'تستحق العاملة إجازة وضع مدتها ستون يوماً بأجر كامل، تزيد عشرين يوماً في الولادة المتعسرة أو التوأم بقرار طبي. ولا يجوز فصلك أثناء الإجازة.',law:'قانون العمل، المادة ٤٥',acts:[['تحدثي مع محامية','#cases']]},
+ {k:'abuse',l:'أتعرض لمعاملة مهينة',t:'سلامتك وكرامتك أولاً',a:'وثّق ما يحدث بالتواريخ والرسائل والشهود إن أمكن. يمكنك تقديم بلاغ سري دون كشف اسمك، أو التحدث مع محامية بخصوصية تامة لتقييم خياراتك القانونية، ومنها ترك العمل بسبب إخلال صاحب العمل مع الاحتفاظ بحقوقك.',law:'يُقيَّم كل وضع على حدة مع المحامي',acts:[['بلّغ بسرية','#report'],['تحدث مع محامٍ','#cases']]}
+];
+const chipsEl=$('#sitChips');
+sits.forEach(s=>{const b=document.createElement('button');b.className='chip';b.type='button';b.textContent=s.l;b.setAttribute('aria-pressed','false');b.onclick=()=>pickSit(s,b);chipsEl.appendChild(b)});
+function pickSit(s,b){
+  $$('#sitChips .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));
+  const an=$('#sitAnswer');an.classList.add('on');
+  an.innerHTML=`<div><h3>${s.t}</h3><p>${s.a}</p><div class="law">${s.law}</div></div><div class="acts">${s.acts.map((a,i)=>`<a class="btn ${i?'btn-ghost':'btn-ink'} btn-sm" href="${a[1]}">${a[0]}</a>`).join('')}</div>`;
+}
+
+/* ---------- parties ---------- */
+const parties=[
+ ['م','الموظف','يتعلم حقوقه، يحسب مستحقاته، يسأل ويبلّغ ويتابع قضيته.','var(--ink)'],
+ ['س','المستشار القانوني','خط الدعم الأول: يقيّم الحالة ويرد على الاستشارات خلال ٢٤ ساعة.','var(--teal)'],
+ ['ح','المحامي المعتمد','مقيّد في النقابة، يتولى الوساطة والتمثيل أمام لجان التحكيم والاستئناف.','var(--ink-2)'],
+ ['و','الوسيط','يدير غرفة التسوية الودية بين الموظف والمنشأة قبل اللجوء للتحكيم.','var(--amber)'],
+ ['ش','المنشأة والموارد البشرية','تقيّم امتثالها، تدرّب فرقها، ترد على الملاحظات وتنشر الوظائف.','#8a5a0f'],
+ ['د','الجهات الداعمة والنقابات','تموّل اشتراكات الفئات الهشة وتستفيد من مؤشر بيئة العمل.','var(--pom)'],
+ ['ت','المدرّبون','محامون ومختصو موارد بشرية يقدمون دورات الأكاديمية وورشها.','#4b5a9c'],
+ ['ق','فريق التحقق','يراجع البلاغات السرية ويتأكد منها قبل أي تواصل مع المنشأة.','#5B6478'],
+ ['ظ','مساعد ظهير الذكي','يستقبل المستخدم على مدار الساعة ويجهّز الملف للمستشار.','var(--teal)']
+];
+$('#partiesGrid').innerHTML=parties.map(p=>`<div class="party"><div class="ico" style="background:${p[3]};color:#fff">${p[0]}</div><div><h4 style="margin:0 0 2px">${p[1]}</h4><p>${p[2]}</p></div></div>`).join('');
+
+/* ---------- rights ---------- */
+const cats=['الكل','العقد والتجربة','الأجور','ساعات العمل','الإجازات','المرأة العاملة','إنهاء الخدمة','النزاعات'];
+const arts=[
+ ['العقد والتجربة','عقد العمل يجب أن يكون مكتوباً','يُحرر العقد من ثلاث نسخ: للعامل، ولصاحب العمل، ولمكتب الوزارة المختص. ويجب أن يحدد مقدار الأجر، ونوع العمل ومكانه، وتاريخ البدء، ومدة العقد. ويحق لك طلب إيصال بأي مستندات أو شهادات تسلّمها لصاحب العمل.','المواد ١٩–٢٦'],
+ ['العقد والتجربة','بلا عقد مكتوب؟ حقوقك قائمة','إذا لم يُكتب العقد، يحق للعامل إثبات علاقة العمل وكل حقوقه بأي وسيلة إثبات مشروعة.','المواد ١٩–٢٦'],
+ ['العقد والتجربة','فترة التجربة لا تتجاوز ستة أشهر','يجب النص عليها صراحة في العقد، ولا تُفرض إلا مرة واحدة للمهنة نفسها ولا تُجدد. خلالها يجوز لصاحب العمل إنهاء العقد دون إشعار إذا لم تثبت صلاحية العامل.','المادتان ٢٨ و٣٥'],
+ ['العقد والتجربة','العقد غير محدد المدة هو الأصل','عقد العامل اليمني غير محدد المدة ما لم يتفق الطرفان كتابة على مدة محددة. وإذا استمر العمل بعد انتهاء العقد المحدد، يُعتبر العقد ممتداً.','المادتان ٢٩ و٤٠'],
+ ['الأجور','موعد صرف الأجر','الأجر الشهري يُصرف في موعد أقصاه اليوم السادس من الشهر التالي، ونصف الشهري خلال ثلاثة أيام من نهاية كل نصف شهر، والأجر اليومي أو الأسبوعي مرة في الأسبوع على الأقل.','المادة ٦١'],
+ ['الأجور','الأجر عند انتهاء العقد','تُستحق الأجور في اليوم التالي لانتهاء العقد، أو خلال ستة أيام إذا كان العامل هو من ترك العمل.','المادة ٦٥'],
+ ['ساعات العمل','ثماني ساعات يومياً و٤٨ أسبوعياً','لا تزيد ساعات العمل الرسمية على ٨ ساعات في اليوم أو ٤٨ ساعة في الأسبوع موزعة على ستة أيام، ولا تزيد في رمضان على ٦ ساعات يومياً أو ٣٦ أسبوعياً.','المادة ٧١'],
+ ['ساعات العمل','أجر الساعات الإضافية','تُدفع الساعة الإضافية بأجر ونصف في أيام العمل العادية، وبأجر مضاعف في العمل الليلي وأيام الراحة الأسبوعية والعطل الرسمية، فوق أجر العطلة. ويجوز التعويض بإجازة بالنسبة ذاتها.','المادتان ٥٦ و٧٥'],
+ ['ساعات العمل','يوم راحة أسبوعي مدفوع','يحق لك يوم راحة كامل مدفوع الأجر بعد ستة أيام عمل، والأصل أن يكون يوم الجمعة، ويجوز تغييره إذا اقتضت طبيعة العمل.','المادتان ٧١ و٧٧'],
+ ['الإجازات','الإجازة السنوية ٣٠ يوماً','تستحق إجازة لا تقل عن ثلاثين يوماً بأجر كامل عن كل سنة خدمة فعلية، بمعدل يومين ونصف شهرياً. لا تُحتسب العطل الرسمية منها، ويجوز تقسيمها بشرط ألا يقل الجزء عن يومين، ولا تُستبدل بمال إلا عند انتهاء الخدمة.','المادتان ٧٩ و٨٨'],
+ ['الإجازات','العطل الرسمية','١٥ يوماً مدفوعة في السنة، منها خمسة أيام لعيد الأضحى وأربعة لعيد الفطر. ومن يُطلب منه العمل في عطلة رسمية يستحق أجراً مضاعفاً إضافة إلى أجر العطلة.','قانون رقم (٢) لسنة ٢٠٠٠م والمادة ٥٦'],
+ ['الإجازات','الإجازة المرضية','الشهران الأول والثاني بأجر كامل، والثالث والرابع بـ٨٥٪ من الأجر، والخامس والسادس بـ٧٥٪، والسابع والثامن بـ٥٠٪، ثم إجازة بلا أجر حتى الشفاء.','المادة ٨٠'],
+ ['المرأة العاملة','إجازة الوضع ٦٠ يوماً','تستحق العاملة إجازة وضع ستين يوماً بأجر كامل، وتُزاد عشرين يوماً في حالة الولادة المتعسرة أو التوأم بقرار طبي.','المادة ٤٥'],
+ ['إنهاء الخدمة','مهلة الإشعار','٣٠ يوماً لمن يتقاضى أجراً شهرياً، و١٥ يوماً لنصف الشهري، وأسبوع لمن يعمل بالقطعة أو الساعة أو اليوم أو الأسبوع. ويجوز استبدال المهلة بدفع أجرها.','المادة ٣٨'],
+ ['إنهاء الخدمة','مكافأة نهاية الخدمة','للعامل غير المشمول بالتأمينات الاجتماعية أو بنظام خاص مكافأة لا تقل عن أجر شهر عن كل سنة خدمة، تُحسب على آخر أجر.','المادة ١٢٠'],
+ ['إنهاء الخدمة','الفصل التعسفي','للعامل المفصول تعسفياً، أو الذي ترك العمل بسبب إخلال صاحب العمل، تعويض خاص تقدّره لجنة التحكيم بما لا يتجاوز أجر ستة أشهر، إضافة إلى كل مستحقاته الأخرى.','أحكام إنهاء العقد'],
+ ['إنهاء الخدمة','متى لا يجوز فصلك','لا يجوز فصل العامل أثناء إجازته، أو أثناء نزاع عمالي قائم لمدة تصل إلى أربعة أشهر، إلا إذا ارتكب مخالفة جديدة.','أحكام إنهاء العقد'],
+ ['النزاعات','لجان التحكيم العمالية','لجان تُشكَّل بقرار وزاري برئاسة ممثل عن الوزارة وعضوية ممثل عن أصحاب العمل وآخر عن نقابات العمال. قراراتها نهائية في الدعاوى التي لا تتجاوز ٣٠ ألف ريال، وما زاد يُستأنف أمام الشعبة العمالية خلال شهر.','المواد ١٣١ و١٣٥ و١٣٩'],
+ ['النزاعات','التسوية الودية أولاً','يجب أن يحاول الطرفان التسوية الودية خلال شهر، وإن فشلت يُرفع النزاع للجنة خلال أسبوعين من محضر فشل الوساطة. غرفة الوساطة في ظهير توثّق هذه المحاولة.','المادتان ١٢٩ و١٣٠']
+];
+let curCat='الكل';
+$('#cats').innerHTML=cats.map(c=>`<button type="button" aria-pressed="${c==='الكل'}">${c}</button>`).join('');
+$$('#cats button').forEach(b=>b.onclick=()=>{curCat=b.textContent;$$('#cats button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderArts()});
+$('#rSearch').addEventListener('input',renderArts);
+function renderArts(){
+  const q=$('#rSearch').value.trim();
+  const list=arts.filter(a=>(curCat==='الكل'||a[0]===curCat)&&(!q||(a[1]+a[2]).includes(q)));
+  $('#articles').innerHTML=list.length?list.map((a,i)=>`<details class="article"${i===0&&!q?' open':''}><summary><div><span class="tag tag-ink">${a[0]}</span><h3>${a[1]}</h3></div><span class="plus" aria-hidden="true">+</span></summary><div class="body"><p>${a[2]}</p><div class="ref">${a[3]}</div><div style="margin-top:10px"><a class="btn btn-ghost btn-sm" href="#cases">اسأل محامياً عن حالتك</a></div></div></details>`).join(''):`<div class="panel"><p style="margin:0">لم نجد نتيجة لـ «${esc(q)}». جرّب كلمة أبسط، أو <a href="#cases">اسأل مساعد ظهير مباشرة</a>.</p></div>`;
+  $('#disputePath').style.display=(curCat==='الكل'||curCat==='النزاعات')?'block':'none';
+}
+renderArts();
+
+/* ---------- calculator ---------- */
+let calcSummary='';
+function calc(){
+  const W=+$('#cWage').value||0, Y=+$('#cYears').value||0, R=$('#cReason').value;
+  const L=+$('#cLeave').value||0, U=+$('#cUnpaid').value||0, OT=+$('#cOt').value||0, OTR=+$('#cOtType').value;
+  const day=W/30, hour=day/8, lines=[];
+  if(U>0) lines.push(['أجور متأخرة',U+' شهر × الأجر الشهري','م ٦١',U*W]);
+  if(OT>0) lines.push(['ساعات إضافية',OT+' ساعة × '+(OTR===2?'أجر مضاعف':'أجر ونصف'),'م ٥٦',OT*hour*OTR]);
+  if(R!=='still'){
+    if(L>0) lines.push(['بدل إجازة سنوية',L+' يوم × الأجر اليومي','م ٧٩',L*day]);
+    if(!$('#cInsured').checked && Y>0) lines.push(['مكافأة نهاية الخدمة',Y+' سنة × أجر شهر','م ١٢٠',Y*W]);
+    if($('#cNotice').checked && (R==='arbitrary'||R==='ended')) lines.push(['بدل مهلة الإشعار','٣٠ يوماً','م ٣٨',W]);
+    if(R==='arbitrary') lines.push(['تعويض الفصل التعسفي (الحد الأقصى)','تقدّره لجنة التحكيم حتى ٦ أشهر','',6*W]);
+  }
+  const tot=lines.reduce((s,l)=>s+l[3],0);
+  $('#calcLines').innerHTML=lines.length?lines.map(l=>`<div class="line"><div>${l[0]}<small>${l[1]}${l[2]?' — '+l[2]:''}</small></div><b>${fmt(l[3])}</b></div>`).join(''):'<p class="small" style="color:#AEB6D8">أدخل بياناتك لتظهر النتيجة.</p>';
+  $('#calcTotal').textContent=fmt(tot)+' ريال';
+  if($('#cInsured').checked && R!=='still') $('#calcLines').insertAdjacentHTML('beforeend','<p class="tiny" style="color:#AEB6D8;margin-top:8px">لأنك مشترك في التأمينات، تخضع مكافأة نهاية الخدمة لقانون التأمينات الاجتماعية ويحسبها المستشار معك.</p>');
+  calcSummary='ملخص مستحقات (ظهير):\n'+lines.map(l=>'- '+l[0]+': '+fmt(l[3])+' ريال').join('\n')+'\nالإجمالي التقريبي: '+fmt(tot)+' ريال';
+  return {lines,tot};
+}
+$$('#calcForm input,#calcForm select').forEach(i=>i.addEventListener('input',calc));
+calc();
+$('#calcCopy').onclick=()=>copy(calcSummary,'نُسخ الملخص');
+$('#calcToCase').onclick=()=>{const r=calc();location.hash='cases';openThread('bot');pushMsg('bot',{f:'me',t:'أرسلت نتيجة الحاسبة: الإجمالي التقريبي '+fmt(r.tot)+' ريال.'});botReply('calc')};
+
+/* ---------- chat ---------- */
+const people={
+ bot:{n:'مساعد ظهير',c:'var(--teal)',i:'ظ'},
+ emp:{n:'الموظف: محمد ع.',c:'var(--ink)',i:'م'},
+ lawyer:{n:'أ. نادية سالم',c:'var(--ink-2)',i:'ن'},
+ hr:{n:'م. الموارد البشرية — شركة الأفق',c:'#8a5a0f',i:'ش'},
+ med:{n:'الوسيط: أ. خالد ناصر',c:'var(--amber)',i:'و'}
+};
+const ME={v:'emp',e:'emp',l:'lawyer',c:'hr',a:'emp'};
+const TH={v:[],e:['bot','case','mediation'],l:['case','mediation'],c:['mediation'],a:['bot','case','mediation']};
+const threads={
+ bot:{title:'مساعد ظهير',sub:'متاح على مدار الساعة — يجهّز ملفك للمستشار',av:people.bot,unread:0,
+  quick:['فُصلت من عملي','راتبي متأخر','هل يحق لي بدل إجازة؟','حوّلني إلى محامٍ'],
+  msgs:[{f:'them',p:'bot',t:'أهلاً بك في ظهير. أنا المساعد الآلي، أستقبل حالتك وأجهّز ملفاً منظماً يراجعه مستشار قانوني بشري. ما الذي حدث معك؟'}]},
+ case:{title:'قضية ZH-2417 — فصل دون إشعار',sub:'أ. نادية سالم — محامية مقيّدة',av:people.lawyer,unread:2,
+  quick:['أرسلت كشف الحساب','متى الجلسة؟','هل أوقّع على المخالصة؟'],
+  msgs:[
+   {f:'sys',t:'فُتحت القضية في ٢ نوفمبر — رُبطت بالمحامية أ. نادية سالم'},
+   {f:'me',t:'السلام عليكم أستاذة، أبلغوني يوم ٢٨ أكتوبر بانتهاء عملي من نفس اليوم بدون أي سبب مكتوب. عملت عندهم ٤ سنوات.',tm:'٢ نوفمبر'},
+   {f:'them',p:'lawyer',t:'وعليكم السلام. من المهم أولاً ألا توقّع على أي مخالصة أو إقرار استلام قبل أن نراجعه معاً. هل لديك نسخة من العقد أو كشف تحويل الرواتب؟',tm:'٢ نوفمبر'},
+   {f:'me',t:'أرفقت صورة العقد ورسالة الواتساب من المدير.',tm:'٣ نوفمبر'},
+   {f:'them',p:'lawyer',t:'ممتاز. بحسب المستندات يحق لك بدل مهلة الإشعار ومكافأة نهاية الخدمة وبدل الإجازات، إضافة إلى تعويض الفصل التعسفي. أرسلت دعوة وساطة للشركة، والقانون يمنح التسوية الودية شهراً.',tm:'أمس'},
+   {f:'them',p:'lawyer',t:'وافقت الشركة على جلسة وساطة يوم ١٦ نوفمبر داخل المنصة. ستجد غرفة الوساطة في قائمة المحادثات.',tm:'اليوم'}
+  ]},
+ mediation:{title:'غرفة الوساطة — ZH-2417',sub:'٤ أطراف — المحادثة موثّقة كمحضر رسمي',av:people.med,unread:1,group:true,
+  quick:['أقبل العرض','أطلب مهلة للتفكير','أريد رأي محاميتي'],
+  msgs:[
+   {f:'sys',t:'بدأت جلسة التسوية الودية — كل ما يُكتب هنا يُحفظ في محضر الوساطة (م ١٢٩)'},
+   {f:'them',p:'med',t:'مرحباً بالجميع. هدف الجلسة الوصول إلى تسوية عادلة لمستحقات الموظف. نبدأ بعرض الشركة.'},
+   {f:'them',p:'hr',t:'الشركة تقر بمستحقات الإجازة ومهلة الإشعار، ونرى أن الفصل كان بسبب إعادة هيكلة.'},
+   {f:'them',p:'lawyer',t:'إعادة الهيكلة لا تُعفي من الإجراءات المقررة قانوناً، ولم يُقدَّم أي إخطار للوزارة. موكلي يطالب أيضاً بمكافأة نهاية الخدمة عن أربع سنوات.'},
+   {f:'card',p:'med',t:'<b>عرض تسوية من الشركة</b><br>بدل مهلة الإشعار + مكافأة نهاية الخدمة كاملة + بدل ١٨ يوم إجازة، تُدفع خلال ١٠ أيام، مع شهادة خبرة.',acts:true}
+  ]}
+};
+let curThread='case';
+function renderThreads(){
+  $('#threadList').innerHTML=Object.entries(threads).filter(([k])=>(TH[role]||[]).includes(k)).map(([k,t])=>{const last=t.msgs[t.msgs.length-1];const lt=(last.t||'').replace(/<[^>]+>/g,'');return `<button class="thread" role="tab" aria-selected="${k===curThread}" data-k="${k}"><div class="av" style="background:${t.av.c}">${t.av.i}</div><div class="meta"><b>${t.title}</b><span>${esc(lt)}</span></div>${t.unread?`<span class="unread">${t.unread}</span>`:''}</button>`}).join('');
+  $$('#threadList .thread').forEach(b=>b.onclick=()=>openThread(b.dataset.k));
+}
+function msgHTML(m){
+  if(m.f==='sys') return `<div class="msg sys">${m.t}</div>`;
+  const author=m.f==='me'?'emp':m.p, p=people[author], t=threads[curThread];
+  const isMe=m.f!=='card'&&author===ME[role];
+  const who=(!isMe&&(t.group||m.f==='card'||role==='l'||role==='c'))?`<span class="who" style="color:${p.c}">${p.n}</span>`:'';
+  const acts=(m.acts&&role==='e')?`<div class="acts"><button class="btn btn-teal btn-sm" data-act="accept">أقبل التسوية</button><button class="btn btn-ghost btn-sm" data-act="counter">أقترح تعديلاً</button></div>`:'';
+  return `<div class="msg ${m.f==='card'?'card':isMe?'me':'them'}">${who}${m.f==='me'||m.u?esc(m.t):m.t}${acts}${m.tm?`<span class="time">${m.tm}</span>`:''}</div>`;
+}
+function openThread(k){
+  curThread=k;threads[k].unread=0;const t=threads[k];
+  $('#cAv').style.background=t.av.c;$('#cAv').textContent=t.av.i;$('#cName').textContent=t.title;$('#cSub').textContent=(role==='l'&&k==='case')?'الموكّل: محمد ع. — تعز':t.sub;
+  const qk=role==='l'?(k==='case'?['أرسلت مسودة العريضة للمراجعة','أحتاج كشف تحويل الرواتب','لا توقّع على أي مخالصة']:['نطلب إدراج تعويض عن عدم الإشعار','موكلي يوافق مبدئياً']):role==='c'?['نقبل حضور الجلسة','نطلب مهلة ٤٨ ساعة','سنرسل عرضاً معدّلاً']:t.quick;
+  $('#msgs').innerHTML=t.msgs.map(msgHTML).join('');
+  $('#quick').innerHTML=qk.map(q=>`<button type="button">${q}</button>`).join('');
+  $$('#quick button').forEach(b=>b.onclick=()=>send(b.textContent));
+  bindActs();renderThreads();renderSide();scrollMsgs();
+  $('#chatShell').classList.add('open');
+}
+function bindActs(){$$('#msgs [data-act]').forEach(b=>b.onclick=()=>{
+  if(b.dataset.act==='accept'){pushMsg('mediation',{f:'me',t:'أقبل عرض التسوية.'});setTimeout(()=>{pushMsg('mediation',{f:'sys',t:'تم توقيع اتفاق التسوية إلكترونياً من الطرفين — يُرسل المحضر إلى بريد الطرفين وأرشيف القضية'});caseStage=4;renderSide();toast('تم توقيع اتفاق التسوية')},800)}
+  else{send('أقترح أن يُضاف تعويض عن الفصل دون إجراءات.')}
+})}
+function scrollMsgs(){const m=$('#msgs');m.scrollTop=m.scrollHeight}
+function pushMsg(k,m){threads[k].msgs.push(m);if(k===curThread){$('#msgs').insertAdjacentHTML('beforeend',msgHTML(m));bindActs();scrollMsgs()}else threads[k].unread++;renderThreads()}
+function typing(on,k){const ex=$('#msgs .typing');if(ex)ex.remove();if(on&&k===curThread){$('#msgs').insertAdjacentHTML('beforeend','<div class="typing">يكتب الآن…</div>');scrollMsgs()}}
+function send(text){
+  text=text.trim();if(!text)return;const k=curThread;
+  if(role==='l'||role==='c'){pushMsg(k,{f:'them',p:ME[role],u:1,t:text,tm:'الآن'});roleReply(k);return}
+  pushMsg(k,{f:'me',t:text,tm:'الآن'});
+  if(k==='bot') botReply(text); else otherReply(k,text);
+}
+function botReply(text){
+  typing(true,'bot');
+  setTimeout(()=>{typing(false);let r;
+    if(text==='calc') r='استلمت نتيجة الحاسبة وأضفتها إلى ملفك. هل تريد أن أحوّل الملف الآن إلى مستشار قانوني ليؤكد الأرقام؟';
+    else if(/فصل|فصلت|طرد|انهاء|إنهاء/.test(text)) r='آسف لما حدث. لأبني ملفك أحتاج ثلاثة أشياء: <b>تاريخ الإبلاغ بالفصل</b>، و<b>مدة خدمتك</b>، و<b>هل أُعطيت سبباً مكتوباً؟</b><br><span class="small">تذكير مهم: لا توقّع على أي مخالصة قبل مراجعتها. وللفصل التعسفي تعويض يصل إلى أجر ٦ أشهر.</span>';
+    else if(/راتب|أجر|معاش|متأخر/.test(text)) r='الأجر الشهري يجب أن يُصرف قبل اليوم السادس من الشهر التالي (م ٦١). كم شهراً تأخر راتبك؟ وهل التأخير يشمل زملاءك أيضاً؟ إذا كان جماعياً يمكن تحويله إلى <a href="#report">بلاغ سري</a> أو شكوى جماعية.';
+    else if(/إجاز|اجاز/.test(text)) r='نعم، الإجازة السنوية ٣٠ يوماً على الأقل، ولا تُستبدل بمال إلا عند انتهاء الخدمة (م ٧٩). يمكنك حساب بدلها من <a href="#calculator">حاسبة المستحقات</a>.';
+    else if(/محام|مستشار|حوّل|حول/.test(text)){r='تم. جهزت ملفك وأرسلته إلى المستشار المناوب. سيرد خلال ٢٤ ساعة كحد أقصى، وستصلك رسالة نصية عند الرد.';setTimeout(()=>{pushMsg('bot',{f:'sys',t:'استلم المستشار أ. سامي العامري ملفك — رقم الطلب ZH-2463'})},1400)}
+    else if(/^\d|سنة|سنوات|أكتوبر|نوفمبر|شهر/.test(text)) r='شكراً، أضفت المعلومة إلى ملفك. هل لديك مستندات تثبت علاقة العمل، مثل العقد أو كشف تحويل الرواتب؟ أرفقها بزر المشبك.';
+    else r='فهمت. لأساعدك بدقة، هل مشكلتك تتعلق بالفصل، أم الأجور، أم الإجازات، أم ساعات العمل، أم شيء آخر؟';
+    pushMsg('bot',{f:'them',p:'bot',t:r});
+  },1100);
+}
+function otherReply(k,text){
+  const who=k==='case'?'lawyer':(Math.random()<.5?'med':'lawyer');
+  typing(true,k);
+  setTimeout(()=>{typing(false);let r;
+    if(/مخالصة|أوقع|أوقّع/.test(text)) r='لا توقّع على المخالصة قبل أن تتضمن كل البنود المتفق عليها كتابة. سأراجع النص وأرد عليك اليوم.';
+    else if(/جلسة|موعد/.test(text)) r='جلسة الوساطة يوم الأحد ١٦ نوفمبر الساعة ١٠ صباحاً داخل المنصة. إن فشلت، نرفع الدعوى للجنة التحكيم خلال أسبوعين من المحضر.';
+    else if(/كشف|أرسلت|مرفق/.test(text)) r='وصل، شكراً. أضفته إلى مستندات القضية.';
+    else if(/مهلة|تفكير/.test(text)) r='من حقك. نؤجل الرد ٤٨ ساعة ويُثبت ذلك في المحضر.';
+    else if(/رأي|محاميت/.test(text)) r='نصيحتي: العرض جيد ويغطي أهم المستحقات. يمكننا طلب إضافة تعويض بسيط عن عدم الإشعار، أو القبول لتوفير الوقت.';
+    else r='تم الاطلاع. سأعود إليك بالرد خلال ساعات العمل.';
+    pushMsg(k,{f:'them',p:k==='case'?'lawyer':who,t:r,tm:'الآن'});
+  },1300);
+}
+let caseStage=2;
+function renderSide(){
+  const st=['استقبال الحالة','مراجعة المستندات','دعوة للتسوية الودية','جلسة الوساطة','اتفاق التسوية / الرفع للجنة التحكيم','التنفيذ وإغلاق القضية'];
+  if(curThread==='bot'){$('#caseSide').innerHTML=`<h4 style="margin-top:0">ملفك قيد التجهيز</h4><p class="small muted">يجمع المساعد المعلومات الأساسية ثم يحوّل الملف لمستشار بشري.</p><h4>ما يحتاجه الملف</h4><ul class="stages"><li class="done"><i></i>نوع المشكلة</li><li class="now"><i></i>التواريخ ومدة الخدمة</li><li><i></i>المستندات والأدلة</li><li><i></i>المستحقات المتوقعة</li></ul><p class="tiny muted">المساعد لا يقدم رأياً قانونياً نهائياً، بل معلومات عامة من مركز الحقوق.</p>`;return}
+  const parts=curThread==='mediation'?['emp','lawyer','hr','med']:['emp','lawyer'];
+  $('#caseSide').innerHTML=`<span class="tag tag-amber">${caseStage>=4?'تمت التسوية':'وساطة ودية'}</span>
+  <h4>مراحل القضية</h4><ul class="stages">${st.map((s,i)=>`<li class="${i<caseStage?'done':i===caseStage?'now':''}"><i></i>${s}</li>`).join('')}</ul>
+  <h4>المهل القانونية</h4><div class="small"><div style="display:flex;justify-content:space-between"><span>نهاية فترة التسوية الودية</span><b style="color:var(--pom)">٢ ديسمبر</b></div><div class="meter"><i style="width:45%;background:var(--amber)"></i></div><span class="tiny muted">إن فشلت الوساطة: الرفع للجنة خلال أسبوعين (م ١٣٠)</span></div>
+  <h4>الأطراف</h4><div class="parts">${parts.map(p=>`<div><span class="av" style="background:${people[p].c}">${people[p].i}</span>${people[p].n}${p===ME[role]?' <b>(أنت)</b>':''}</div>`).join('')}</div>
+  <h4>المستندات</h4><div class="docs"><a href="#cases">عقد العمل.pdf<span class="muted">١٫٢ م.ب</span></a><a href="#cases">رسالة الإبلاغ بالفصل.png<span class="muted">٣٤٠ ك.ب</span></a><a href="#cases">تقدير المستحقات.pdf<span class="muted">٩٠ ك.ب</span></a></div>`;
+}
+$('#composer').addEventListener('submit',e=>{e.preventDefault();const i=$('#msgInput');send(i.value);i.value=''});
+$('#attach').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;pushMsg(curThread,{f:'me',t:'📎 '+f.name,tm:'الآن'});toast('أُرفق المستند وحُذفت بيانات الموقع منه');e.target.value=''});
+$('#callBtn').onclick=()=>toast('أُرسل طلب مكالمة — سيتصل بك المحامي عبر رقم المنصة دون كشف رقمك');
+$('#backThreads').onclick=()=>$('#chatShell').classList.remove('open');
+$('#newCase').onclick=()=>{openThread('bot');pushMsg('bot',{f:'sys',t:'بدأت قضية جديدة — أجب عن أسئلة المساعد'})};
+function roleReply(k){const from=role==='l'?(k==='case'?'emp':'med'):'med';typing(true,k);
+  setTimeout(()=>{typing(false);pushMsg(k,{f:'them',p:from,t:from==='emp'?'شكراً أستاذة، سأرسل المطلوب اليوم.':'شكراً، أُثبت ذلك في محضر الجلسة.',tm:'الآن'})},1200)}
+function refreshChatRole(){const hp={l:['القضايا والمحادثات','قضايا موكّليك وغرف الوساطة التي أنت طرف فيها.'],c:['غرفة الوساطة','جلسات التسوية الودية التي دُعيت إليها منشأتك فقط. لا تظهر لك أي محادثات أو بيانات أخرى.']}[role]||['قضاياي والمحادثات','كل التواصل مع المستشار والمحامي وصاحب العمل يتم هنا، موثّقاً ومحفوظاً كدليل.'];$('#casesH').textContent=hp[0];$('#casesP').textContent=hp[1];const list=TH[role]||[];if(!list.length)return;if(!list.includes(curThread))curThread=list[0];openThread(curThread);$('#chatShell').classList.remove('open')}
+$$('[data-thread]').forEach(a=>a.addEventListener('click',()=>setTimeout(()=>openThread(a.dataset.thread),50)));
+
+/* ---------- report ---------- */
+const vios=['تأخير الرواتب','فصل تعسفي أو جماعي','العمل بلا عقود','ساعات إضافية بلا أجر','حرمان من الإجازات','تحرش أو معاملة مهينة','بيئة عمل غير آمنة','تمييز ضد النساء','تشغيل أطفال'];
+$('#vioChips').innerHTML=vios.map(v=>`<button type="button" class="chip" aria-pressed="false">${v}</button>`).join('');
+$$('#vioChips .chip').forEach(c=>c.onclick=()=>c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')!=='true'));
+const govs=['أمانة العاصمة','عدن','تعز','حضرموت','الحديدة','إب','مأرب','لحج','ذمار','المهرة','شبوة','أبين','البيضاء','حجة','عمران','صعدة','الضالع','المحويت','ريمة','الجوف','صنعاء','سقطرى'];
+const secs=['التجارة والتجزئة','المطاعم والفنادق','التعليم الخاص','الصحة والمستشفيات','البناء والمقاولات','الصناعة','الاتصالات والتقنية','المنظمات والمشاريع','البنوك والصرافة','النقل','أخرى'];
+$('#rGov').innerHTML=govs.map(g=>`<option>${g}</option>`).join('');
+$('#rSec').innerHTML=secs.map(g=>`<option>${g}</option>`).join('');
+let rs=0;const reports={};
+function rRender(){
+  $$('.wstep').forEach(w=>w.classList.toggle('on',+w.dataset.s===rs));
+  $$('.wizard-steps span').forEach((s,i)=>s.classList.toggle('done',i<=rs));
+  $('#rPrev').style.visibility=(rs===0||rs===3)?'hidden':'visible';
+  $('#rNext').textContent=rs===2?'أرسل البلاغ':rs===3?'بلاغ جديد':'التالي';
+}
+$('#rNext').onclick=()=>{
+  if(rs===0&&!$$('#vioChips .chip[aria-pressed="true"]').length){toast('اختر نوع مخالفة واحداً على الأقل');return}
+  if(rs===1&&!$('#rCo').value.trim()){toast('اكتب اسم المنشأة');$('#rCo').focus();return}
+  if(rs===2){const ch='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',r=n=>Array.from({length:n},()=>ch[Math.floor(Math.random()*ch.length)]).join('');const code='ZH-'+r(4)+'-'+r(2);reports[code]=$('input[name=rMode]:checked').value;$('#rCode').textContent=code;$('#trackIn').value=code}
+  if(rs===3){rs=0;$('#repForm').reset();$$('#vioChips .chip').forEach(c=>c.setAttribute('aria-pressed','false'));rRender();return}
+  rs++;rRender();
+};
+$('#rPrev').onclick=()=>{if(rs>0){rs--;rRender()}};
+$('#copyCode').onclick=()=>copy($('#rCode').textContent,'نُسخ رمز المتابعة');
+$('#trackBtn').onclick=()=>{const c=$('#trackIn').value.trim().toUpperCase();const o=$('#trackOut');
+  if(reports[c]) o.innerHTML='<span class="tag tag-amber">قيد التحقق</span> استُلم البلاغ، ويراجعه فريق التحقق خلال ٧٢ ساعة.'+(reports[c]==='help'?' سيفتح محامٍ محادثة معك باسم مستعار.':'');
+  else if(c==='ZH-DEMO-01') o.innerHTML='<span class="tag tag-teal">تم التواصل مع المنشأة</span> وصلت ٤ بلاغات مستقلة مشابهة. تواصلنا مع المنشأة رسمياً، ولديها ١٤ يوماً للرد.';
+  else o.textContent='لم نجد بلاغاً بهذا الرمز. تأكد من كتابته كما ظهر لك. للتجربة استخدم ZH-DEMO-01';
+};
+rRender();
+const idx={'حسب نوع المخالفة':[['تأخير الرواتب',38],['العمل بلا عقود',24],['ساعات إضافية بلا أجر',17],['فصل تعسفي',12],['حرمان من الإجازات',9]],
+ 'حسب القطاع':[['التعليم الخاص',29],['المطاعم والفنادق',22],['التجارة والتجزئة',19],['الصحة',16],['البناء والمقاولات',14]],
+ 'حسب المحافظة':[['أمانة العاصمة',31],['عدن',23],['تعز',18],['حضرموت',15],['الحديدة',13]]};
+$('#idxTabs').innerHTML=Object.keys(idx).map((k,i)=>`<button role="tab" aria-selected="${i===0}">${k}</button>`).join('');
+function renderIdx(k){$('#idxBars').innerHTML=idx[k].map(b=>`<div class="bar"><span>${b[0]}</span><div class="track-b"><div class="fill" style="width:${b[1]*2.4}%"></div></div><b>${b[1]}٪</b></div>`).join('')}
+$$('#idxTabs button').forEach(b=>b.onclick=()=>{$$('#idxTabs button').forEach(x=>x.setAttribute('aria-selected',x===b));renderIdx(b.textContent)});
+renderIdx('حسب نوع المخالفة');
+
+/* ---------- academy ---------- */
+const cover=(a,b,c)=>`<svg viewBox="0 0 300 96" preserveAspectRatio="xMidYMid slice" width="100%" height="96" aria-hidden="true"><rect width="300" height="96" fill="${a}"/><path d="M220 96V60a40 40 0 0 1 80 0v36" fill="${b}"/><circle cx="260" cy="66" r="9" fill="${c}"/><path d="M-10 96V70a30 30 0 0 1 60 0v26" fill="${b}" opacity=".35"/></svg>`;
+const coursesEmp=[
+ ['حقوقك في عقد العمل','٦ دروس — ٤٥ دقيقة','مجانية',100,['#1F2A5C','#2E3C7A','#E8A33D']],
+ ['الأجور والساعات الإضافية','٥ دروس — ٤٠ دقيقة','مجانية',60,['#1C8C7E','#178073','#fff']],
+ ['ماذا تفعل إذا فُصلت؟','٧ دروس — ساعة','الباقة الأساسية',0,['#C2364B','#a92c40','#E8A33D']],
+ ['حقوق المرأة العاملة','٤ دروس — ٣٠ دقيقة','مجانية',0,['#E8A33D','#d4912e','#1F2A5C']],
+ ['كيف تتفاوض على راتبك','٥ دروس — ٥٠ دقيقة','الباقة المميزة',0,['#2E3C7A','#1F2A5C','#1C8C7E']],
+ ['التأمينات الاجتماعية ببساطة','٤ دروس — ٣٥ دقيقة','مجانية',0,['#5B6478','#4a5265','#E8A33D']]
+];
+const coursesHr=[
+ ['الامتثال لقانون العمل للمنشآت','٨ دروس — ساعتان','عضوية منشأة عادلة',0,['#1C8C7E','#178073','#E8A33D']],
+ ['صياغة عقود ولوائح سليمة','٦ دروس — ساعة ونصف','عضوية منشأة عادلة',0,['#1F2A5C','#2E3C7A','#fff']],
+ ['إنهاء الخدمة بالإجراءات الصحيحة','٥ دروس — ساعة','عضوية منشأة عادلة',0,['#C2364B','#a92c40','#fff']]
+];
+const courseHTML=c=>`<div class="course">${cover(...c[4])}<div class="in"><h3>${c[0]}</h3><p>${c[1]}</p>${c[3]?`<div class="progress"><i style="width:${c[3]}%"></i></div>`:''}<div class="foot"><span class="tag ${c[2]==='مجانية'?'tag-teal':'tag-ink'}">${c[2]}</span><button class="btn btn-ghost btn-sm" data-course="${c[0]}">${c[3]===100?'راجع':c[3]?'تابع':'ابدأ'}</button></div></div></div>`;
+$('#coursesEmp').innerHTML=coursesEmp.map(courseHTML).join('');
+$('#coursesHr').innerHTML=coursesHr.map(courseHTML).join('');
+$('#homeCourses').innerHTML=coursesEmp.slice(0,2).map(courseHTML).join('');
+$$('[data-course]').forEach(b=>b.onclick=()=>toast('فُتحت دورة «'+b.dataset.course+'»'));
+const ws=[['١٨','نوفمبر','لقاء مفتوح: أسئلة الموظفين عن الفصل','مع أ. نادية سالم — زووم ومباشر على فيسبوك','مجاني'],['٢٥','نوفمبر','ورشة: قراءة عقد العمل قبل التوقيع','للخريجين الجدد — ٩٠ دقيقة','مجاني'],['٢','ديسمبر','ورشة للموارد البشرية: إدارة النزاعات ودياً','لأعضاء منشأة عادلة','للأعضاء'],['٩','ديسمبر','حقوق العاملات في القطاع الصحي','برعاية جهة داعمة','مجاني']];
+$('#workshops').innerHTML=ws.map((w,i)=>`<div class="item"><div class="date"><b>${w[0]}</b><span>${w[1]}</span></div><div><b>${w[2]}</b><div class="small muted">${w[3]} — <span class="tag ${w[4]==='مجاني'?'tag-teal':'tag-ink'}">${w[4]}</span></div></div><button class="btn btn-ink btn-sm" data-ws="${i}">سجّل</button></div>`).join('');
+$$('[data-ws]').forEach(b=>b.onclick=()=>{const on=b.textContent==='سجّل';b.textContent=on?'مسجّل ✓':'سجّل';b.className='btn btn-sm '+(on?'btn-teal':'btn-ink');if(on)toast('سجّلت في الورشة — سيصلك تذكير قبلها بيوم')});
+
+/* ---------- tabs generic ---------- */
+function tabs(id){$$('#'+id+' button').forEach(b=>b.onclick=()=>{$$('#'+id+' button').forEach(x=>{x.setAttribute('aria-selected',x===b);$('#'+x.dataset.p).classList.toggle('on',x===b)})})}
+tabs('acTabs');tabs('plTabs');
+
+/* ---------- plans ---------- */
+const plans=[
+ ['مجانية',0,['مركز الحقوق كاملاً','حاسبة المستحقات','البلاغ السري','المساعد الذكي','٣ دورات أساسية']],
+ ['الأساسية',1500,['كل ما في المجانية','استشارة مكتوبة واحدة شهرياً','كل دورات الموظفين','مراجعة مستند واحد سنوياً']],
+ ['المميزة',3000,['استشارات غير محدودة كتابةً','مكالمة مع مستشار شهرياً','ورش العمل المباشرة','خصم ٢٠٪ على الخدمات']],
+ ['القائد',5000,['كل ما في المميزة','حضور محامٍ لجلسة الوساطة','متابعة قضية عمالية واحدة','صياغة الإنذارات الرسمية']],
+ ['البريميوم',12000,['كل ما في القائد','تمثيل كامل أمام لجنة التحكيم','الاستئناف أمام الشعبة العمالية','محامٍ مخصص لك']]
+];
+let yearly=false;
+function renderPlans(){$('#plansGrid').innerHTML=plans.map((p,i)=>{const pr=p[1]?(yearly?p[1]*12*.8:p[1]):0;return `<div class="plan${i===2?' feat':''}"><h3>${p[0]}</h3><div class="price">${pr?fmt(pr):'مجاناً'}</div><div class="per">${pr?(yearly?'ريال سنوياً':'ريال شهرياً'):'لكل موظف، دائماً'}</div><ul>${p[2].map(f=>`<li>${f}</li>`).join('')}</ul><button class="btn ${i===2?'btn-ink':'btn-ghost'} btn-sm" data-plan="${p[0]}">${p[1]?'اشترك':'ابدأ الآن'}</button></div>`}).join('');
+ $$('[data-plan]').forEach(b=>b.onclick=()=>openModal('pay',b.dataset.plan))}
+$('#yearSw').onclick=e=>{yearly=!yearly;e.currentTarget.setAttribute('aria-checked',yearly);renderPlans()};
+renderPlans();
+$('#visSw').onclick=e=>{const v=e.currentTarget.getAttribute('aria-checked')!=='true';e.currentTarget.setAttribute('aria-checked',v);toast(v?'ملفك مرئي للمنشآت العادلة':'أخفيت ملفك')};
+
+/* ---------- employers ---------- */
+const comp=['كل الموظفين لديهم عقود مكتوبة بثلاث نسخ','الأجور تُصرف قبل اليوم السادس من كل شهر','ساعات العمل لا تتجاوز ٨ يومياً و٦ في رمضان','الساعات الإضافية تُدفع بأجر ونصف أو مضاعف','الإجازة السنوية ٣٠ يوماً مطبّقة ومسجّلة','إجازة الوضع ٦٠ يوماً بأجر كامل','لائحة جزاءات معتمدة ومعلنة للموظفين','الموظفون مسجلون في التأمينات الاجتماعية','إجراءات مكتوبة لإنهاء الخدمة والإشعار','قناة شكاوى داخلية آمنة'];
+const compOn=[0,1,2,4,5,7];
+$('#compList').innerHTML=comp.map((c,i)=>`<label class="check"><input type="checkbox" ${compOn.includes(i)?'checked':''}> ${c}</label>`).join('');
+function compCalc(){const n=$$('#compList input:checked').length,p=Math.round(n/comp.length*100);$('#compScore').textContent=p+'٪';$('#compMeter').style.width=p+'%';$('#compMsg').textContent=p>=80?'منشأتك مؤهلة لشارة «منشأة عادلة». بقي الرد على ملاحظات الموظفين.':'تحتاج '+(80-p)+' نقطة لتتأهل للشارة. كل بند غير مكتمل يأتي معه دليل تصحيح ونموذج جاهز.'}
+$$('#compList input').forEach(i=>i.onchange=compCalc);compCalc();
+const jobs=[['محاسب أول','شركة الأفق للتجارة','صنعاء','دوام كامل',true],['مدرّسة لغة إنجليزية','مدارس النور الأهلية','عدن','دوام كامل',true],['ممرض/ة','مستشفى الرحمة','تعز','نوبات',true],['مندوب مبيعات','مؤسسة البركة','الحديدة','عمولة + راتب',false],['مطور تطبيقات','حلول رقمية','المكلا','عن بُعد',true]];
+function renderJobs(){const q=$('#jobQ').value.trim(),f=$('#fairOnly').checked;const l=jobs.filter(j=>(!f||j[4])&&(!q||j.join(' ').includes(q)));
+ $('#jobList').innerHTML=l.length?l.map(j=>`<div class="job"><div><h3>${esc(j[0])}</h3><div class="small muted">${esc(j[1])} — ${esc(j[2])} — ${esc(j[3])}</div>${j[4]?`<span class="fair"><svg width="14" height="15" viewBox="0 0 36 40"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#1C8C7E" stroke-width="6" stroke-linecap="round"/></svg>منشأة عادلة</span>`:''}</div><button class="btn btn-ink btn-sm" data-apply>قدّم</button></div>`).join(''):'<div class="panel">لا توجد وظائف مطابقة. جرّب إزالة فلتر المنشآت العادلة.</div>';
+ $$('[data-apply]').forEach(b=>b.onclick=()=>{b.textContent='تم التقديم';b.disabled=true;toast('أُرسل ملفك المهني للمنشأة')})}
+$('#jobQ').addEventListener('input',renderJobs);$('#fairOnly').addEventListener('change',renderJobs);renderJobs();
+$('#postJob').onclick=()=>{const t=$('#jT').value.trim(),c=$('#jC').value.trim()||'صنعاء';if(!t){toast('اكتب المسمى الوظيفي');return}jobs.unshift([t,'شركة الأفق للتجارة',c,'دوام كامل',true]);renderJobs();$('#jT').value='';toast('نُشرت الوظيفة بشارة منشأة عادلة')};
+$('#agencyBtn').onclick=e=>{e.preventDefault();toast('دليل شركات التوظيف — قريباً في النسخة الكاملة')};
+
+/* ---------- lawyers queue ---------- */
+const q=[['ZH-2471','أجور متأخرة — ٥ موظفين','تعز','٢٢ ساعة'],['ZH-2468','فصل أثناء إجازة وضع','عدن','١٨ ساعة'],['ZH-2466','مراجعة عقد عمل','لحج','٤٠ ساعة'],['ZH-2460','ساعات إضافية في رمضان','تعز','٦ ساعات']];
+$('#queue tbody').innerHTML=q.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="tag ${parseInt(r[3])<10?'tag-pom':'tag-amber'}">${r[3]}</span></td><td><button class="btn btn-ink btn-sm" data-take>استلم</button></td></tr>`).join('');
+$$('[data-take]').forEach(b=>b.onclick=()=>{b.textContent='استُلمت';b.className='btn btn-teal btn-sm';b.disabled=true;toast('أُضيفت القضية إلى قضاياك وأُبلغ الموظف')});
+
+/* ---------- modal ---------- */
+function openModal(kind,extra){
+  const forms={
+   pay:`<h2 id="mTitle">الاشتراك في الباقة ${esc(extra||'')}</h2><p class="muted small">اختر طريقة الدفع. هذه شاشة عرض فقط ولن يُخصم أي مبلغ.</p>${['محفظة إلكترونية محلية','تحويل بنكي','الدفع عند أقرب وكيل','اشتراك مموّل من جهة داعمة (برمز)'].map((m,i)=>`<label class="opt"><input type="radio" name="pm" ${i?'':'checked'}><div><b>${m}</b></div></label>`).join('')}<div style="display:flex;gap:8px;margin-top:14px"><button class="btn btn-ink" data-ok="فُعّل اشتراكك التجريبي">تأكيد</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
+   sponsor:`<h2 id="mTitle">طلب عرض شراكة</h2><div class="field"><label for="m1">اسم الجهة</label><input id="m1"></div><div class="field"><label for="m2">الفئة المستهدفة</label><select id="m2"><option>النساء العاملات</option><option>الشباب والخريجون</option><option>العمالة المؤقتة</option><option>قطاع محدد</option></select></div><div class="field"><label for="m3">بريد التواصل</label><input id="m3" type="email"></div><div style="display:flex;gap:8px"><button class="btn btn-ink" data-ok="وصل طلبك وسيتواصل فريق الشراكات معك">أرسل الطلب</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
+   join:`<h2 id="mTitle">طلب الانضمام لشبكة محامي ظهير</h2><div class="field"><label for="j1">الاسم الكامل</label><input id="j1"></div><div class="row2"><div class="field"><label for="j2">رقم القيد في النقابة</label><input id="j2"></div><div class="field"><label for="j3">المحافظات</label><input id="j3" placeholder="تعز، عدن"></div></div><div class="field"><label for="j4">صورة بطاقة القيد</label><input id="j4" type="file"></div><label class="check"><input type="checkbox"> أوافق على ميثاق السرية وتعارض المصالح</label><div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-ink" data-ok="استُلم طلبك — يُراجع القيد خلال ٥ أيام عمل">أرسل الطلب</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
+   addPrec:`<h2 id="mTitle">أضف قراراً من قضاياك</h2><p class="small muted">يُراجع الفريق القانوني القرار ويحذف أسماء الأطراف قبل نشره في القاعدة. تحصل على رصيد مسودات إضافي لكل قرار يُقبل.</p><div class="field"><label for="p1">الجهة ورقم القرار</label><input id="p1" placeholder="لجنة التحكيم — تعز — ٥٠/٢٠٢٦"></div><div class="field"><label for="p2">صورة القرار</label><input id="p2" type="file"></div><label class="check"><input type="checkbox"> حصلت على موافقة الموكّل على المشاركة بعد حذف الأسماء</label><div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-ink" data-ok="أُرسل القرار للمراجعة">أرسل للمراجعة</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
+   addLaw:`<h2 id="mTitle">اقترح قانوناً أو تعديلاً</h2><div class="field"><label for="a1">اسم القانون أو القرار ورقمه</label><input id="a1"></div><div class="field"><label for="a2">النص الرسمي</label><input id="a2" type="file"></div><div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-ink" data-ok="أُرسل للفريق القانوني لاعتماده">أرسل</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
+   reply:`<h2 id="mTitle">الرد على ملاحظات الموظفين</h2><p class="small muted">يظهر ردك لكل موظفي المنشأة عبر القناة المجهولة، ويُحتسب في تقييم الشارة.</p><div class="field"><label for="r1">الإجراء الذي اتخذته المنشأة</label><textarea id="r1" rows="4">اعتباراً من الشهر القادم تُصرف الرواتب يوم ٢٨ من كل شهر.</textarea></div><div style="display:flex;gap:8px"><button class="btn btn-ink" data-ok="نُشر الرد للموظفين">انشر الرد</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`
+  };
+  $('#mBox').innerHTML=forms[kind];$('#modal').classList.add('on');
+  const f=$('#mBox input,#mBox button');if(f)f.focus();
+  $$('#mBox [data-close]').forEach(b=>b.onclick=closeModal);
+  $$('#mBox [data-ok]').forEach(b=>b.onclick=()=>{closeModal();toast(b.dataset.ok)});
+}
+function closeModal(){$('#modal').classList.remove('on')}
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+$$('[data-modal]').forEach(b=>b.onclick=()=>openModal(b.dataset.modal));
+
+/* ---------- AI center ---------- */
+tabs('aiTabs');
+const lawText={
+ 'م ٣٨':['قانون العمل رقم (٥) لسنة ١٩٩٥م — المادة ٣٨','مهلة الإشعار ثلاثون يوماً للعامل الذي يتقاضى أجره شهرياً، ويجوز الاستعاضة عنها بدفع أجر المدة.'],
+ 'م ٦١':['قانون العمل — المادة ٦١','يُصرف الأجر الشهري في موعد أقصاه اليوم السادس من الشهر التالي.'],
+ 'م ٦٥':['قانون العمل — المادة ٦٥','تُستحق الأجور في اليوم التالي لانتهاء العقد، وخلال ستة أيام إذا ترك العامل العمل.'],
+ 'م ٧٩':['قانون العمل — المادة ٧٩','يستحق العامل إجازة سنوية لا تقل عن ثلاثين يوماً بأجر كامل، ولا يجوز استبدالها بمقابل نقدي إلا عند انتهاء الخدمة.'],
+ 'م ١٢٠':['قانون العمل — المادة ١٢٠','للعامل غير المشمول بالتأمينات الاجتماعية مكافأة نهاية خدمة لا تقل عن أجر شهر عن كل سنة، محسوبة على آخر أجر.'],
+ 'م ١٢٩':['قانون العمل — المادة ١٢٩','يحاول الطرفان التسوية الودية خلال شهر، فإن فشلت تُحال إلى الوزارة.'],
+ 'م ١٣٠':['قانون العمل — المادة ١٣٠','يُرفع النزاع إلى لجنة التحكيم خلال مدة أقصاها أسبوعان من تاريخ محضر فشل الوساطة.'],
+ 'م ١٣٩':['قانون العمل — المادة ١٣٩','يُستأنف قرار اللجنة أمام الشعبة العمالية بمحكمة الاستئناف خلال شهر من تاريخ الإبلاغ.']
+};
+const precs=[
+ {id:'تحكيم تعز ٤٧/٢٠٢٤',body:'لجنة التحكيم العمالية — تعز',y:'٢٠٢٤',sub:'فصل دون إشعار — إعادة هيكلة',res:'لصالح العامل',arts:['م ٣٨','م ١٢٠'],pr:'ادعاء إعادة الهيكلة لا يُسقط حق العامل في مهلة الإشعار والمكافأة ما لم يثبت صاحب العمل اتباع الإجراءات المقررة للفصل الجماعي.',tags:'فصل هيكلة إشعار ١٢٠ ٣٨'},
+ {id:'تحكيم الأمانة ١١٢/٢٠٢٣',body:'لجنة التحكيم العمالية — أمانة العاصمة',y:'٢٠٢٣',sub:'إثبات علاقة عمل دون عقد',res:'لصالح العامل',arts:['م ٦١'],pr:'كشوف التحويلات الشهرية المنتظمة ورسائل التكليف بالعمل قرينة كافية على قيام علاقة العمل في غياب العقد المكتوب.',tags:'عقد إثبات أجور تحويلات'},
+ {id:'استئناف تعز (عمالي) ٩/٢٠٢٤',body:'الشعبة العمالية — استئناف تعز',y:'٢٠٢٤',sub:'تعويض الفصل التعسفي',res:'تعديل لصالح العامل',arts:['م ١٢٠'],pr:'تقدير التعويض يراعي مدة الخدمة وظروف الفصل، ورُفع التعويض لعدم تسبيب قرار الفصل كتابةً.',tags:'فصل تعسفي تعويض استئناف'},
+ {id:'تحكيم عدن ٣٣/٢٠٢٥',body:'لجنة التحكيم العمالية — عدن',y:'٢٠٢٥',sub:'بدل إجازات متراكمة',res:'قبول جزئي',arts:['م ٧٩'],pr:'يُستحق بدل الإجازات غير المستخدمة عند انتهاء الخدمة، ويقع عبء إثبات منحها على صاحب العمل.',tags:'إجازة بدل ٧٩'},
+ {id:'تحكيم تعز ٦٢/٢٠٢٥',body:'لجنة التحكيم العمالية — تعز',y:'٢٠٢٥',sub:'تأخير أجور جماعي',res:'لصالح العمال',arts:['م ٦١','م ٦٥'],pr:'توقيع العامل على كشف استلام لم يُصرف فعلياً لا يُعتد به متى ثبت عدم التحويل.',tags:'أجور تأخير جماعي ٦١'}
+];
+const pCite=i=>`<span class="cite prec" tabindex="0" data-prec="${i}">قرار ${precs[i].id}</span>`;
+const lCite=k=>`<span class="cite law" tabindex="0" data-law="${k}">${k}</span>`;
+const chk=t=>`<span class="cite check" tabindex="0" data-check="${t}">بحاجة لتحقق</span>`;
+function draftHTML(type,cs,req){
+  const co=cs==='2417'?'شركة الأفق للتجارة':'مؤسسة النور الطبية', emp=cs==='2417'?'[اسم الموظف]':'[أسماء الموظفين السبعة]';
+  const reqs=[];
+  if(req.notice) reqs.push(`بدل مهلة الإشعار ومدتها ثلاثون يوماً ${lCite('م ٣٨')}.`);
+  if(req.eos) reqs.push(`مكافأة نهاية الخدمة بواقع أجر شهر عن كل سنة من سنوات الخدمة الأربع ${lCite('م ١٢٠')}.`);
+  if(req.leave) reqs.push(`بدل ثمانية عشر يوماً من الإجازة السنوية غير المستخدمة ${lCite('م ٧٩')}.`);
+  if(req.arb) reqs.push(`تعويض عن الفصل التعسفي تقدّره الهيئة بما لا يتجاوز أجر ستة أشهر ${chk('رقم المادة المنظمة لتعويض الفصل التعسفي غير موجود بصيغة مؤكدة في المكتبة')}.`);
+  const head=t=>`<h3>${t}</h3><div class="center">مقدّمة إلى ${type==='appeal'?'الشعبة العمالية بمحكمة استئناف تعز':'لجنة التحكيم العمالية بمحافظة تعز'}</div>`;
+  if(type==='petition') return head('عريضة دعوى عمالية')+`
+<p><b>المدعي:</b> ${emp}، ويمثله المحامي [الاسم] بموجب توكيل.<br><b>المدعى عليه:</b> ${co}، ويمثلها مديرها العام.</p>
+<h4>أولاً: الوقائع</h4>
+<p>عمل المدعي لدى المدعى عليها منذ [تاريخ البدء] بأجر شهري قدره [المبلغ] ريال، واستمرت علاقة العمل أربع سنوات. وبتاريخ ٢٨/١٠/٢٠٢٦م أُبلغ المدعي شفاهةً، ثم برسالة نصية من مديره المباشر، بإنهاء خدمته من اليوم ذاته دون إشعار ودون بيان سبب مكتوب.</p>
+<p>وقد سعى المدعي إلى التسوية الودية عبر جلسة وساطة موثقة بتاريخ ١٦/١١/٢٠٢٦م ${lCite('م ١٢٩')}، وانتهت بمحضر فشل الوساطة المرفق، وتُقدَّم هذه العريضة خلال المهلة القانونية ${lCite('م ١٣٠')}.</p>
+<h4>ثانياً: الأسانيد</h4>
+<p>إنهاء العقد غير محدد المدة دون إشعار يرتب للعامل بدل مهلة الإشعار ${lCite('م ٣٨')}. وقد استقر قضاء اللجان على أن الادعاء بإعادة الهيكلة لا يسقط هذا الحق ما لم يثبت صاحب العمل اتباع الإجراءات المقررة ${pCite(0)}. كما أن خلو قرار الفصل من التسبيب الكتابي قرينة على التعسف ${pCite(2)}.</p>
+<h4>ثالثاً: الطلبات</h4>
+<ol>${reqs.map(r=>`<li>${r}</li>`).join('')}<li>إلزام المدعى عليها بتسليم شهادة خبرة.</li></ol>
+<p><b>المرفقات:</b> صورة عقد العمل، الرسالة النصية بالإبلاغ بالفصل، محضر فشل الوساطة، كشف تحويل الرواتب.</p>`;
+  if(type==='appeal') return head('صحيفة استئناف')+`
+<p><b>المستأنف:</b> ${emp}.<br><b>المستأنف ضدها:</b> ${co}.<br><b>القرار المستأنف:</b> قرار لجنة التحكيم العمالية بتعز رقم [—] الصادر بتاريخ [—]، والمبلّغ به في [—]، ويُقدَّم الاستئناف خلال الميعاد ${lCite('م ١٣٩')}.</p>
+<h4>أولاً: ملخص القرار المستأنف</h4>
+<p>قضى القرار بإلزام المستأنف ضدها ببدل الإشعار وبدل الإجازات، ورفض طلب التعويض عن الفصل التعسفي، وأغفل الفصل في مكافأة نهاية الخدمة.</p>
+<h4>ثانياً: أسباب الاستئناف</h4>
+<ol>
+<li><b>الإغفال عن طلب جوهري:</b> لم يتناول القرار طلب مكافأة نهاية الخدمة رغم ثبوت مدة الخدمة وعدم شمول المستأنف بالتأمينات ${lCite('م ١٢٠')}.</li>
+<li><b>الخطأ في تكييف الفصل:</b> اعتبر القرار الفصل مشروعاً رغم خلوه من أي سبب مكتوب، وهو ما سبق للشعبة أن عدّته موجباً للتعويض ${pCite(2)}.</li>
+<li><b>مخالفة قضاء اللجان المستقر</b> في أن إعادة الهيكلة لا تُعفي من الإجراءات ${pCite(0)}.</li>
+</ol>
+<h4>ثالثاً: الطلبات</h4>
+<ol><li>قبول الاستئناف شكلاً لتقديمه في الميعاد.</li><li>تعديل القرار المستأنف والحكم بالطلبات الآتية:</li>${reqs.map(r=>`<li>${r}</li>`).join('')}</ol>`;
+  if(type==='reply') return head('مذكرة رد على دفوع المدعى عليها')+`
+<p>رداً على ما أثارته المدعى عليها في مذكرتها المؤرخة [—]، يتمسك المدعي بما يلي:</p>
+<h4>الرد على الدفع بإعادة الهيكلة</h4>
+<p>لم تقدّم المدعى عليها ما يثبت إخطار الوزارة أو اتباع إجراءات الفصل الجماعي، وقد قررت اللجنة في واقعة مماثلة أن هذا الادعاء لا يسقط حقوق العامل ${pCite(0)}.</p>
+<h4>الرد على الدفع بعدم وجود عقد مكتوب</h4>
+<p>كشوف تحويل الأجر الشهري المنتظمة طوال أربع سنوات قرينة كافية على قيام علاقة العمل ${pCite(1)}، فضلاً عن استحقاق الأجر في مواعيده ${lCite('م ٦١')}.</p>
+<h4>الرد على الدفع بتسليم المستحقات</h4>
+<p>توقيع العامل على كشف استلام لا يُعتد به ما لم يثبت التحويل الفعلي ${pCite(4)}.</p>`;
+  return `<h3>إنذار رسمي</h3><div class="center">من: المحامي [الاسم] بصفته وكيلاً عن ${emp}<br>إلى: السيد المدير العام — ${co}</div>
+<p>بالإشارة إلى إنهاء خدمة موكلي بتاريخ ٢٨/١٠/٢٠٢٦م دون إشعار، نطالبكم بصرف المستحقات الآتية خلال سبعة أيام من تاريخ استلام هذا الإنذار:</p>
+<ol>${reqs.map(r=>`<li>${r}</li>`).join('')}</ol>
+<p>وفي حال عدم الاستجابة، سنلجأ إلى الوساطة ثم لجنة التحكيم العمالية وفق المهل المقررة ${lCite('م ١٢٩')} ${lCite('م ١٣٠')}، مع حفظ حق موكلنا في المطالبة بالتعويض.</p>`;
+}
+let typingTimer;
+function genDraft(){
+  const type=$('#dType').value,cs=$('#dCase').value,req={};$$('[data-req]').forEach(c=>req[c.dataset.req]=c.checked);
+  const full=draftHTML(type,cs,req);const out=$('#docOut');clearInterval(typingTimer);
+  const tmp=document.createElement('div');tmp.innerHTML=full;const blocks=[...tmp.children];out.innerHTML='';let i=0;
+  $('#docActs').style.display='none';
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){out.innerHTML=full;finish();return}
+  out.insertAdjacentHTML('beforeend','<span class="caret"></span>');
+  typingTimer=setInterval(()=>{const c=out.querySelector('.caret');if(i>=blocks.length){clearInterval(typingTimer);c&&c.remove();finish();return}out.insertBefore(blocks[i++],c);bindCites()},260);
+  function finish(){bindCites();$('#docActs').style.display='flex';
+    const nL=out.querySelectorAll('.cite.law').length,nP=out.querySelectorAll('.cite.prec').length,nC=out.querySelectorAll('.cite.check').length;
+    $('#inspBody').innerHTML=`<h4 style="margin-top:16px">فحص المسودة</h4>
+    <div class="flag"><i style="background:var(--teal)"></i><span>${nL} استشهاداً بمواد قانونية، كلها موجودة في المكتبة.</span></div>
+    <div class="flag"><i style="background:var(--ink)"></i><span>${nP} قرارات سابقة داعمة من الجهة نفسها أو الأعلى منها.</span></div>
+    ${nC?`<div class="flag"><i style="background:var(--amber)"></i><span>${nC} موضع بحاجة لتحقق من المحامي قبل الاعتماد.</span></div>`:''}
+    <div class="flag"><i style="background:var(--pom)"></i><span>تنقص المسودة: تاريخ بدء العمل، والأجر الشهري، ورقم التوكيل.</span></div>
+    <div class="flag"><i style="background:var(--teal)"></i><span>المهلة: متبقٍ ٩ أيام على انتهاء ميعاد الرفع للجنة.</span></div>`}
+}
+function bindCites(){$$('#docOut .cite').forEach(c=>{if(c._b)return;c._b=1;const show=()=>{
+  let h='';
+  if(c.dataset.law){const t=lawText[c.dataset.law];h=`<div class="q"><b>${t[0]}</b><br>${t[1]}</div><span class="tag tag-teal">مصدر موثّق في المكتبة</span>`}
+  else if(c.dataset.prec){const p=precs[+c.dataset.prec];h=`<div class="q"><b>${p.id}</b> — ${p.body}<br><span class="small">${p.sub} — ${p.res}</span><div class="principle" style="border-inline-start:3px solid var(--amber);padding-inline-start:10px;margin-top:6px">${p.pr}</div></div>`}
+  else h=`<div class="q" style="background:var(--amber-2)">${c.dataset.check}. اختر المادة الصحيحة من المكتبة أو احذف الإحالة.</div>`;
+  $('#inspBody').innerHTML=`<h4 style="margin-top:16px">الاستشهاد المحدد</h4>`+h};
+  c.onclick=show;c.onkeydown=e=>{if(e.key==='Enter')show()}})}
+$('#genDraft').onclick=genDraft;$('#regenDoc').onclick=genDraft;
+$('#copyDoc').onclick=()=>copy($('#docOut').innerText,'نُسخ نص المسودة');
+$('#approveDoc').onclick=()=>toast('اعتُمدت المسودة وحُفظت في ملف القضية باسمك');
+
+const laws=[
+ ['قانون العمل رقم (٥) لسنة ١٩٩٥م','وتعديلاته ١٩٩٧، ٢٠٠١، ٢٠٠٣، ٢٠٠٨',Object.keys(lawText)],
+ ['قانون التأمينات الاجتماعية رقم (٢٦) لسنة ١٩٩١م','مكافآت نهاية الخدمة للمشمولين',[]],
+ ['قانون تنظيم النقابات العمالية رقم (٣٥) لسنة ٢٠٠٢م','اللجان النقابية وحق التمثيل',[]],
+ ['قانون الإجازات والعطلات الرسمية رقم (٢) لسنة ٢٠٠٠م','العطل الرسمية',[]],
+ ['قانون المرافعات والتنفيذ المدني','إجراءات التقاضي والتنفيذ',[]],
+ ['قانون الإثبات','وسائل الإثبات وعبء الإثبات',[]],
+ ['قانون التحكيم','أحكام التحكيم العامة',[]],
+ ['القرارات الوزارية واللوائح التنفيذية','تُضاف بعد مراجعة الفريق القانوني',[]]
+];
+let curLaw=0;
+function renderLaws(){const q=$('#libQ').value.trim();
+ $('#lawList').innerHTML=laws.map((l,i)=>(!q||(l[0]+l[1]).includes(q))?`<button class="law-item" role="tab" aria-selected="${i===curLaw}" data-l="${i}"><span><b>${l[0]}</b><span class="tiny muted">${l[1]}</span></span><span class="tag ${l[2].length?'tag-teal':'tag-ink'}">${l[2].length?'مفهرس':'قيد الإدخال'}</span></button>`:'').join('');
+ $$('[data-l]').forEach(b=>b.onclick=()=>{curLaw=+b.dataset.l;renderLaws()});
+ const l=laws[curLaw];
+ $('#lawView').innerHTML=`<h2>${l[0]}</h2><p class="muted small">${l[1]}</p>`+(l[2].length?l[2].map(k=>`<div class="prec-card"><div class="hd"><b style="color:var(--ink)">${lawText[k][0].split('—')[1]||k}</b><span class="tag tag-teal">سارية</span></div><p style="margin:8px 0 0">${lawText[k][1]}</p></div>`).join('')+'<p class="tiny muted">عرض مختصر لبعض المواد المفهرسة.</p>':`<div class="note" style="margin-top:0">يُدخل نص هذا القانون ويُراجع من الفريق القانوني قبل أن يعتمد عليه المساعد في الصياغة.</div>`)}
+$('#libQ').addEventListener('input',renderLaws);renderLaws();
+
+const bodies=['كل الجهات',...new Set(precs.map(p=>p.body))];
+$('#precBody').innerHTML=bodies.map(b=>`<option>${b}</option>`).join('');
+function renderPrecs(){const q=$('#precQ').value.trim(),b=$('#precBody').value;
+ const l=precs.filter(p=>(b==='كل الجهات'||p.body===b)&&(!q||(p.sub+p.pr+p.tags+p.arts.join(' ')).includes(q)));
+ $('#precList').innerHTML=l.length?l.map(p=>`<div class="prec-card"><div class="hd"><div><b style="color:var(--ink);font-family:var(--f-head)">${p.id}</b> <span class="small muted">— ${p.body}</span></div><span class="tag ${p.res.includes('جزئي')?'tag-amber':'tag-teal'}">${p.res}</span></div><div class="small muted">${p.sub}</div><div class="principle">${p.pr}</div><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">${p.arts.map(a=>`<span class="cite law">${a}</span>`).join('')}<button class="btn btn-ghost btn-sm" style="margin-inline-start:auto" data-use>استخدم في مذكرة</button></div></div>`).join(''):'<div class="panel">لا قرارات مطابقة. جرّب رقم مادة مثل ١٢٠.</div>';
+ $$('[data-use]').forEach(b=>b.onclick=()=>{$('#aiTabs button').click();toast('أُضيف القرار إلى أسانيد المسودة')})}
+$('#precQ').addEventListener('input',renderPrecs);$('#precBody').addEventListener('change',renderPrecs);renderPrecs();
+
+const bench={
+ 'لجنة التحكيم العمالية — تعز (الهيئة الأولى)':{n:'٨٦',ok:71,dur:'٣٤ يوماً',arts:[['م ١٢٠',41],['م ٣٨',33],['م ٦١',29],['م ٧٩',18]],ev:['كشوف التحويلات البنكية والمحافظ','رسائل الواتساب الموثقة بمحضر','شهادة زميلين على الأقل'],notes:['تشترط إثبات تاريخ الإبلاغ بالفصل كتابةً أو برسالة.','تميل إلى الحد الأدنى في تقدير التعويض حين تقل الخدمة عن سنتين.','تقبل محضر الوساطة الرقمي الموقّع من الطرفين.']},
+ 'لجنة التحكيم العمالية — أمانة العاصمة':{n:'١٤٢',ok:64,dur:'٤١ يوماً',arts:[['م ٦١',46],['م ١٢٠',38],['م ٣٨',21],['م ٧٩',15]],ev:['العقد المكتوب أو صورته','كشوف الرواتب','مراسلات البريد الرسمي'],notes:['تتشدد في إثبات علاقة العمل عند غياب العقد.','تفصل في الدعاوى الصغيرة غالباً من الجلسة الثانية.']},
+ 'لجنة التحكيم العمالية — عدن':{n:'٩٧',ok:68,dur:'٢٩ يوماً',arts:[['م ٧٩',36],['م ١٢٠',34],['م ٦١',30],['م ٣٨',19]],ev:['كشوف الحضور والانصراف','تحويلات الأجر','الشهود'],notes:['تُلقي عبء إثبات منح الإجازة على صاحب العمل.','تطلب ملخصاً مكتوباً للطلبات مع العريضة.']}
+};
+$('#benchSel').innerHTML=Object.keys(bench).map(k=>`<option>${k}</option>`).join('');
+function renderBench(){const k=$('#benchSel').value,b=bench[k];
+ $('#benchOut').innerHTML=`<div class="kpis"><div class="kpi"><b>${b.n}</b><span>قراراً منشوراً في القاعدة</span></div><div class="kpi"><b>${b.ok}٪</b><span>قبول كلي أو جزئي لطلبات العمال</span></div><div class="kpi"><b>${b.dur}</b><span>متوسط مدة الفصل</span></div><div class="kpi"><b>٢٢٪</b><span>نسبة القرارات المستأنفة</span></div></div>
+ <div class="bench"><div class="panel"><h3>المواد الأكثر استناداً في قراراتها</h3><div class="bars">${b.arts.map(a=>`<div class="bar" style="grid-template-columns:70px 1fr 44px"><span>${a[0]}</span><div class="track-b"><div class="fill" style="width:${a[1]*2}%;background:var(--ink)"></div></div><b>${a[1]}٪</b></div>`).join('')}</div></div>
+ <div class="panel"><h3>الأدلة التي قبلتها الهيئة</h3><ul class="small" style="padding-inline-start:18px">${b.ev.map(e=>`<li>${e}</li>`).join('')}</ul><h3 style="margin-top:14px">ملاحظات مستخلصة من أحكامها</h3><ul class="small" style="padding-inline-start:18px">${b.notes.map(e=>`<li>${e}</li>`).join('')}</ul></div></div>
+ <p class="tiny muted" style="margin-top:10px">أرقام توضيحية. التحليل يُحدَّث تلقائياً كلما أُضيف قرار جديد، ولا يتضمن أي معلومات شخصية عن أعضاء الهيئة.</p>`}
+$('#benchSel').addEventListener('change',renderBench);renderBench();
+
+const lplans=[['الأساسية','مجاناً لمحامي الشبكة',['المكتبة القانونية كاملة','البحث في القرارات السابقة','١٠ مسودات شهرياً','تذكير بالمهل القانونية']],
+ ['المحترف','25,000 ريال شهرياً',['مسودات غير محدودة','تحليل الهيئات','فحص مسودات الخصم وتفنيد دفوعه','تصدير بصيغة Word']],
+ ['المكتب','75,000 ريال شهرياً',['حتى ٥ محامين','مكتبة خاصة بقضايا المكتب','مساحة مشتركة للمذكرات','أولوية في القضايا المحالة من ظهير']]];
+$('#lawyerPlans').innerHTML=lplans.map((p,i)=>`<div class="plan${i===1?' feat':''}"><h3>${p[0]}</h3><div class="price" style="font-size:1.3rem">${p[1]}</div><div class="per">${i?'مع رصيد مجاني عند إضافة قرارات للقاعدة':'شرط تولي قضايا المنصة'}</div><ul>${p[2].map(f=>`<li>${f}</li>`).join('')}</ul><button class="btn ${i===1?'btn-ink':'btn-ghost'} btn-sm" data-plan="${p[0]} للمحامين">اشترك</button></div>`).join('');
+$$('#lawyerPlans [data-plan]').forEach(b=>b.onclick=()=>openModal('pay',b.dataset.plan));
+$$('[data-upload]').forEach(b=>b.onclick=()=>openModal(b.dataset.upload==='prec'?'addPrec':'addLaw'));
+
+/* ---------- KYC signup ---------- */
+const kForms={
+ emp:{t:'بياناتك الأساسية',f:[['الاسم الرباعي كما في البطاقة','text'],['رقم الهاتف','tel'],['المحافظة','gov'],['جهة العمل الحالية أو الأخيرة','text']],
+  d:[['البطاقة الشخصية أو جواز السفر','إلزامي'],['صورة شخصية وأنت تحمل البطاقة','إلزامي'],['ما يثبت العمل: عقد، أو كشف راتب، أو بطاقة موظف','اختياري — يسرّع التوثيق']],
+  now:['قراءة مركز الحقوق واستخدام الحاسبة','التحدث مع مساعد ظهير وتجهيز ملفك','تقديم بلاغ سري (لا يحتاج حساباً)']},
+ law:{t:'بيانات المحامي',f:[['الاسم الكامل','text'],['رقم القيد في نقابة المحامين','text'],['درجة القيد','sel:ابتدائي|استئناف|عليا'],['المحافظات التي تترافع فيها','text']],
+  d:[['البطاقة الشخصية','إلزامي'],['بطاقة القيد النقابي سارية','إلزامي'],['صورة شخصية مع البطاقة','إلزامي'],['ما يثبت الخبرة في القضايا العمالية','إلزامي']],
+  now:['قراءة المكتبة القانونية','مشاهدة دورات الأكاديمية','تُفعّل صياغة المذكرات واستلام القضايا بعد الموافقة والتحقق من القيد لدى النقابة']},
+ co:{t:'بيانات المنشأة',f:[['الاسم التجاري','text'],['رقم السجل التجاري','text'],['المحافظة','gov'],['اسم المفوّض بالتوقيع','text'],['عدد الموظفين','sel:أقل من ١٠|١٠–٥٠|٥١–٢٠٠|أكثر من ٢٠٠']],
+  d:[['السجل التجاري ساري','إلزامي'],['البطاقة الضريبية','إلزامي'],['تفويض رسمي للممثل مختوم','إلزامي'],['بطاقة المفوّض الشخصية','إلزامي']],
+  now:['إكمال تقييم الامتثال الذاتي','تصفح دورات الموارد البشرية','تُفعّل الشارة ونشر الوظائف بعد الموافقة']}
+};
+let ks=0;
+function kType(){return $('input[name=kType]:checked').value}
+function kBuild(){const f=kForms[kType()];$('#kInfoTitle').textContent=f.t;
+ $('#kInfo').innerHTML=f.f.map((x,i)=>{const id='kf'+i;let inp;
+  if(x[1]==='gov') inp=`<select id="${id}">${govs.map(g=>`<option>${g}</option>`).join('')}</select>`;
+  else if(x[1].startsWith('sel:')) inp=`<select id="${id}">${x[1].slice(4).split('|').map(o=>`<option>${o}</option>`).join('')}</select>`;
+  else inp=`<input id="${id}" type="${x[1]}">`;
+  return `<div class="field"><label for="${id}">${x[0]}</label>${inp}</div>`}).join('');
+ $('#kDocs').innerHTML=f.d.map((d,i)=>`<div class="field"><label for="kd${i}">${d[0]} <span class="tag ${d[1]==='إلزامي'?'tag-pom':'tag-ink'}">${d[1]}</span></label><input id="kd${i}" type="file" accept="image/*,.pdf"></div>`).join('');
+ $('#kNow').innerHTML=f.now.map(n=>`<li>${n}</li>`).join('')}
+function kRender(){$$('.wstep.k').forEach(w=>w.classList.toggle('on',+w.dataset.k===ks));$$('#kSteps span').forEach((s,i)=>s.classList.toggle('done',i<=ks));
+ $('#kPrev').style.visibility=(ks===0||ks===3)?'hidden':'visible';$('#kNext').textContent=ks===2?'أرسل للمراجعة':ks===3?'اذهب إلى لوحة الإدارة':'التالي'}
+$('#kNext').onclick=()=>{
+ if(ks===0) kBuild();
+ if(ks===1&&!$('#kf0').value.trim()){toast('أكمل الاسم أولاً');$('#kf0').focus();return}
+ if(ks===2){const t=kType(),nm=$('#kf0').value.trim();kyc.unshift({n:nm,t:{emp:'موظف',law:'محامٍ',co:'منشأة'}[t],g:(t==='law'?$('#kf3').value.trim():$('#kf2').value)||'تعز',d:$$('#kDocs input').filter(i=>i.files.length).length+'/'+kForms[t].d.length,since:'الآن',s:'pending',isNew:1});renderKyc();log('طلب توثيق جديد: '+nm)}
+ if(ks===3){location.hash='admin';return}
+ ks++;kRender()};
+$('#kPrev').onclick=()=>{if(ks>0){ks--;kRender()}};
+kRender();
+
+/* ---------- admin ---------- */
+tabs('adTabs');
+const kyc=[
+ {n:'سامي أحمد العامري',t:'محامٍ',g:'تعز',d:'4/4',since:'٣ ساعات',s:'pending'},
+ {n:'مؤسسة النور الطبية',t:'منشأة',g:'عدن',d:'3/4',since:'يوم',s:'more'},
+ {n:'منى عبدالله',t:'موظف',g:'أمانة العاصمة',d:'2/3',since:'٥ ساعات',s:'pending'},
+ {n:'عمر صالح',t:'موظف',g:'حضرموت',d:'3/3',since:'يومان',s:'approved'},
+ {n:'شركة الأفق للتجارة',t:'منشأة',g:'أمانة العاصمة',d:'4/4',since:'٣ أيام',s:'approved'},
+ {n:'حساب باسم مكرر',t:'موظف',g:'إب',d:'1/3',since:'يومان',s:'rejected'}
+];
+const st={pending:['قيد المراجعة','tag-amber'],more:['طُلبت وثائق','tag-ink'],approved:['مفعّل','tag-teal'],rejected:['مرفوض','tag-pom']};
+let kf='الكل';
+$('#kycFilter').innerHTML=['الكل','موظف','محامٍ','منشأة'].map(x=>`<button type="button" class="chip" aria-pressed="${x==='الكل'}">${x}</button>`).join('');
+$$('#kycFilter .chip').forEach(c=>c.onclick=()=>{kf=c.textContent;$$('#kycFilter .chip').forEach(x=>x.setAttribute('aria-pressed',x===c));renderKyc()});
+function renderKyc(){
+ $('#kycTable tbody').innerHTML=kyc.map((k,i)=>(kf==='الكل'||k.t===kf)?`<tr${k.isNew?' style="background:var(--amber-2)"':''}><td><b>${esc(k.n)}</b></td><td>${k.t}</td><td>${esc(k.g)}</td><td>${k.d}</td><td>${k.since}</td><td><span class="tag ${st[k.s][1]}">${st[k.s][0]}</span></td><td>${k.s==='pending'||k.s==='more'?`<button class="btn btn-ink btn-sm" data-review="${i}">راجع</button>`:''}</td></tr>`:'').join('');
+ $$('[data-review]').forEach(b=>b.onclick=()=>review(+b.dataset.review));
+ const p=kyc.filter(k=>k.s==='pending'||k.s==='more').length;
+ $('#adKpis').innerHTML=`<div class="kpi"><b>${p}</b><span>طلب توثيق بانتظار المراجعة</span></div><div class="kpi"><b>٣</b><span>بلاغات تحتاج قراراً</span></div><div class="kpi"><b>٢</b><span>قرارات قضائية للنشر</span></div><div class="kpi"><b>٧ س</b><span>متوسط زمن التوثيق</span></div>`}
+const checks={'موظف':['الاسم مطابق للبطاقة','البطاقة سارية وواضحة','الصورة الشخصية تطابق صورة البطاقة','لا يوجد حساب آخر بنفس الرقم'],
+ 'محامٍ':['الاسم مطابق للبطاقة','بطاقة القيد سارية','التحقق من القيد لدى نقابة المحامين','الصورة الشخصية تطابق البطاقة','خبرة عمالية موثقة'],
+ 'منشأة':['السجل التجاري ساري','الاسم التجاري مطابق للسجل','التفويض مختوم وموقّع','بطاقة المفوّض مطابقة']};
+function review(i){const k=kyc[i];
+ $('#mBox').innerHTML=`<h2 id="mTitle">مراجعة: ${esc(k.n)}</h2><p class="small muted">${k.t} — ${esc(k.g)} — الوثائق المرفوعة ${k.d}</p>
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0">${['الوثيقة','الوجه الخلفي','صورة مع البطاقة'].map(x=>`<div style="aspect-ratio:4/3;background:var(--ink-3);border-radius:8px;display:grid;place-items:center;font-size:.78rem;color:var(--slate)">${x}</div>`).join('')}</div>
+ <h4>قائمة التحقق</h4>${checks[k.t].map(c=>`<label class="check"><input type="checkbox" class="rv"> ${c}</label>`).join('')}
+ <div class="field" style="margin-top:10px"><label for="rvNote">ملاحظة (تصل لصاحب الطلب عند طلب وثائق أو الرفض)</label><input id="rvNote"></div>
+ ${k.t!=='موظف'?'<p class="tiny muted">حسابات المحامين والمنشآت تحتاج موافقة مشرفَين.</p>':''}
+ <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-teal" id="rvOk">وافق وفعّل الحساب</button><button class="btn btn-ghost" id="rvMore">اطلب وثائق</button><button class="btn btn-pom" id="rvNo">ارفض</button></div>`;
+ $('#modal').classList.add('on');
+ const done=(s,msg)=>{k.s=s;k.isNew=0;closeModal();renderKyc();log(msg+': '+k.n);toast(msg)};
+ $('#rvOk').onclick=()=>{if($$('.rv:not(:checked)').length){toast('أكمل قائمة التحقق قبل التفعيل');return}done('approved','فُعّل الحساب')};
+ $('#rvMore').onclick=()=>done('more','طُلبت وثائق إضافية');
+ $('#rvNo').onclick=()=>{if(!$('#rvNote').value.trim()){toast('اكتب سبب الرفض');$('#rvNote').focus();return}done('rejected','رُفض الطلب')};
+}
+const audit=[['١١ نوفمبر ٢٢:40','المشرف أ. رنا','فعّل حساب: عمر صالح'],['١١ نوفمبر ٢١:15','المشرف م. فهد','طلب وثائق إضافية: مؤسسة النور الطبية'],['١١ نوفمبر ١٨:02','المشرف أ. رنا','وافق على نشر قرار: تحكيم تعز ٦٢/٢٠٢٥']];
+function log(t){audit.unshift(['الآن','أنت',t]);renderLog()}
+function renderLog(){$('#auditLog').innerHTML=audit.map(a=>`<div class="flag"><i style="background:var(--ink)"></i><span><b>${a[2]}</b><br><span class="tiny muted">${a[0]} — ${a[1]}</span></span></div>`).join('')}
+$('#repTable').innerHTML=[['ZH-7Q4K-92','تأخير الرواتب','التعليم الخاص / تعز','٤','موظف موثّق',1],['ZH-M2PA-17','العمل بلا عقود','المطاعم / عدن','٢','مجهول',0],['ZH-K8RT-05','بيئة عمل غير آمنة','البناء / الحديدة','٣','مجهول',1]].map(r=>`<tr><td><b dir="ltr">${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td><span class="tag ${r[4]==='مجهول'?'tag-ink':'tag-teal'}">${r[4]}</span></td><td>${r[5]?'<button class="btn btn-ink btn-sm" data-rep>ابدأ التواصل مع المنشأة</button>':'<span class="small muted">بانتظار بلاغات مستقلة</span>'}</td></tr>`).join('');
+$$('[data-rep]').forEach(b=>b.onclick=()=>{b.outerHTML='<span class="tag tag-amber">بانتظار موافقة مشرف ثانٍ</span>';log('طلب تواصل مع منشأة بشأن بلاغات مجمّعة')});
+$('#precTable').innerHTML=[['تحكيم تعز ٥٠/٢٠٢٦','أ. نادية سالم','تم','نعم'],['تحكيم الأمانة ١٣٠/٢٠٢٥','أ. سامي العامري','بحاجة لمراجعة','نعم']].map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td><span class="tag ${r[2]==='تم'?'tag-teal':'tag-amber'}">${r[2]}</span></td><td>${r[3]}</td><td><button class="btn btn-ink btn-sm" data-pub>انشر في القاعدة</button></td></tr>`).join('');
+$$('[data-pub]').forEach(b=>b.onclick=()=>{b.outerHTML='<span class="tag tag-teal">نُشر</span>';log('نُشر قرار في قاعدة السوابق')});
+renderKyc();renderLog();
+
+const bs=$('#buySeats');if(bs)bs.onclick=()=>toast('أُرسلت دعوات التدريب إلى '+($('#seats').value||0)+' موظفاً');
+const permRows=[['مركز الحقوق والحاسبة','veal'],['البلاغ السري','vea'],['المحادثات والقضايا','ela'],['غرفة الوساطة (بدعوة)','elca'],['المركز الذكي والمكتبة','la'],['بيانات المحامين وقضاياهم','la'],['الأكاديمية','velca'],['شراء مقاعد تدريب للموظفين','ca'],['نشر الوظائف','ca'],['ملف الموظف المهني','ea'],['مؤشر بيئة العمل','vea'],['التوثيق ولوحة الإدارة','a']];
+$('#permTable').innerHTML='<thead><tr><th>الخدمة</th>'+['v','e','l','c','a'].map(r=>`<th>${ROLES[r]}</th>`).join('')+'</tr></thead><tbody>'+permRows.map(r=>'<tr><td>'+r[0]+'</td>'+['v','e','l','c','a'].map(x=>`<td class="${r[1].includes(x)?'yes':'no'}">${r[1].includes(x)?'✓':'—'}</td>`).join('')+'</tr>').join('')+'</tbody>';
+buildNav();
+route();
+})();
+</script>
+</body>
+</html>
