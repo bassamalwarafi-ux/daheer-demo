@@ -349,6 +349,66 @@ section.view.on{display:block}
 .guard li{margin-bottom:6px}
 @media (max-width:1020px){.draft-layout{grid-template-columns:1fr}.insp{position:static}.lib,.bench,.ai-hero{grid-template-columns:1fr}}
 
+
+/* subscription bar */
+.subbar{background:var(--ink);color:#E4E8F7;font-size:.9rem}
+.subbar .wrap{display:flex;align-items:center;gap:14px;min-height:48px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.subbar b{color:#fff}
+.subbar .grow{flex:1;min-width:220px}
+.subbar .btn{padding:7px 16px;font-size:.86rem}
+.subbar .demo-link{background:none;border:0;color:#AEB6D8;text-decoration:underline;cursor:pointer;font-size:.8rem}
+.subbar.review{background:var(--amber-2);color:#6d4709}.subbar.review b{color:#4d3206}
+.sub-chip{font-size:.76rem;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.gate{border:1.5px dashed #C4CADB;background:#fff;border-radius:var(--r-m);padding:26px;text-align:center}
+.gate .ico{width:56px;height:56px;border-radius:50%;background:var(--amber-2);display:grid;place-items:center;margin:0 auto 10px}
+.plan.current{border:2px solid var(--teal)}
+.plan.current::before{content:"باقتك الحالية";position:absolute;top:-12px;inset-inline-start:16px;background:var(--teal);color:#fff;font-size:.74rem;font-weight:700;padding:2px 10px;border-radius:999px}
+.plan{position:relative}
+/* company quote */
+.quote{display:grid;grid-template-columns:1.35fr .65fr;gap:20px;align-items:start}
+.band-pick{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 4px}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.pkg{border:1.5px solid var(--line);border-radius:var(--r-m);padding:18px;cursor:pointer;background:#fff;display:flex;flex-direction:column;position:relative}
+.pkg:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.pkg input{position:absolute;opacity:0;pointer-events:none}
+.pkg .pp{font-family:var(--f-head);font-size:1.35rem;color:var(--ink);font-weight:700;margin:4px 0 0}
+.pkg ul{list-style:none;padding:0;margin:10px 0 0;font-size:.84rem}
+.pkg li{padding:4px 0;padding-inline-start:18px;position:relative}
+.pkg li::before{content:"";position:absolute;inset-inline-start:0;top:12px;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.qsum{background:var(--ink);color:#fff;border-radius:var(--r-m);padding:22px;position:sticky;top:86px}
+.qsum h3{color:#fff}
+.qsum .line{border-bottom-color:rgba(255,255,255,.14)}
+.qsum .total b{font-size:1.6rem}
+input[type=range]{width:100%;accent-color:var(--ink)}
+/* checkout */
+.co-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:start}
+.co-steps{display:flex;gap:0;margin-bottom:22px;counter-reset:cs}
+.co-steps span{flex:1;font-size:.8rem;color:var(--slate);padding-top:10px;border-top:4px solid var(--line);text-align:center}
+.co-steps span.done{border-top-color:var(--teal);color:var(--teal);font-weight:600}
+.co-steps span.now{border-top-color:var(--ink);color:var(--ink);font-weight:700}
+.zone{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.zone label{border:1.5px solid var(--line);border-radius:var(--r-s);padding:12px;cursor:pointer;text-align:center;font-size:.86rem;background:#fff}
+.zone label:has(input:checked){border-color:var(--ink);background:var(--ink-3)}
+.zone input{display:none}
+.zone b{display:block;font-family:var(--f-head);color:var(--ink);font-size:1.1rem}
+.paybox{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-s);padding:16px 18px;margin-top:12px}
+.paybox dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:8px 0 0;font-size:.9rem}
+.paybox dt{color:var(--slate)}
+.paybox dd{margin:0;font-weight:600;color:var(--ink)}
+.ref{font-family:var(--f-head);direction:ltr;display:inline-block;background:var(--amber-2);color:#6d4709;padding:2px 10px;border-radius:6px;letter-spacing:.04em}
+.track-list{list-style:none;padding:0;margin:0}
+.track-list li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.track-list li:last-child{border-bottom:0}
+.track-list i{width:26px;height:26px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-style:normal;font-size:.8rem;color:#fff;background:var(--line)}
+.track-list .ok i{background:var(--teal)}.track-list .wait i{background:var(--amber)}.track-list .no i{background:var(--pom)}
+.match{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.receipt-ph{aspect-ratio:3/4;max-height:260px;background:repeating-linear-gradient(0deg,#fff,#fff 22px,#EEF0F6 22px,#EEF0F6 23px);border:1px solid var(--line);border-radius:8px;padding:16px;font-size:.78rem;color:var(--slate);overflow:hidden}
+.two>*,.calc>*,.report-layout>*,.quote>*,.co-layout>*,.rights-layout>*,.lib>*,.draft-layout>*{min-width:0}
+@media (max-width:1020px){.pkgs{grid-template-columns:1fr}.quote,.co-layout{grid-template-columns:1fr}.qsum{position:static}}
+@media (max-width:520px){.zone{grid-template-columns:1fr}.search{flex-wrap:wrap}}
+
+@media (max-width:1300px){.role>span{display:none}}
+@media (max-width:820px){.sub-chip{display:none}.subbar .wrap{font-size:.84rem}}
 /* footer */
 footer{background:var(--ink);color:#C8CEE8;padding:44px 0 30px;margin-top:40px}
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
@@ -412,6 +472,7 @@ footer a:hover{color:#fff}
       <b>ظهير</b>
     </a>
     <nav class="main" aria-label="التنقل الرئيسي" id="mainNav"></nav>
+    <span class="sub-chip" id="subChip" hidden></span>
     <label class="role"><span class="small muted">عرض كـ</span>
       <select id="roleSel" aria-label="عرض المنصة بصفة">
         <option value="v">زائر</option>
@@ -423,6 +484,7 @@ footer a:hover{color:#fff}
     </label>
   </div>
 </header>
+<div class="subbar" id="subBar" hidden><div class="wrap" id="subBarIn"></div></div>
 
 <main>
 <!-- ============ HOME ============ -->
@@ -791,12 +853,14 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="view-head">
       <h1>الباقات والخدمات</h1>
-      <p class="muted">المعرفة والحاسبة والبلاغ السري مجانية لكل موظف. الباقات المدفوعة تضيف الاستشارات والتمثيل القانوني.</p>
+      <p class="muted" id="plansLead">المعرفة والحاسبة والبلاغ السري مجانية لكل موظف. الباقات المدفوعة تضيف الاستشارات والتمثيل القانوني.</p>
     </div>
     <div class="tabs" role="tablist" id="plTabs">
       <button role="tab" aria-selected="true" data-p="pl-emp" data-roles="vea">للموظفين</button>
       <button role="tab" aria-selected="false" data-p="pl-co" data-roles="vca">للمنشآت</button>
+      <button role="tab" aria-selected="false" data-p="pl-law" data-roles="vla">للمحامين</button>
       <button role="tab" aria-selected="false" data-p="pl-sp" data-roles="va">للجهات الداعمة</button>
+      <button role="tab" aria-selected="false" data-p="pl-pay" data-roles="velca">طرق السداد</button>
     </div>
     <div class="pane on" id="pl-emp">
       <div class="toggle"><span>شهري</span><button class="switch" role="switch" aria-checked="false" id="yearSw" aria-label="الدفع السنوي"></button><span>سنوي <span class="tag tag-teal">وفّر ٢٠٪</span></span></div>
@@ -809,29 +873,46 @@ footer a:hover{color:#fff}
         <div class="svc"><span class="tag tag-ink">جلسة</span><b>حضور جلسة وساطة</b><p class="small muted">محامٍ يمثلك في غرفة الوساطة مع المنشأة.</p></div>
         <div class="svc"><span class="tag tag-ink">قضية</span><b>تمثيل أمام لجنة التحكيم</b><p class="small muted">أتعاب جزئية مقدماً والباقي نسبة من المبلغ المحكوم به.</p></div>
       </div>
-      <p class="tiny muted" style="margin-top:16px">الدفع عبر المحافظ الإلكترونية المحلية، أو التحويل البنكي، أو عبر نقاط الوكلاء. الأسعار تجريبية للعرض.</p>
+      <p class="tiny muted" style="margin-top:16px">الأسعار تجريبية للعرض. السداد بحوالة صرافة أو إيداع بنكي أو محفظة إلكترونية، ثم رفع صورة الإيصال — انظر تبويب «طرق السداد».</p>
     </div>
     <div class="pane" id="pl-co">
-      <div class="two">
-        <div class="panel">
-          <span class="tag tag-teal">عضوية سنوية</span>
-          <h2 style="margin-top:10px">برنامج «منشأة عادلة»</h2>
-          <ul class="small" style="padding-inline-start:18px">
-            <li>تقييم امتثال سنوي لعقود العمل والأجور والإجازات وفق القانون.</li>
-            <li>مراجعة نماذج العقود واللوائح الداخلية من محامٍ.</li>
-            <li>مقاعد تدريب لفريق الموارد البشرية في الأكاديمية.</li>
-            <li>شارة «منشأة عادلة» تظهر في إعلانات الوظائف.</li>
-            <li>نشر وظائف بلا حدود والوصول إلى قاعدة المواهب.</li>
-            <li>قناة مجهولة لملاحظات الموظفين، ملخّصة دون كشف الأسماء.</li>
-            <li>اشتراك ظهير مدفوع لموظفيك كميزة وظيفية.</li>
-          </ul>
-          <a class="btn btn-ink" href="#verify" data-roles="v">سجّل منشأتك للبدء</a><a class="btn btn-ink" href="#employers" data-roles="ca">ابدأ التقييم</a>
+      <div class="quote">
+        <div>
+          <div class="panel">
+            <h2 style="margin-bottom:4px">احسب باقة منشأتك</h2>
+            <p class="muted small" style="margin:0">السعر يعتمد على عدد موظفيك والخدمات التي تحتاجها. اختر، وسيظهر لك عرض السعر فوراً.</p>
+            <div class="field" style="margin-top:18px">
+              <label for="empCount">عدد الموظفين: <b id="empCountOut">25</b></label>
+              <input type="range" id="empCount" min="1" max="600" value="25">
+              <div class="band-pick" id="bandPick"></div>
+            </div>
+            <div class="pkgs" id="pkgs"></div>
+            <h3 style="margin-top:22px">خدمات إضافية</h3>
+            <div id="addons"></div>
+            <div class="toggle" style="margin:16px 0 0"><span>شهري</span><button class="switch" role="switch" aria-checked="false" id="coYearSw" aria-label="الدفع السنوي للمنشأة"></button><span>سنوي <span class="tag tag-teal">وفّر ٢٠٪</span></span></div>
+          </div>
+          <div class="panel" style="margin-top:14px">
+            <h3>ما الذي تراه المنشأة وما الذي لا تراه</h3>
+            <p class="small muted" style="margin:0">حتى في باقة «ظهير لموظفيك» التي تدفع فيها المنشأة اشتراكات موظفيها، لا تطّلع المنشأة على استشاراتهم ولا بلاغاتهم ولا قضاياهم. ترى فقط عدد المقاعد المفعّلة ونسب إنجاز التدريب والشهادات.</p>
+          </div>
         </div>
-        <div class="panel">
-          <h3>لماذا تشترك المنشأة؟</h3>
-          <p class="small muted">حل الخلاف في غرفة وساطة أقل كلفة من نزاع أمام لجنة التحكيم، والشارة ترفع جودة المتقدمين للوظائف، والتقييم يكشف المخالفات قبل أن تتحول إلى قضايا.</p>
-        </div>
+        <aside class="qsum" aria-live="polite">
+          <h3>عرض السعر</h3>
+          <div class="lines" id="qLines"></div>
+          <div class="total"><span>الإجمالي <span id="qPer">شهرياً</span></span><b id="qTotal">0</b></div>
+          <p class="tiny" style="color:#AEB6D8;margin-top:8px" id="qNote"></p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+            <button class="btn btn-amber btn-sm" id="qSubscribe">اشترك بهذه الباقة</button>
+            <button class="btn btn-ghost btn-sm" style="color:#fff;border-color:rgba(255,255,255,.35)" data-modal="quoteReq">اطلب عرضاً رسمياً</button>
+          </div>
+          <p class="tiny" style="color:#AEB6D8;margin:12px 0 0">الأسعار بالريال (مناطق صنعاء) تجريبية. تُعرض المبالغ المقابلة لمناطق عدن وبالدولار عند السداد.</p>
+        </aside>
       </div>
+    </div>
+    <div class="pane" id="pl-law">
+      <p class="muted" style="margin-top:0">المركز الذكي متاح لكل محامٍ مقيّد في النقابة. محامو شبكة ظهير الشركاء يحصلون على الباقة الأساسية مجاناً مقابل تولي قضايا المنصة، والمحامون غير الشركاء يشتركون مباشرة.</p>
+      <div class="plans" id="plLawGrid" style="grid-template-columns:repeat(4,1fr)"></div>
+      <p class="tiny muted" style="margin-top:12px">المحامي المستقل لا تُحال إليه قضايا المنصة، ويمكنه التقديم للشراكة في أي وقت. أسعار تجريبية.</p>
     </div>
     <div class="pane" id="pl-sp">
       <div class="two">
@@ -856,6 +937,28 @@ footer a:hover{color:#fff}
             <div class="kpi"><b>٤٧</b><span>قضية حُلّت ودياً</span></div>
           </div>
           <p class="tiny muted" style="margin-top:10px">أرقام توضيحية.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pane" id="pl-pay">
+      <div class="two">
+        <div>
+          <h2>طرق السداد المتاحة</h2>
+          <p class="muted">صُممت لتناسب الوضع المالي في اليمن: لا تحتاج بطاقة بنكية. تدفع بالطريقة المتاحة لك، ثم ترفع صورة الإيصال من المنصة.</p>
+          <div id="payMethodsInfo"></div>
+        </div>
+        <div>
+          <div class="panel">
+            <h3>كيف يتم التفعيل</h3>
+            <ul class="track-list">
+              <li class="ok"><i>١</i><div><b>اختر الباقة</b><div class="small muted">تحصل على فاتورة برقم مرجعي خاص بك.</div></div></li>
+              <li class="ok"><i>٢</i><div><b>أكمل التوثيق</b><div class="small muted">KYC للأفراد والمحامين، وKYB للمنشآت.</div></div></li>
+              <li class="ok"><i>٣</i><div><b>ادفع واكتب الرقم المرجعي</b><div class="small muted">في خانة الغرض أو الملاحظات في الحوالة أو الإيداع.</div></div></li>
+              <li class="ok"><i>٤</i><div><b>ارفع صورة الإيصال</b><div class="small muted">مع رقم الحوالة والمبلغ وتاريخ التحويل.</div></div></li>
+              <li class="ok"><i>٥</i><div><b>يراجع فريق ظهير ويفعّل</b><div class="small muted">خلال ٢٤ ساعة عمل، ويصلك إشعار برسالة نصية.</div></div></li>
+            </ul>
+          </div>
+          <div class="note">لا يُفعّل أي اشتراك قبل اعتماد التوثيق والسداد معاً. وإذا رُفض التوثيق يُعاد المبلغ بالطريقة نفسها خلال ٧ أيام عمل. ظهير لن تطلب منك أبداً التحويل إلى رقم أو حساب غير المعلن داخل المنصة.</div>
         </div>
       </div>
     </div>
@@ -1067,8 +1170,8 @@ footer a:hover{color:#fff}
 
     <!-- lawyer plans -->
     <div class="pane" id="ai-plans">
-      <div class="plans" style="grid-template-columns:repeat(3,1fr)" id="lawyerPlans"></div>
-      <p class="tiny muted" style="margin-top:12px">أسعار تجريبية للعرض. محامو شبكة ظهير الذين يتولون قضايا المنصة يحصلون على الباقة الأساسية مجاناً.</p>
+      <div class="plans" style="grid-template-columns:repeat(4,1fr)" id="lawyerPlans"></div>
+      <p class="tiny muted" style="margin-top:12px">أسعار تجريبية للعرض. يُفعَّل الاشتراك بعد التحقق من القيد النقابي واعتماد السداد.</p>
     </div>
 
     <div class="guard">
@@ -1151,7 +1254,8 @@ footer a:hover{color:#fff}
     </div>
     <div class="kpis" id="adKpis"></div>
     <div class="tabs" role="tablist" id="adTabs">
-      <button role="tab" aria-selected="true" data-p="ad-kyc">طلبات التوثيق</button>
+      <button role="tab" aria-selected="true" data-p="ad-subs">الاشتراكات والمدفوعات</button>
+      <button role="tab" aria-selected="false" data-p="ad-kyc">طلبات التوثيق</button>
       <button role="tab" aria-selected="false" data-p="ad-rep">البلاغات</button>
       <button role="tab" aria-selected="false" data-p="ad-prec">قرارات للنشر</button>
       <button role="tab" aria-selected="false" data-p="ad-perm">الصلاحيات</button>
@@ -1161,7 +1265,11 @@ footer a:hover{color:#fff}
       <p class="small muted">ما يراه كل نوع حساب. تُطبَّق الصلاحيات على الخادم أيضاً، فلا يكفي معرفة رابط الصفحة للوصول إليها.</p>
       <table class="table perm-table" id="permTable"></table>
     </div>
-    <div class="pane on" id="ad-kyc">
+    <div class="pane on" id="ad-subs">
+      <p class="small muted">لا يُفعَّل اشتراك إلا بعد اعتماد التوثيق (KYC/KYB) ومطابقة السداد. حسابات المنشآت تحتاج اعتماد مشرفَين.</p>
+      <table class="table"><thead><tr><th>الطلب</th><th>المشترك</th><th>الباقة</th><th>المبلغ</th><th>طريقة السداد</th><th>التوثيق</th><th>السداد</th><th></th></tr></thead><tbody id="subsTable"></tbody></table>
+    </div>
+    <div class="pane" id="ad-kyc">
       <div class="chips" id="kycFilter" style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap"></div>
       <table class="table" id="kycTable"><thead><tr><th>الاسم</th><th>النوع</th><th>المحافظة</th><th>الوثائق</th><th>منذ</th><th>الحالة</th><th></th></tr></thead><tbody></tbody></table>
     </div>
@@ -1173,6 +1281,38 @@ footer a:hover{color:#fff}
       <table class="table"><thead><tr><th>القرار</th><th>مقدّم من</th><th>حذف الأسماء</th><th>موافقة الموكّل</th><th></th></tr></thead><tbody id="precTable"></tbody></table>
     </div>
     <div class="pane" id="ad-log"><div class="panel" id="auditLog" style="font-size:.88rem"></div></div>
+  </div>
+</section>
+
+<!-- ============ CHECKOUT ============ -->
+<section class="view" data-view="checkout">
+  <div class="wrap">
+    <div class="view-head">
+      <h1>إتمام الاشتراك</h1>
+      <p class="muted">ثلاث خطوات: التوثيق، ثم السداد، ثم رفع الإيصال. يُفعَّل اشتراكك بعد مراجعة فريق ظهير.</p>
+    </div>
+    <div class="co-layout">
+      <div class="panel">
+        <div class="co-steps" id="coSteps"><span>الطلب</span><span>التوثيق</span><span>السداد</span><span>الإيصال</span><span>المراجعة</span></div>
+        <div id="coBody"></div>
+        <div style="display:flex;justify-content:space-between;margin-top:20px" id="coNav">
+          <button class="btn btn-ghost" id="coPrev" type="button">السابق</button>
+          <button class="btn btn-ink" id="coNext" type="button">التالي</button>
+        </div>
+      </div>
+      <aside>
+        <div class="panel" id="coSummary"></div>
+        <div class="shield" style="margin-top:14px">
+          <h3>حماية مدفوعاتك</h3>
+          <ul>
+            <li>كل فاتورة لها <b>رقم مرجعي فريد</b> يربط السداد بحسابك.</li>
+            <li>نطابق المبلغ والرقم المرجعي والتاريخ مع كشف الحساب قبل التفعيل.</li>
+            <li>الإيصال المستخدم سابقاً يُرفض تلقائياً.</li>
+            <li>الحسابات وأرقام المحافظ المعتمدة هي المعروضة هنا فقط.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -1294,15 +1434,16 @@ const NAV=[
  ['jobs','الوظائف','brief','vea'],
  ['jobs','وظائفنا','brief','c'],
  ['plans','الباقات','tag','veca'],
+ ['plans','الاشتراك','tag','l'],
  ['verify','أنشئ حساباً','user','v']
 ];
 /* which pages each role may open (nav + deep links) */
 const ACCESS={
  v:['home','rights','calculator','report','academy','jobs','plans','verify','brand'],
- e:['home','rights','calculator','cases','report','academy','jobs','plans','brand'],
- l:['lawyers','cases','ai','rights','academy','brand'],
- c:['employers','academy','jobs','plans','cases','brand'],
- a:['home','admin','cases','ai','rights','calculator','report','academy','jobs','plans','employers','lawyers','verify','brand']
+ e:['home','rights','calculator','cases','report','academy','jobs','plans','checkout','brand'],
+ l:['lawyers','cases','ai','rights','academy','plans','checkout','brand'],
+ c:['employers','academy','jobs','plans','cases','checkout','brand'],
+ a:['home','admin','checkout','cases','ai','rights','calculator','report','academy','jobs','plans','employers','lawyers','verify','brand']
 };
 const HOME={v:'home',e:'home',l:'lawyers',c:'employers',a:'admin'};
 let role='v';
@@ -1313,11 +1454,13 @@ function buildNav(){
   $('.brand').setAttribute('href','#'+HOME[role]);
   // role-scoped tabs inside pages
   $$('[data-roles]').forEach(el=>{el.hidden=!el.dataset.roles.includes(role)});
+  const pl=$('#plansLead');if(pl)pl.textContent={l:'اشتراكات المركز الذكي للمحامين الشركاء وغير الشركاء.',c:'باقات المنشآت تُحسب حسب عدد الموظفين والخدمات المطلوبة.'}[role]||'المعرفة والحاسبة والبلاغ السري مجانية لكل موظف. الباقات المدفوعة تضيف الاستشارات والتمثيل القانوني.';
   ['plTabs','acTabs'].forEach(id=>{const vis=$$('#'+id+' button').filter(b=>!b.hidden);const sel=$('#'+id+' button[aria-selected="true"]');if(vis.length&&(!sel||sel.hidden))vis[0].click();$('#'+id).style.display=vis.length>1?'':'none'});
   if(typeof refreshChatRole==='function')refreshChatRole();
+  if(typeof renderSubBar==='function'){renderSubBar();renderPlans();renderLawPlans()}
 }
 function lockedFor(v){
-  const names={home:'الرئيسية',rights:'مركز الحقوق',calculator:'حاسبة المستحقات',cases:'المحادثات',report:'البلاغ السري',academy:'الأكاديمية',jobs:'الوظائف',plans:'الباقات',employers:'لوحة المنشأة',lawyers:'لوحة المحامي',ai:'المركز الذكي',verify:'إنشاء حساب',admin:'لوحة الإدارة',brand:'الهوية'};
+  const names={checkout:'إتمام الاشتراك',home:'الرئيسية',rights:'مركز الحقوق',calculator:'حاسبة المستحقات',cases:'المحادثات',report:'البلاغ السري',academy:'الأكاديمية',jobs:'الوظائف',plans:'الباقات',employers:'لوحة المنشأة',lawyers:'لوحة المحامي',ai:'المركز الذكي',verify:'إنشاء حساب',admin:'لوحة الإدارة',brand:'الهوية'};
   const why={ai:'المركز الذكي متاح فقط للمحامين الموثّقين المشتركين.',lawyers:'بيانات المحامين وقضاياهم لا تظهر إلا لهم ولإدارة المنصة.',admin:'لوحة الإدارة لمشرفي المنصة فقط.',report:'البلاغات سرية، ولا تطّلع عليها المنشآت إطلاقاً.',employers:'لوحة المنشأة لحسابات المنشآت الموثّقة فقط.',cases:'المحادثات والقضايا خاصة بأطرافها.'}[v]||'هذه الصفحة غير مشمولة في صلاحيات حسابك.';
   if(role==='v'&&ACCESS.e.concat(ACCESS.l,ACCESS.c).includes(v)){$('#lockedBox').innerHTML=`<div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div><h2>«${names[v]||v}» تحتاج حساباً موثّقاً</h2><p class="muted" style="margin:0 auto">أنشئ حسابك وارفع وثائقك، وبعد موافقة فريق ظهير تُفتح لك الخدمات المناسبة لنوع حسابك.</p><div style="margin-top:16px"><a class="btn btn-ink" href="#verify">أنشئ حساباً</a></div>`;return}
   $('#lockedBox').innerHTML=`<div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
@@ -1331,6 +1474,7 @@ const views=$$('section.view').map(s=>s.dataset.view);
 function route(){
   let v=(location.hash||'#'+HOME[role]).slice(1); if(!views.includes(v)||v==='locked') v=HOME[role];
   if(!ACCESS[role].includes(v)){lockedFor(v);v='locked'}
+  if(v==='checkout'&&typeof renderCheckout==='function')renderCheckout();
   $$('section.view').forEach(s=>s.classList.toggle('on',s.dataset.view===v));
   $$('nav.main a').forEach(a=>{if(a.getAttribute('href')==='#'+v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   const cur=$('nav.main a[aria-current]'); if(cur) cur.scrollIntoView({block:'nearest',inline:'center'});
@@ -1467,7 +1611,8 @@ const threads={
 };
 let curThread='case';
 function renderThreads(){
-  $('#threadList').innerHTML=Object.entries(threads).filter(([k])=>(TH[role]||[]).includes(k)).map(([k,t])=>{const last=t.msgs[t.msgs.length-1];const lt=(last.t||'').replace(/<[^>]+>/g,'');return `<button class="thread" role="tab" aria-selected="${k===curThread}" data-k="${k}"><div class="av" style="background:${t.av.c}">${t.av.i}</div><div class="meta"><b>${t.title}</b><span>${esc(lt)}</span></div>${t.unread?`<span class="unread">${t.unread}</span>`:''}</button>`}).join('');
+  $('#threadList').innerHTML=Object.entries(threads).filter(([k])=>threadsFor().includes(k)).map(([k,t])=>{const last=t.msgs[t.msgs.length-1];const lt=(last.t||'').replace(/<[^>]+>/g,'');return `<button class="thread" role="tab" aria-selected="${k===curThread}" data-k="${k}"><div class="av" style="background:${t.av.c}">${t.av.i}</div><div class="meta"><b>${t.title}</b><span>${esc(lt)}</span></div>${t.unread?`<span class="unread">${t.unread}</span>`:''}</button>`}).join('');
+  if(role==='e'&&typeof SUB!=='undefined'&&!isActive('e'))$('#threadList').insertAdjacentHTML('beforeend',`<div class="gate" style="margin:14px;padding:18px"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8a5a0f" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div><b style="color:var(--ink)">محامٍ معتمد لقضيتك</b><p class="small muted" style="margin:4px auto 10px">المحادثة مع المستشار والمحامي وغرفة الوساطة متاحة في الباقات المدفوعة.</p><a class="btn btn-ink btn-sm" href="#plans">اشترك الآن</a></div>`);
   $$('#threadList .thread').forEach(b=>b.onclick=()=>openThread(b.dataset.k));
 }
 function msgHTML(m){
@@ -1508,6 +1653,7 @@ function botReply(text){
     else if(/فصل|فصلت|طرد|انهاء|إنهاء/.test(text)) r='آسف لما حدث. لأبني ملفك أحتاج ثلاثة أشياء: <b>تاريخ الإبلاغ بالفصل</b>، و<b>مدة خدمتك</b>، و<b>هل أُعطيت سبباً مكتوباً؟</b><br><span class="small">تذكير مهم: لا توقّع على أي مخالصة قبل مراجعتها. وللفصل التعسفي تعويض يصل إلى أجر ٦ أشهر.</span>';
     else if(/راتب|أجر|معاش|متأخر/.test(text)) r='الأجر الشهري يجب أن يُصرف قبل اليوم السادس من الشهر التالي (م ٦١). كم شهراً تأخر راتبك؟ وهل التأخير يشمل زملاءك أيضاً؟ إذا كان جماعياً يمكن تحويله إلى <a href="#report">بلاغ سري</a> أو شكوى جماعية.';
     else if(/إجاز|اجاز/.test(text)) r='نعم، الإجازة السنوية ٣٠ يوماً على الأقل، ولا تُستبدل بمال إلا عند انتهاء الخدمة (م ٧٩). يمكنك حساب بدلها من <a href="#calculator">حاسبة المستحقات</a>.';
+    else if(/محام|مستشار|حوّل|حول/.test(text)&&role==='e'&&!isActive('e')){r='جهزت ملفك. التحويل إلى مستشار ومحامٍ معتمد متاح في الباقات المدفوعة، تبدأ من ١٬٥٠٠ ريال شهرياً. <a href="#plans">اختر باقتك</a>، وبعد التوثيق واعتماد السداد يُحال ملفك مباشرة.'}
     else if(/محام|مستشار|حوّل|حول/.test(text)){r='تم. جهزت ملفك وأرسلته إلى المستشار المناوب. سيرد خلال ٢٤ ساعة كحد أقصى، وستصلك رسالة نصية عند الرد.';setTimeout(()=>{pushMsg('bot',{f:'sys',t:'استلم المستشار أ. سامي العامري ملفك — رقم الطلب ZH-2463'})},1400)}
     else if(/^\d|سنة|سنوات|أكتوبر|نوفمبر|شهر/.test(text)) r='شكراً، أضفت المعلومة إلى ملفك. هل لديك مستندات تثبت علاقة العمل، مثل العقد أو كشف تحويل الرواتب؟ أرفقها بزر المشبك.';
     else r='فهمت. لأساعدك بدقة، هل مشكلتك تتعلق بالفصل، أم الأجور، أم الإجازات، أم ساعات العمل، أم شيء آخر؟';
@@ -1545,7 +1691,8 @@ $('#backThreads').onclick=()=>$('#chatShell').classList.remove('open');
 $('#newCase').onclick=()=>{openThread('bot');pushMsg('bot',{f:'sys',t:'بدأت قضية جديدة — أجب عن أسئلة المساعد'})};
 function roleReply(k){const from=role==='l'?(k==='case'?'emp':'med'):'med';typing(true,k);
   setTimeout(()=>{typing(false);pushMsg(k,{f:'them',p:from,t:from==='emp'?'شكراً أستاذة، سأرسل المطلوب اليوم.':'شكراً، أُثبت ذلك في محضر الجلسة.',tm:'الآن'})},1200)}
-function refreshChatRole(){const hp={l:['القضايا والمحادثات','قضايا موكّليك وغرف الوساطة التي أنت طرف فيها.'],c:['غرفة الوساطة','جلسات التسوية الودية التي دُعيت إليها منشأتك فقط. لا تظهر لك أي محادثات أو بيانات أخرى.']}[role]||['قضاياي والمحادثات','كل التواصل مع المستشار والمحامي وصاحب العمل يتم هنا، موثّقاً ومحفوظاً كدليل.'];$('#casesH').textContent=hp[0];$('#casesP').textContent=hp[1];const list=TH[role]||[];if(!list.length)return;if(!list.includes(curThread))curThread=list[0];openThread(curThread);$('#chatShell').classList.remove('open')}
+function threadsFor(){return role==='e'&&!isActive('e')?['bot']:(TH[role]||[])}
+function refreshChatRole(){const hp={l:['القضايا والمحادثات','قضايا موكّليك وغرف الوساطة التي أنت طرف فيها.'],c:['غرفة الوساطة','جلسات التسوية الودية التي دُعيت إليها منشأتك فقط. لا تظهر لك أي محادثات أو بيانات أخرى.']}[role]||['قضاياي والمحادثات','كل التواصل مع المستشار والمحامي وصاحب العمل يتم هنا، موثّقاً ومحفوظاً كدليل.'];$('#casesH').textContent=hp[0];$('#casesP').textContent=hp[1];const list=threadsFor();if(!list.length)return;const tl=$('#threadList');if(!list.includes(curThread))curThread=list[0];openThread(curThread);$('#chatShell').classList.remove('open')}
 $$('[data-thread]').forEach(a=>a.addEventListener('click',()=>setTimeout(()=>openThread(a.dataset.thread),50)));
 
 /* ---------- report ---------- */
@@ -1623,8 +1770,8 @@ const plans=[
  ['البريميوم',12000,['كل ما في القائد','تمثيل كامل أمام لجنة التحكيم','الاستئناف أمام الشعبة العمالية','محامٍ مخصص لك']]
 ];
 let yearly=false;
-function renderPlans(){$('#plansGrid').innerHTML=plans.map((p,i)=>{const pr=p[1]?(yearly?p[1]*12*.8:p[1]):0;return `<div class="plan${i===2?' feat':''}"><h3>${p[0]}</h3><div class="price">${pr?fmt(pr):'مجاناً'}</div><div class="per">${pr?(yearly?'ريال سنوياً':'ريال شهرياً'):'لكل موظف، دائماً'}</div><ul>${p[2].map(f=>`<li>${f}</li>`).join('')}</ul><button class="btn ${i===2?'btn-ink':'btn-ghost'} btn-sm" data-plan="${p[0]}">${p[1]?'اشترك':'ابدأ الآن'}</button></div>`}).join('');
- $$('[data-plan]').forEach(b=>b.onclick=()=>openModal('pay',b.dataset.plan))}
+function renderPlans(){$('#plansGrid').innerHTML=plans.map((p,i)=>{const pr=p[1]?(yearly?p[1]*12*.8:p[1]):0;const cur=typeof SUB!=='undefined'&&((isActive('e')&&SUB.e.plan===p[0])||(!p[1]&&role==='e'&&!isActive('e')&&SUB.e.st==='none'));return `<div class="plan${cur?' current':i===2?' feat':''}"><h3>${p[0]}</h3><div class="price">${pr?fmt(pr):'مجاناً'}</div><div class="per">${pr?(yearly?'ريال سنوياً':'ريال شهرياً'):'لكل موظف، دائماً'}</div><ul>${p[2].map(f=>`<li>${f}</li>`).join('')}</ul>${cur?'<span class="tag tag-teal">باقتك الحالية</span>':`<button class="btn ${i===2?'btn-ink':'btn-ghost'} btn-sm" data-eplan="${i}">${p[1]?'اشترك الآن':'ابدأ مجاناً'}</button>`}</div>`}).join('');
+ $$('[data-eplan]').forEach(b=>b.onclick=()=>{const p=plans[+b.dataset.eplan];if(!p[1]){if(role==='v'){location.hash='verify'}else toast('الباقة المجانية مفعّلة لكل موظف موثّق');return}startCheckout('e',{name:p[0],base:p[1],period:yearly?'y':'m',kind:'باقة موظف'})})}
 $('#yearSw').onclick=e=>{yearly=!yearly;e.currentTarget.setAttribute('aria-checked',yearly);renderPlans()};
 renderPlans();
 $('#visSw').onclick=e=>{const v=e.currentTarget.getAttribute('aria-checked')!=='true';e.currentTarget.setAttribute('aria-checked',v);toast(v?'ملفك مرئي للمنشآت العادلة':'أخفيت ملفك')};
@@ -1640,7 +1787,7 @@ function renderJobs(){const q=$('#jobQ').value.trim(),f=$('#fairOnly').checked;c
  $('#jobList').innerHTML=l.length?l.map(j=>`<div class="job"><div><h3>${esc(j[0])}</h3><div class="small muted">${esc(j[1])} — ${esc(j[2])} — ${esc(j[3])}</div>${j[4]?`<span class="fair"><svg width="14" height="15" viewBox="0 0 36 40"><path d="M4 38V18a14 14 0 0 1 28 0v20" fill="none" stroke="#1C8C7E" stroke-width="6" stroke-linecap="round"/></svg>منشأة عادلة</span>`:''}</div><button class="btn btn-ink btn-sm" data-apply>قدّم</button></div>`).join(''):'<div class="panel">لا توجد وظائف مطابقة. جرّب إزالة فلتر المنشآت العادلة.</div>';
  $$('[data-apply]').forEach(b=>b.onclick=()=>{b.textContent='تم التقديم';b.disabled=true;toast('أُرسل ملفك المهني للمنشأة')})}
 $('#jobQ').addEventListener('input',renderJobs);$('#fairOnly').addEventListener('change',renderJobs);renderJobs();
-$('#postJob').onclick=()=>{const t=$('#jT').value.trim(),c=$('#jC').value.trim()||'صنعاء';if(!t){toast('اكتب المسمى الوظيفي');return}jobs.unshift([t,'شركة الأفق للتجارة',c,'دوام كامل',true]);renderJobs();$('#jT').value='';toast('نُشرت الوظيفة بشارة منشأة عادلة')};
+$('#postJob').onclick=()=>{if(needSub('c','co'))return;const t=$('#jT').value.trim(),c=$('#jC').value.trim()||'صنعاء';if(!t){toast('اكتب المسمى الوظيفي');return}jobs.unshift([t,'شركة الأفق للتجارة',c,'دوام كامل',true]);renderJobs();$('#jT').value='';toast('نُشرت الوظيفة بشارة منشأة عادلة')};
 $('#agencyBtn').onclick=e=>{e.preventDefault();toast('دليل شركات التوظيف — قريباً في النسخة الكاملة')};
 
 /* ---------- lawyers queue ---------- */
@@ -1654,6 +1801,7 @@ function openModal(kind,extra){
    pay:`<h2 id="mTitle">الاشتراك في الباقة ${esc(extra||'')}</h2><p class="muted small">اختر طريقة الدفع. هذه شاشة عرض فقط ولن يُخصم أي مبلغ.</p>${['محفظة إلكترونية محلية','تحويل بنكي','الدفع عند أقرب وكيل','اشتراك مموّل من جهة داعمة (برمز)'].map((m,i)=>`<label class="opt"><input type="radio" name="pm" ${i?'':'checked'}><div><b>${m}</b></div></label>`).join('')}<div style="display:flex;gap:8px;margin-top:14px"><button class="btn btn-ink" data-ok="فُعّل اشتراكك التجريبي">تأكيد</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
    sponsor:`<h2 id="mTitle">طلب عرض شراكة</h2><div class="field"><label for="m1">اسم الجهة</label><input id="m1"></div><div class="field"><label for="m2">الفئة المستهدفة</label><select id="m2"><option>النساء العاملات</option><option>الشباب والخريجون</option><option>العمالة المؤقتة</option><option>قطاع محدد</option></select></div><div class="field"><label for="m3">بريد التواصل</label><input id="m3" type="email"></div><div style="display:flex;gap:8px"><button class="btn btn-ink" data-ok="وصل طلبك وسيتواصل فريق الشراكات معك">أرسل الطلب</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
    join:`<h2 id="mTitle">طلب الانضمام لشبكة محامي ظهير</h2><div class="field"><label for="j1">الاسم الكامل</label><input id="j1"></div><div class="row2"><div class="field"><label for="j2">رقم القيد في النقابة</label><input id="j2"></div><div class="field"><label for="j3">المحافظات</label><input id="j3" placeholder="تعز، عدن"></div></div><div class="field"><label for="j4">صورة بطاقة القيد</label><input id="j4" type="file"></div><label class="check"><input type="checkbox"> أوافق على ميثاق السرية وتعارض المصالح</label><div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-ink" data-ok="استُلم طلبك — يُراجع القيد خلال ٥ أيام عمل">أرسل الطلب</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
+   quoteReq:`<h2 id="mTitle">طلب عرض سعر رسمي</h2><p class="small muted">يتواصل معك فريق الشراكات خلال يومي عمل بعرض مكتوب وفاتورة مبدئية.</p><div class="field"><label for="q1">اسم المنشأة</label><input id="q1"></div><div class="row2"><div class="field"><label for="q2">عدد الموظفين</label><input id="q2" type="number"></div><div class="field"><label for="q3">رقم التواصل</label><input id="q3" type="tel"></div></div><div class="field"><label for="q4">الخدمات المطلوبة</label><textarea id="q4" rows="3"></textarea></div><div style="display:flex;gap:8px"><button class="btn btn-ink" data-ok="وصل طلبك وسيتواصل معك فريق الشراكات">أرسل الطلب</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
    addPrec:`<h2 id="mTitle">أضف قراراً من قضاياك</h2><p class="small muted">يُراجع الفريق القانوني القرار ويحذف أسماء الأطراف قبل نشره في القاعدة. تحصل على رصيد مسودات إضافي لكل قرار يُقبل.</p><div class="field"><label for="p1">الجهة ورقم القرار</label><input id="p1" placeholder="لجنة التحكيم — تعز — ٥٠/٢٠٢٦"></div><div class="field"><label for="p2">صورة القرار</label><input id="p2" type="file"></div><label class="check"><input type="checkbox"> حصلت على موافقة الموكّل على المشاركة بعد حذف الأسماء</label><div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-ink" data-ok="أُرسل القرار للمراجعة">أرسل للمراجعة</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
    addLaw:`<h2 id="mTitle">اقترح قانوناً أو تعديلاً</h2><div class="field"><label for="a1">اسم القانون أو القرار ورقمه</label><input id="a1"></div><div class="field"><label for="a2">النص الرسمي</label><input id="a2" type="file"></div><div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-ink" data-ok="أُرسل للفريق القانوني لاعتماده">أرسل</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`,
    reply:`<h2 id="mTitle">الرد على ملاحظات الموظفين</h2><p class="small muted">يظهر ردك لكل موظفي المنشأة عبر القناة المجهولة، ويُحتسب في تقييم الشارة.</p><div class="field"><label for="r1">الإجراء الذي اتخذته المنشأة</label><textarea id="r1" rows="4">اعتباراً من الشهر القادم تُصرف الرواتب يوم ٢٨ من كل شهر.</textarea></div><div style="display:flex;gap:8px"><button class="btn btn-ink" data-ok="نُشر الرد للموظفين">انشر الرد</button><button class="btn btn-ghost" data-close>إلغاء</button></div>`
@@ -1735,6 +1883,7 @@ function draftHTML(type,cs,req){
 }
 let typingTimer;
 function genDraft(){
+  if(needSub('l','ai'))return;
   const type=$('#dType').value,cs=$('#dCase').value,req={};$$('[data-req]').forEach(c=>req[c.dataset.req]=c.checked);
   const full=draftHTML(type,cs,req);const out=$('#docOut');clearInterval(typingTimer);
   const tmp=document.createElement('div');tmp.innerHTML=full;const blocks=[...tmp.children];out.innerHTML='';let i=0;
@@ -1802,11 +1951,6 @@ function renderBench(){const k=$('#benchSel').value,b=bench[k];
  <p class="tiny muted" style="margin-top:10px">أرقام توضيحية. التحليل يُحدَّث تلقائياً كلما أُضيف قرار جديد، ولا يتضمن أي معلومات شخصية عن أعضاء الهيئة.</p>`}
 $('#benchSel').addEventListener('change',renderBench);renderBench();
 
-const lplans=[['الأساسية','مجاناً لمحامي الشبكة',['المكتبة القانونية كاملة','البحث في القرارات السابقة','١٠ مسودات شهرياً','تذكير بالمهل القانونية']],
- ['المحترف','25,000 ريال شهرياً',['مسودات غير محدودة','تحليل الهيئات','فحص مسودات الخصم وتفنيد دفوعه','تصدير بصيغة Word']],
- ['المكتب','75,000 ريال شهرياً',['حتى ٥ محامين','مكتبة خاصة بقضايا المكتب','مساحة مشتركة للمذكرات','أولوية في القضايا المحالة من ظهير']]];
-$('#lawyerPlans').innerHTML=lplans.map((p,i)=>`<div class="plan${i===1?' feat':''}"><h3>${p[0]}</h3><div class="price" style="font-size:1.3rem">${p[1]}</div><div class="per">${i?'مع رصيد مجاني عند إضافة قرارات للقاعدة':'شرط تولي قضايا المنصة'}</div><ul>${p[2].map(f=>`<li>${f}</li>`).join('')}</ul><button class="btn ${i===1?'btn-ink':'btn-ghost'} btn-sm" data-plan="${p[0]} للمحامين">اشترك</button></div>`).join('');
-$$('#lawyerPlans [data-plan]').forEach(b=>b.onclick=()=>openModal('pay',b.dataset.plan));
 $$('[data-upload]').forEach(b=>b.onclick=()=>openModal(b.dataset.upload==='prec'?'addPrec':'addLaw'));
 
 /* ---------- KYC signup ---------- */
@@ -1817,8 +1961,8 @@ const kForms={
  law:{t:'بيانات المحامي',f:[['الاسم الكامل','text'],['رقم القيد في نقابة المحامين','text'],['درجة القيد','sel:ابتدائي|استئناف|عليا'],['المحافظات التي تترافع فيها','text']],
   d:[['البطاقة الشخصية','إلزامي'],['بطاقة القيد النقابي سارية','إلزامي'],['صورة شخصية مع البطاقة','إلزامي'],['ما يثبت الخبرة في القضايا العمالية','إلزامي']],
   now:['قراءة المكتبة القانونية','مشاهدة دورات الأكاديمية','تُفعّل صياغة المذكرات واستلام القضايا بعد الموافقة والتحقق من القيد لدى النقابة']},
- co:{t:'بيانات المنشأة',f:[['الاسم التجاري','text'],['رقم السجل التجاري','text'],['المحافظة','gov'],['اسم المفوّض بالتوقيع','text'],['عدد الموظفين','sel:أقل من ١٠|١٠–٥٠|٥١–٢٠٠|أكثر من ٢٠٠']],
-  d:[['السجل التجاري ساري','إلزامي'],['البطاقة الضريبية','إلزامي'],['تفويض رسمي للممثل مختوم','إلزامي'],['بطاقة المفوّض الشخصية','إلزامي']],
+ co:{t:'بيانات المنشأة (KYB)',f:[['الاسم التجاري','text'],['رقم السجل التجاري','text'],['المحافظة','gov'],['الشكل القانوني','sel:مؤسسة فردية|شركة تضامن|شركة ذات مسؤولية محدودة|شركة مساهمة|منظمة أو جمعية'],['النشاط الرئيسي','text'],['المالك أو المستفيد الحقيقي (٢٥٪ فأكثر)','text'],['اسم المفوّض بالتوقيع','text'],['عدد الموظفين','sel:١–١٠|١١–٥٠|٥١–٢٠٠|٢٠١–٥٠٠|أكثر من ٥٠٠']],
+  d:[['السجل التجاري ساري','إلزامي'],['البطاقة الضريبية','إلزامي'],['عقد التأسيس أو النظام الأساسي','إلزامي'],['بطاقة المالك أو المستفيد الحقيقي','إلزامي'],['تفويض رسمي للممثل مختوم','إلزامي'],['بطاقة المفوّض الشخصية','إلزامي']],
   now:['إكمال تقييم الامتثال الذاتي','تصفح دورات الموارد البشرية','تُفعّل الشارة ونشر الوظائف بعد الموافقة']}
 };
 let ks=0;
@@ -1836,7 +1980,7 @@ function kRender(){$$('.wstep.k').forEach(w=>w.classList.toggle('on',+w.dataset.
 $('#kNext').onclick=()=>{
  if(ks===0) kBuild();
  if(ks===1&&!$('#kf0').value.trim()){toast('أكمل الاسم أولاً');$('#kf0').focus();return}
- if(ks===2){const t=kType(),nm=$('#kf0').value.trim();kyc.unshift({n:nm,t:{emp:'موظف',law:'محامٍ',co:'منشأة'}[t],g:(t==='law'?$('#kf3').value.trim():$('#kf2').value)||'تعز',d:$$('#kDocs input').filter(i=>i.files.length).length+'/'+kForms[t].d.length,since:'الآن',s:'pending',isNew:1});renderKyc();log('طلب توثيق جديد: '+nm)}
+ if(ks===2){const t=kType(),nm=$('#kf0').value.trim();KYC[{emp:'e',law:'l',co:'c'}[t]]=KYC[{emp:'e',law:'l',co:'c'}[t]]==='approved'?'approved':'pending';saveSub();kyc.unshift({n:nm,t:{emp:'موظف',law:'محامٍ',co:'منشأة'}[t],g:(t==='law'?$('#kf3').value.trim():$('#kf2').value)||'تعز',r:{emp:'e',law:'l',co:'c'}[t],d:$$('#kDocs input').filter(i=>i.files.length).length+'/'+kForms[t].d.length,since:'الآن',s:'pending',isNew:1});renderKyc();log('طلب توثيق جديد: '+nm)}
  if(ks===3){location.hash='admin';return}
  ks++;kRender()};
 $('#kPrev').onclick=()=>{if(ks>0){ks--;kRender()}};
@@ -1873,7 +2017,7 @@ function review(i){const k=kyc[i];
  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-teal" id="rvOk">وافق وفعّل الحساب</button><button class="btn btn-ghost" id="rvMore">اطلب وثائق</button><button class="btn btn-pom" id="rvNo">ارفض</button></div>`;
  $('#modal').classList.add('on');
  const done=(s,msg)=>{k.s=s;k.isNew=0;closeModal();renderKyc();log(msg+': '+k.n);toast(msg)};
- $('#rvOk').onclick=()=>{if($$('.rv:not(:checked)').length){toast('أكمل قائمة التحقق قبل التفعيل');return}done('approved','فُعّل الحساب')};
+ $('#rvOk').onclick=()=>{if($$('.rv:not(:checked)').length){toast('أكمل قائمة التحقق قبل التفعيل');return}if(k.r){KYC[k.r]='approved';saveSub();renderSubBar();renderSubs()}done('approved','فُعّل الحساب')};
  $('#rvMore').onclick=()=>done('more','طُلبت وثائق إضافية');
  $('#rvNo').onclick=()=>{if(!$('#rvNote').value.trim()){toast('اكتب سبب الرفض');$('#rvNote').focus();return}done('rejected','رُفض الطلب')};
 }
@@ -1886,8 +2030,213 @@ $('#precTable').innerHTML=[['تحكيم تعز ٥٠/٢٠٢٦','أ. نادية س
 $$('[data-pub]').forEach(b=>b.onclick=()=>{b.outerHTML='<span class="tag tag-teal">نُشر</span>';log('نُشر قرار في قاعدة السوابق')});
 renderKyc();renderLog();
 
-const bs=$('#buySeats');if(bs)bs.onclick=()=>toast('أُرسلت دعوات التدريب إلى '+($('#seats').value||0)+' موظفاً');
-const permRows=[['مركز الحقوق والحاسبة','veal'],['البلاغ السري','vea'],['المحادثات والقضايا','ela'],['غرفة الوساطة (بدعوة)','elca'],['المركز الذكي والمكتبة','la'],['بيانات المحامين وقضاياهم','la'],['الأكاديمية','velca'],['شراء مقاعد تدريب للموظفين','ca'],['نشر الوظائف','ca'],['ملف الموظف المهني','ea'],['مؤشر بيئة العمل','vea'],['التوثيق ولوحة الإدارة','a']];
+/* ---------- subscriptions, checkout & payments ---------- */
+const ZONES={old:{n:'ريال — مناطق صنعاء',f:1},nw:{n:'ريال — مناطق عدن',f:3},usd:{n:'دولار أمريكي',f:1/530}};
+const fmtZ=(a,z)=>z==='usd'?'$'+fmt(Math.max(1,Math.round(a*ZONES.usd.f))):fmt(Math.round(a*ZONES[z].f/100)*100)+' ر.ي';
+var SUB={e:{st:'none'},l:{st:'none'},c:{st:'none'}},KYC={e:'none',l:'none',c:'none'};
+try{const x=JSON.parse(localStorage.getItem('daheerSub')||'null');if(x&&x.SUB&&x.KYC){SUB=x.SUB;KYC=x.KYC}}catch(e){}
+function saveSub(){try{localStorage.setItem('daheerSub',JSON.stringify({SUB,KYC}))}catch(e){}}
+const isActive=r=>!!(SUB[r]&&SUB[r].st==='active');
+const RNAME={e:'موظف',l:'محامٍ',c:'منشأة'};
+const DEFPLAN={e:'المميزة',l:'المستقل المحترف',c:'منشأة عادلة'};
+function demoActivate(r){SUB[r]={st:'active',plan:SUB[r].plan||DEFPLAN[r]};KYC[r]='approved';saveSub();afterSubChange();toast('فُعّل اشتراك تجريبي للعرض. في المنصة الفعلية يُفعَّل بعد اعتماد الإدارة للتوثيق والسداد.')}
+function afterSubChange(){renderSubBar();renderPlans();renderLawPlans();if(typeof refreshChatRole==='function')refreshChatRole()}
+function renderSubBar(){
+  const bar=$('#subBar'),inn=$('#subBarIn'),chip=$('#subChip');
+  bar.classList.remove('review');chip.hidden=true;
+  if(role==='a'){bar.hidden=true;return}
+  if(role==='v'){bar.hidden=false;inn.innerHTML=`<span class="grow">المعرفة والحاسبة والبلاغ السري مجانية. <b>اشترك لتحصل على محامٍ معتمد عند الحاجة</b> — يبدأ من ١٬٥٠٠ ريال شهرياً.</span><a class="btn btn-amber" href="#plans">اعرض الباقات</a><a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)" href="#verify">أنشئ حساباً</a>`;return}
+  const s=SUB[role];
+  chip.hidden=false;
+  if(s.st==='active'){bar.hidden=true;chip.textContent='مشترك: '+s.plan;chip.style.cssText='background:var(--teal-2);color:#0f5c52';return}
+  bar.hidden=false;
+  if(s.st==='review'){bar.classList.add('review');chip.textContent='اشتراكك قيد التفعيل';chip.style.cssText='background:var(--amber-2);color:#6d4709';
+    inn.innerHTML=`<span class="grow">طلب اشتراكك في <b>${esc(s.plan)}</b> قيد المراجعة — التوثيق: <b>${KYC[role]==='approved'?'معتمد ✓':'قيد المراجعة'}</b> — السداد: <b>قيد المطابقة</b></span><a class="btn btn-ink" href="#checkout">تابع طلبك</a>`;return}
+  chip.textContent='غير مشترك';chip.style.cssText='background:var(--pom-2);color:#8f1f31';
+  const msg={e:'أنت على الباقة المجانية: المعرفة والحاسبة والمساعد الآلي. <b>اشترك لتتحدث مع محامٍ معتمد وتتابع قضيتك حتى النهاية.</b>',
+   l:'لست مشتركاً في المركز الذكي. <b>اشترك لتصوغ العرائض والاستئنافات وتحلل قرارات الهيئات.</b>',
+   c:'منشأتك غير مشتركة بعد. <b>اختر باقة حسب عدد موظفيك</b> لتفعيل الشارة والتدريب ونشر الوظائف.'}[role];
+  inn.innerHTML=`<span class="grow">${msg}</span><a class="btn btn-amber" href="#plans">اختر باقتك</a><button type="button" class="demo-link" id="demoAct">تفعيل تجريبي للعرض</button>`;
+  $('#demoAct').onclick=()=>demoActivate(role);
+}
+function gate(what){
+  const t={chat:['التحدث مع محامٍ للمشتركين','الباقات المدفوعة تتيح لك مستشاراً يرد خلال ٢٤ ساعة، ومحامياً يتابع قضيتك.'],ai:['صياغة المذكرات للمشتركين','اشترك في المركز الذكي لتصوغ العرائض والاستئنافات بالاستناد إلى القانون والقرارات السابقة.'],co:['هذه الخدمة ضمن باقات المنشآت','اختر باقة حسب عدد موظفيك لتفعيل التدريب ونشر الوظائف والشارة.']}[what];
+  $('#mBox').innerHTML=`<div class="gate" style="border:0;padding:6px"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a5a0f" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div><h2 id="mTitle">${t[0]}</h2><p class="muted" style="margin:0 auto 16px">${t[1]}</p><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><a class="btn btn-ink" href="#plans" data-close>اعرض الباقات</a><button class="btn btn-ghost" id="gDemo">تفعيل تجريبي للعرض</button></div></div>`;
+  $('#modal').classList.add('on');$$('#mBox [data-close]').forEach(b=>b.onclick=closeModal);$('#gDemo').onclick=()=>{closeModal();demoActivate(role)};
+}
+const needSub=(r,what)=>{if(role===r&&!isActive(r)){gate(what);return true}return false};
+
+/* employee & lawyer plan buttons */
+let cart=null;
+function startCheckout(r,c){
+  if(role==='v'){toast('أنشئ حساباً موثّقاً أولاً، ثم اختر باقتك');location.hash='verify';return}
+  if(role!==r&&role!=='a'){toast('هذه الباقة لحسابات '+RNAME[r]+' فقط');return}
+  if(SUB[r].st==='review'){toast('لديك طلب اشتراك قيد المراجعة');location.hash='checkout';return}
+  cart=Object.assign({r,period:'m',zone:'old',oneTime:0,lines:null,fixedPeriod:false},c);cart.ref='ZH-PAY-'+Math.floor(100000+Math.random()*899999);
+  coStep=0;payMethod=null;location.hash='checkout';
+}
+const lplans=[
+ {n:'شريك ظهير',p:0,per:'مجاناً بشرط الشراكة',f:['المكتبة القانونية كاملة','البحث في القرارات السابقة','١٠ مسودات شهرياً','قضايا محالة من المنصة'],partner:1},
+ {n:'المستقل الأساسي',p:10000,f:['المكتبة القانونية كاملة','البحث في القرارات السابقة','١٠ مسودات شهرياً','تذكير بالمهل القانونية']},
+ {n:'المستقل المحترف',p:25000,feat:1,f:['مسودات غير محدودة','تحليل الهيئات','تفنيد مذكرات الخصم','تصدير بصيغة Word']},
+ {n:'المكتب',p:75000,f:['حتى ٥ محامين','مكتبة خاصة بقضايا المكتب','مساحة مشتركة للمذكرات','فواتير باسم المكتب']}];
+function renderLawPlans(){
+  const h=lplans.map((p,i)=>{const cur=isActive('l')&&SUB.l.plan===p.n;return `<div class="plan${cur?' current':p.feat?' feat':''}"><h3>${p.n}</h3><div class="price" style="font-size:1.3rem">${p.p?fmt(p.p)+' ريال':'مجاناً'}</div><div class="per">${p.p?'شهرياً — للمحامين غير الشركاء':p.per}</div><ul>${p.f.map(f=>`<li>${f}</li>`).join('')}</ul>${cur?'<span class="tag tag-teal">مفعّلة</span>':p.partner?'<button class="btn btn-ghost btn-sm" data-modal="join">قدّم طلب الشراكة</button>':`<button class="btn ${p.feat?'btn-ink':'btn-ghost'} btn-sm" data-lplan="${i}">اشترك</button>`}</div>`}).join('');
+  ['#lawyerPlans','#plLawGrid'].forEach(id=>{const el=$(id);if(el)el.innerHTML=h});
+  $$('[data-lplan]').forEach(b=>b.onclick=()=>{const p=lplans[+b.dataset.lplan];startCheckout('l',{name:p.n,base:p.p,kind:'محامٍ مستقل'})});
+  $$('#lawyerPlans [data-modal],#plLawGrid [data-modal]').forEach(b=>b.onclick=()=>openModal(b.dataset.modal));
+}
+
+/* company quote */
+const BANDS=[[1,10,'١–١٠'],[11,50,'١١–٥٠'],[51,200,'٥١–٢٠٠'],[201,500,'٢٠١–٥٠٠'],[501,1e9,'أكثر من ٥٠٠']];
+const PKGS=[
+ {n:'الامتثال',d:'لتنظيم الوضع القانوني للمنشأة.',pr:[15000,30000,60000,120000],f:['تقييم امتثال سنوي','نماذج عقود ولوائح معتمدة','٣ استشارات شهرياً للإدارة','مقعدا تدريب للموارد البشرية']},
+ {n:'منشأة عادلة',d:'الأكثر اختياراً: امتثال وشارة وتوظيف.',pr:[25000,50000,100000,200000],f:['كل ما في «الامتثال»','شارة «منشأة عادلة»','وظائف بلا حدود وقاعدة المواهب','قناة ملاحظات مجهولة','غرفة وساطة للحل الودي','٥ مقاعد تدريب']},
+ {n:'ظهير لموظفيك',d:'ميزة وظيفية: اشتراك لكل موظف.',pr:[25000,50000,100000,200000],per:1000,f:['كل ما في «منشأة عادلة»','باقة «المميزة» لكل موظف','الأكاديمية لكل الموظفين','تقرير أثر ربع سنوي']}];
+const ADDONS=[{n:'مقاعد تدريب إضافية',u:'للمقعد شهرياً',p:2000,q:1},{n:'تدقيق امتثال ميداني',u:'مرة واحدة',p:50000,one:1},{n:'ورشة حضورية في مقر المنشأة',u:'مرة واحدة',p:80000,one:1},{n:'مراجعة عقود مخصصة',u:'للعقد',p:10000,q:1,one:1}];
+let coYear=false,lastQuote=null;
+$('#pkgs').innerHTML=PKGS.map((p,i)=>`<label class="pkg"><input type="radio" name="pkg" value="${i}" ${i===1?'checked':''}><b style="font-family:var(--f-head);color:var(--ink)">${p.n}</b><span class="small muted">${p.d}</span><span class="pp" data-pp="${i}"></span><span class="tiny muted" data-pper="${i}"></span><ul>${p.f.map(f=>`<li>${f}</li>`).join('')}</ul></label>`).join('');
+$('#addons').innerHTML=ADDONS.map((a,i)=>`<div class="check" style="justify-content:space-between;gap:10px;flex-wrap:wrap"><label style="display:flex;gap:10px;align-items:center;cursor:pointer"><input type="checkbox" data-ad="${i}"> ${a.n} <span class="tiny muted">(${fmt(a.p)} ريال ${a.u})</span></label>${a.q?`<input type="number" min="1" value="${i===0?5:3}" data-adq="${i}" aria-label="الكمية" style="width:70px;border:1.5px solid var(--line);border-radius:8px;padding:5px 8px">`:''}</div>`).join('');
+function bandOf(n){return BANDS.findIndex(b=>n>=b[0]&&n<=b[1])}
+function renderQuote(){
+  const n=+$('#empCount').value,bi=bandOf(n),pk=+($('input[name=pkg]:checked')||{value:1}).value,P=PKGS[pk];
+  $('#empCountOut').textContent=n>500?'أكثر من ٥٠٠':n;
+  $('#bandPick').innerHTML=BANDS.map((b,i)=>`<button type="button" class="chip" aria-pressed="${i===bi}" data-band="${i}">${b[2]} موظفاً</button>`).join('');
+  $$('[data-band]').forEach(c=>c.onclick=()=>{const b=BANDS[+c.dataset.band];$('#empCount').value=Math.min(600,b[0]===1?5:Math.round((b[0]+Math.min(b[1],600))/2));renderQuote()});
+  PKGS.forEach((p,i)=>{const el=$(`[data-pp="${i}"]`);el.textContent=bi<4?fmt(p.pr[bi]+(p.per?p.per*n:0))+' ريال':'عرض مخصص';$(`[data-pper="${i}"]`).textContent=bi<4?(p.per?`شهرياً (أساس + ${fmt(p.per)} لكل موظف)`:'شهرياً'):''});
+  const lines=[];let rec=0,one=0;
+  if(bi>=4){$('#qLines').innerHTML='<p class="small" style="color:#D5DAEE">للمنشآت التي يزيد عدد موظفيها على ٥٠٠ نعدّ عرضاً مخصصاً بعد زيارة تقييم.</p>';$('#qTotal').textContent='عرض مخصص';$('#qNote').textContent='';$('#qSubscribe').disabled=true;lastQuote=null;return}
+  $('#qSubscribe').disabled=false;
+  lines.push([P.n+' — شريحة '+BANDS[bi][2],P.pr[bi]]);rec+=P.pr[bi];
+  if(P.per){lines.push([`اشتراك لكل موظف (${n} × ${fmt(P.per)})`,P.per*n]);rec+=P.per*n}
+  ADDONS.forEach((a,i)=>{if(!$(`[data-ad="${i}"]`).checked)return;const q=a.q?Math.max(1,+$(`[data-adq="${i}"]`).value||1):1,v=a.p*q;lines.push([a.n+(a.q?` (${q})`:'')+(a.one?' — مرة واحدة':''),v,a.one]);if(a.one)one+=v;else rec+=v});
+  const recP=coYear?rec*12*.8:rec;
+  $('#qLines').innerHTML=lines.map(l=>`<div class="line"><div>${l[0]}</div><b>${fmt(coYear&&!l[2]?l[1]*12*.8:l[1])}</b></div>`).join('')+(coYear?'<div class="line"><div>خصم الدفع السنوي ٢٠٪ مطبّق</div><b>✓</b></div>':'');
+  $('#qPer').textContent=coYear?'سنوياً':'شهرياً';
+  $('#qTotal').textContent=fmt(recP+one)+' ريال';
+  $('#qNote').textContent=one?`يشمل ${fmt(one)} ريال لخدمات تُدفع مرة واحدة.`:'';
+  lastQuote={name:`${P.n} — ${n} موظفاً`,base:rec,oneTime:one,period:coYear?'y':'m',fixedPeriod:true,kind:'منشأة',lines:lines.map(l=>[l[0],l[1],l[2]])};
+}
+$('#empCount').addEventListener('input',renderQuote);
+$$('#pkgs input,#addons input').forEach(i=>i.addEventListener('input',renderQuote));
+$('#coYearSw').onclick=e=>{coYear=!coYear;e.currentTarget.setAttribute('aria-checked',coYear);renderQuote()};
+$('#qSubscribe').onclick=()=>{if(lastQuote)startCheckout('c',Object.assign({},lastQuote))};
+renderQuote();
+
+/* payment methods */
+const PAY=[
+ {k:'exch',n:'حوالة عبر شركة صرافة',d:'من أي شركة صرافة أو شبكة تحويلات في محافظتك. الأنسب لمعظم المشتركين.',rows:[['اسم المستفيد','مؤسسة ظهير للخدمات الرقمية'],['جهة الاستلام','مكتب ظهير — صنعاء أو عدن حسب منطقتك'],['هاتف المستفيد','يُعلن عند الإطلاق'],['الغرض / الملاحظات','الرقم المرجعي']]},
+ {k:'bank',n:'إيداع أو تحويل إلى حساب بنكي',d:'إيداع نقدي في أي فرع، أو تحويل من حسابك البنكي.',rows:[['البنك','يُعلن عند الإطلاق'],['اسم الحساب','مؤسسة ظهير للخدمات الرقمية'],['رقم الحساب','يُعلن عند الإطلاق'],['بيان الإيداع','الرقم المرجعي']]},
+ {k:'wallet',n:'تحويل من محفظة إلكترونية',d:'من محفظتك على الهاتف إلى محفظة ظهير المعتمدة.',rows:[['محفظة ظهير','يُعلن عند الإطلاق'],['الملاحظة','الرقم المرجعي']]},
+ {k:'cash',n:'نقداً لدى وكيل معتمد',d:'لمن لا يملك حساباً أو محفظة. يسلّمك الوكيل إيصالاً مختوماً.',rows:[['الوكلاء','قائمة الوكلاء المعتمدين في محافظتك'],['أخبر الوكيل بـ','الرقم المرجعي']]},
+ {k:'invoice',n:'فاتورة رسمية وتحويل بنكي',d:'للمنشآت والمنظمات: فاتورة باسم المنشأة ورقمها الضريبي، بالريال أو الدولار.',rows:[['الفاتورة','تصدر باسم المنشأة فور اعتماد KYB'],['مهلة السداد','١٥ يوماً من تاريخ الفاتورة'],['بيان التحويل','رقم الفاتورة']],only:'c'}];
+$('#payMethodsInfo').innerHTML=PAY.map(m=>`<div class="paybox"><b style="color:var(--ink)">${m.n}</b>${m.only?' <span class="tag tag-ink">للمنشآت</span>':''}<p class="small muted" style="margin:4px 0 0">${m.d}</p></div>`).join('')+`<div class="paybox"><b style="color:var(--ink)">العملة ومنطقة السداد</b><p class="small muted" style="margin:4px 0 0">لكل باقة سعر بالريال في مناطق صنعاء، وسعر مقابل بالريال في مناطق عدن، وسعر بالدولار. يختار المشترك منطقته عند السداد، فلا يتحمل فرق الصرف بين المنطقتين.</p></div>`;
+
+/* checkout */
+let coStep=0,payMethod=null;
+function coAmount(){if(!cart)return 0;const rec=cart.period==='y'?cart.base*12*.8:cart.base;return rec+(cart.oneTime||0)}
+function renderCoSummary(){
+  if(!cart){$('#coSummary').innerHTML='';return}
+  $('#coSummary').innerHTML=`<h3>ملخص الطلب</h3><div class="small muted">${RNAME[cart.r]} — ${esc(cart.kind||'')}</div><p style="margin:8px 0 4px"><b style="font-family:var(--f-head);color:var(--ink);font-size:1.1rem">${esc(cart.name)}</b></p><div class="small">${cart.period==='y'?'اشتراك سنوي (خصم ٢٠٪)':'اشتراك شهري'}</div>
+  <div class="match" style="margin-top:10px"><span>المبلغ المطلوب</span><b>${fmtZ(coAmount(),cart.zone)}</b></div><div class="match"><span>منطقة السداد</span><span>${ZONES[cart.zone].n}</span></div><div class="match" style="border:0"><span>الرقم المرجعي</span><span class="ref">${cart.ref}</span></div>`;
+}
+function stepsUI(){$$('#coSteps span').forEach((s,i)=>{s.className=i<coStep?'done':i===coStep?'now':''})}
+function renderCheckout(){
+  const r=['e','l','c'].includes(role)?role:(cart?cart.r:null);
+  if(r&&SUB[r].st==='review'&&(!cart||coStep<4)){coStep=4;cart=cart||SUB[r].cart||null}
+  if(r&&SUB[r].st==='active'&&!cart){$('#coBody').innerHTML=`<div class="gate" style="border-color:var(--teal)"><h2>اشتراكك مفعّل ✓</h2><p class="muted" style="margin:0 auto">باقتك الحالية: <b>${esc(SUB[r].plan)}</b>.</p></div>`;$('#coNav').style.display='none';$('#coSummary').innerHTML='';stepsUI();return}
+  if(!cart){$('#coBody').innerHTML=`<div class="gate"><h2>لم تختر باقة بعد</h2><p class="muted" style="margin:0 auto 14px">اختر الباقة المناسبة لك أولاً.</p><a class="btn btn-ink" href="#plans">اعرض الباقات</a></div>`;$('#coNav').style.display='none';$('#coSummary').innerHTML='';stepsUI();return}
+  $('#coNav').style.display='flex';stepsUI();renderCoSummary();
+  const b=$('#coBody');
+  if(coStep===0){
+    b.innerHTML=`<h3>راجع طلبك</h3>${cart.lines?`<div class="lines">${cart.lines.map(l=>`<div class="match"><span>${l[0]}</span><b>${fmt(l[1])}</b></div>`).join('')}</div>`:`<p class="muted">باقة <b>${esc(cart.name)}</b> — ${fmt(cart.base)} ريال شهرياً (مناطق صنعاء).</p>`}
+    ${cart.fixedPeriod?'':`<div class="toggle" style="margin:14px 0 0"><span>شهري</span><button class="switch" role="switch" aria-checked="${cart.period==='y'}" id="coPer" aria-label="الدفع السنوي"></button><span>سنوي <span class="tag tag-teal">وفّر ٢٠٪</span></span></div>`}
+    <h3 style="margin-top:20px">منطقة السداد والعملة</h3><p class="small muted" style="margin-top:0">اختر حسب العملة التي ستدفع بها، فلكل منطقة سعر ثابت.</p>
+    <div class="zone">${Object.entries(ZONES).map(([k,z])=>`<label><input type="radio" name="zone" value="${k}" ${cart.zone===k?'checked':''}><b>${fmtZ(coAmount(),k)}</b>${z.n}</label>`).join('')}</div>
+    <p class="tiny muted" style="margin-top:8px">المبالغ المقابلة تقريبية في هذه النسخة التجريبية، وتُحدَّث لكل منطقة دورياً.</p>`;
+    const cp=$('#coPer');if(cp)cp.onclick=()=>{cart.period=cart.period==='y'?'m':'y';renderCheckout()};
+    $$('input[name=zone]').forEach(i=>i.onchange=()=>{cart.zone=i.value;renderCheckout()});
+  }
+  else if(coStep===1){
+    const st=KYC[cart.r],kt={e:'emp',l:'law',c:'co'}[cart.r],docs=kForms[kt].d;
+    b.innerHTML=`<h3>${cart.r==='c'?'توثيق المنشأة (KYB)':'توثيق الهوية (KYC)'}</h3>`+(st==='approved'?`<div class="paybox" style="border-color:var(--teal)"><b style="color:var(--teal)">حسابك موثّق ✓</b><p class="small muted" style="margin:4px 0 0">يمكنك المتابعة إلى السداد.</p></div>`:st==='pending'?`<div class="paybox"><b style="color:#8a5a0f">وثائقك قيد المراجعة</b><p class="small muted" style="margin:4px 0 0">يمكنك السداد الآن، ولن يُفعَّل الاشتراك قبل اعتماد التوثيق. إذا رُفض التوثيق يُعاد المبلغ خلال ٧ أيام عمل.</p></div>`:
+    `<p class="small muted">التوثيق شرط لكل مشترك في ظهير، ويُراجع يدوياً من فريق المنصة. الوثائق محفوظة مشفّرة ولا يراها إلا موظف التوثيق.</p>${docs.map((d,i)=>`<div class="field"><label for="cd${i}">${d[0]} <span class="tag ${d[1]==='إلزامي'?'tag-pom':'tag-ink'}">${d[1]}</span></label><input id="cd${i}" type="file" accept="image/*,.pdf"></div>`).join('')}<label class="check"><input type="checkbox" id="kycDecl"> أقر بأن البيانات والوثائق صحيحة وتخصني${cart.r==='c'?' أو تخص المنشأة التي أمثلها بتفويض رسمي':''}</label>`);
+  }
+  else if(coStep===2){
+    const ms=PAY.filter(m=>!m.only||m.only===cart.r);if(!payMethod)payMethod=ms[0].k;
+    b.innerHTML=`<h3>اختر طريقة السداد</h3>${ms.map(m=>`<label class="opt"><input type="radio" name="pm" value="${m.k}" ${payMethod===m.k?'checked':''}><div><b>${m.n}</b><p>${m.d}</p></div></label>`).join('')}<div id="pmBox"></div>`;
+    const box=()=>{const m=PAY.find(x=>x.k===payMethod);$('#pmBox').innerHTML=`<div class="paybox" style="border-color:var(--ink)"><b style="color:var(--ink)">تعليمات السداد</b><dl><dt>المبلغ</dt><dd>${fmtZ(coAmount(),cart.zone)}</dd>${m.rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]==='الرقم المرجعي'||r[1]==='رقم الفاتورة'?`<span class="ref">${cart.ref}</span>`:r[1]}</dd>`).join('')}</dl><p class="tiny muted" style="margin:10px 0 0">اكتب الرقم المرجعي كما هو، فهو ما يربط سدادك بحسابك. البيانات التي تظهر «يُعلن عند الإطلاق» تُستكمل في النسخة الفعلية.</p></div>`};
+    box();$$('input[name=pm]').forEach(i=>i.onchange=()=>{payMethod=i.value;box()});
+  }
+  else if(coStep===3){
+    b.innerHTML=`<h3>ارفع إثبات السداد</h3><p class="small muted" style="margin-top:0">صورة واضحة لإيصال الحوالة أو الإيداع، يظهر فيها المبلغ والتاريخ والرقم المرجعي.</p>
+    <div class="field"><label for="rcFile">صورة الإيصال</label><input id="rcFile" type="file" accept="image/*,.pdf"></div>
+    <div class="row2"><div class="field"><label for="rcName">اسم المرسل كما في الإيصال</label><input id="rcName"></div><div class="field"><label for="rcNo">رقم الحوالة أو الإيصال</label><input id="rcNo" dir="ltr"></div></div>
+    <div class="row2"><div class="field"><label for="rcAmt">المبلغ المحوّل</label><input id="rcAmt" inputmode="numeric" placeholder="${fmtZ(coAmount(),cart.zone)}"></div><div class="field"><label for="rcDate">تاريخ السداد</label><input id="rcDate" type="date"></div></div>
+    <div class="field"><label for="rcVia">اسم الصراف أو البنك أو الوكيل</label><input id="rcVia"></div>`;
+  }
+  else{
+    const s=SUB[cart.r],k=KYC[cart.r],act=s.st==='active';
+    b.innerHTML=`<h3>${act?'تم تفعيل اشتراكك ✓':'استلمنا طلبك'}</h3><p class="muted small" style="margin-top:0">${act?'يمكنك الآن استخدام كل خدمات باقتك.':'نراجع التوثيق ونطابق السداد خلال ٢٤ ساعة عمل، ويصلك إشعار برسالة نصية.'}</p>
+    <ul class="track-list"><li class="ok"><i>✓</i><div><b>الطلب والفاتورة</b><div class="small muted">رقم مرجعي ${cart.ref}</div></div></li>
+    <li class="${k==='approved'?'ok':'wait'}"><i>${k==='approved'?'✓':'…'}</i><div><b>${cart.r==='c'?'توثيق المنشأة (KYB)':'توثيق الهوية (KYC)'}</b><div class="small muted">${k==='approved'?'معتمد':'قيد المراجعة اليدوية'}</div></div></li>
+    <li class="${act?'ok':'wait'}"><i>${act?'✓':'…'}</i><div><b>مطابقة السداد</b><div class="small muted">${act?'تمت المطابقة':'يطابق فريق المالية المبلغ والرقم المرجعي مع كشف الحساب'}</div></div></li>
+    <li class="${act?'ok':''}"><i>${act?'✓':'٤'}</i><div><b>تفعيل الاشتراك</b><div class="small muted">${act?'مفعّل من '+'اليوم':'يبدأ احتساب المدة من تاريخ التفعيل لا من تاريخ الدفع'}</div></div></li></ul>
+    ${act?'':`<p class="tiny muted" style="margin-top:12px">للعرض: بدّل إلى «مشرف المنصة» من قائمة «عرض كـ»، وافتح «الاشتراكات والمدفوعات» لاعتماد هذا الطلب.</p>`}`;
+  }
+  $('#coPrev').style.visibility=(coStep===0||coStep===4)?'hidden':'visible';
+  $('#coNext').textContent=coStep===3?'أرسل للمراجعة':coStep===4?'العودة إلى المنصة':coStep===2?'سددت، التالي':'التالي';
+}
+$('#coNext').onclick=()=>{
+  if(coStep===1&&KYC[cart.r]==='none'){if(!$('#kycDecl').checked){toast('أكّد صحة البيانات للمتابعة');return}KYC[cart.r]='pending';saveSub();kyc.unshift({n:{e:'محمد ع.',l:'أ. نادية سالم',c:'شركة الأفق للتجارة'}[cart.r],t:RNAME[cart.r],g:'تعز',d:'كاملة',since:'الآن',s:'pending',isNew:1,r:cart.r});renderKyc()}
+  if(coStep===3){const nm=$('#rcName').value.trim(),no=$('#rcNo').value.trim(),am=$('#rcAmt').value.trim();
+    if(!nm||!no||!am){toast('أكمل اسم المرسل ورقم الحوالة والمبلغ');return}
+    const req={id:cart.ref,who:{e:'محمد ع.',l:'أ. نادية سالم',c:'شركة الأفق للتجارة'}[cart.r],r:cart.r,plan:cart.name+(cart.period==='y'?' — سنوي':' — شهري'),amt:fmtZ(coAmount(),cart.zone),m:PAY.find(x=>x.k===payMethod).n,pay:'review',sender:nm,no,paid:am,date:$('#rcDate').value||'اليوم',via:$('#rcVia').value.trim()||'—',mine:1,file:($('#rcFile').files[0]||{}).name||'لم تُرفع صورة'};
+    REQS.unshift(req);SUB[cart.r]={st:'review',plan:cart.name,cart};saveSub();renderSubs();renderSubBar();log('طلب اشتراك جديد بانتظار المطابقة: '+req.id)}
+  if(coStep===4){location.hash=HOME[role]||'home';return}
+  coStep++;renderCheckout();window.scrollTo(0,0)};
+$('#coPrev').onclick=()=>{if(coStep>0){coStep--;renderCheckout()}};
+
+/* admin: subscriptions & payments */
+const REQS=[
+ {id:'ZH-PAY-482117',who:'منى عبدالله',r:'e',plan:'المميزة — شهري',amt:'3,000 ر.ي',m:'حوالة عبر شركة صرافة',kyc:'pending',pay:'review',sender:'منى عبدالله',no:'771245',paid:'3,000',date:'١٢ نوفمبر',via:'صراف — تعز'},
+ {id:'ZH-PAY-481702',who:'شركة الأفق للتجارة',r:'c',plan:'منشأة عادلة — ٨٥ موظفاً — سنوي',amt:'960,000 ر.ي',m:'فاتورة رسمية وتحويل بنكي',kyc:'approved',pay:'review',sender:'شركة الأفق للتجارة',no:'TRF-55120',paid:'960,000',date:'١١ نوفمبر',via:'تحويل بنكي'},
+ {id:'ZH-PAY-480955',who:'أ. ياسر محمد',r:'l',plan:'المستقل المحترف — شهري',amt:'25,000 ر.ي',m:'تحويل من محفظة إلكترونية',kyc:'approved',pay:'mismatch',sender:'ياسر محمد',no:'90311',paid:'20,000',date:'١٠ نوفمبر',via:'محفظة'}
+];
+const payTag={review:['بانتظار المطابقة','tag-amber'],mismatch:['المبلغ غير مطابق','tag-pom'],approved:['معتمد','tag-teal'],rejected:['مرفوض','tag-pom'],more:['طُلب إيصال أوضح','tag-ink']};
+const kycOf=q=>q.mine?KYC[q.r]:q.kyc;
+function renderSubs(){
+  $('#subsTable').innerHTML=REQS.map((q,i)=>{const k=kycOf(q);return `<tr${q.mine&&q.pay==='review'?' style="background:var(--amber-2)"':''}><td><b dir="ltr">${q.id}</b></td><td>${esc(q.who)}<div class="tiny muted">${RNAME[q.r]}</div></td><td>${esc(q.plan)}</td><td>${q.amt}</td><td class="small">${q.m}</td><td><span class="tag ${k==='approved'?'tag-teal':'tag-amber'}">${k==='approved'?'معتمد':'قيد المراجعة'}</span></td><td><span class="tag ${payTag[q.pay][1]}">${payTag[q.pay][0]}</span></td><td>${q.pay!=='approved'&&q.pay!=='rejected'?`<button class="btn btn-ink btn-sm" data-sub="${i}">راجع</button>`:''}</td></tr>`}).join('');
+  $$('[data-sub]').forEach(b=>b.onclick=()=>reviewSub(+b.dataset.sub));
+}
+function reviewSub(i){const q=REQS[i];
+  const exp=q.amt.replace(/[^\d]/g,''),got=String(q.paid).replace(/[^\d]/g,''),okAmt=exp===got;
+  const draw=()=>{const k=kycOf(q);
+  $('#mBox').innerHTML=`<h2 id="mTitle">مراجعة الطلب <span dir="ltr">${q.id}</span></h2><p class="small muted">${esc(q.who)} — ${RNAME[q.r]} — ${esc(q.plan)}</p>
+  <div style="display:grid;grid-template-columns:.8fr 1.2fr;gap:14px;align-items:start">
+   <div class="receipt-ph"><b style="color:var(--ink)">صورة الإيصال</b><br>${esc(q.file||'إيصال.jpg')}<br><br>المرسل: ${esc(q.sender)}<br>رقم: <span dir="ltr">${esc(q.no)}</span><br>المبلغ: ${esc(q.paid)}<br>التاريخ: ${esc(q.date)}<br>عبر: ${esc(q.via)}<br>الملاحظة: <span dir="ltr">${q.id}</span></div>
+   <div><h4 style="margin-top:0">المطابقة</h4>
+    <div class="match"><span>المبلغ المطلوب / المحوّل</span><b style="color:${okAmt?'var(--teal)':'var(--pom)'}">${q.amt} / ${esc(q.paid)} ${okAmt?'✓':'✗'}</b></div>
+    <div class="match"><span>الرقم المرجعي في الملاحظات</span><b style="color:var(--teal)">✓</b></div>
+    <div class="match"><span>الإيصال غير مستخدم سابقاً</span><b style="color:var(--teal)">✓</b></div>
+    <div class="match"><span>اسم المرسل يطابق الحساب</span><b style="color:${esc(q.sender).includes(q.who.replace('أ. ','').split(' ')[0])?'var(--teal)':'var(--amber)'}">${esc(q.sender).includes(q.who.replace('أ. ','').split(' ')[0])?'✓':'يحتاج تأكيد'}</b></div>
+    <div class="match"><span>${q.r==='c'?'KYB':'KYC'}</span><b>${k==='approved'?'<span class="tag tag-teal">معتمد</span>':'<button class="btn btn-teal btn-sm" id="kOk">اعتمد التوثيق</button>'}</b></div>
+   </div></div>
+  <div class="field" style="margin-top:12px"><label for="sNote">ملاحظة للمشترك (عند الرفض أو طلب إيصال أوضح)</label><input id="sNote"></div>
+  ${q.r==='c'?'<p class="tiny muted">اشتراكات المنشآت تحتاج اعتماد مشرفَين.</p>':''}
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-teal" id="pOk" ${k!=='approved'||!okAmt?'disabled style="opacity:.45;cursor:not-allowed"':''}>اعتمد السداد وفعّل الاشتراك</button><button class="btn btn-ghost" id="pMore">اطلب إيصالاً أوضح</button><button class="btn btn-pom" id="pNo">ارفض</button></div>
+  ${!okAmt?'<p class="tiny" style="color:var(--pom);margin-top:8px">لا يمكن التفعيل لأن المبلغ المحوّل لا يطابق الفاتورة. اطلب من المشترك استكمال الفرق.</p>':''}`;
+  const kb=$('#kOk');if(kb)kb.onclick=()=>{if(q.mine){KYC[q.r]='approved';saveSub();renderSubBar()}else q.kyc='approved';log('اعتُمد توثيق: '+q.who);draw()};
+  $('#pOk').onclick=()=>{if(kycOf(q)!=='approved'||!okAmt)return;q.pay='approved';if(q.mine){SUB[q.r]={st:'active',plan:SUB[q.r].plan||q.plan};saveSub();afterSubChange()}closeModal();renderSubs();log('فُعّل اشتراك '+q.who+' — '+q.id);toast('فُعّل الاشتراك وأُرسل إشعار للمشترك')};
+  $('#pMore').onclick=()=>{q.pay='more';closeModal();renderSubs();log('طُلب إيصال أوضح: '+q.id);toast('أُرسل طلب إيصال أوضح للمشترك')};
+  $('#pNo').onclick=()=>{if(!$('#sNote').value.trim()){toast('اكتب سبب الرفض');$('#sNote').focus();return}q.pay='rejected';if(q.mine){SUB[q.r]={st:'none'};saveSub();afterSubChange()}closeModal();renderSubs();log('رُفض طلب '+q.id);toast('رُفض الطلب وأُبلغ المشترك')};
+  };
+  $('#modal').classList.add('on');draw();
+}
+renderSubs();renderLawPlans();
+
+const bs=$('#buySeats');if(bs)bs.onclick=()=>needSub('c','co')||toast('أُرسلت دعوات التدريب إلى '+($('#seats').value||0)+' موظفاً');
+const permRows=[['مركز الحقوق والحاسبة','veal'],['البلاغ السري','vea'],['المحادثات والقضايا','ela'],['غرفة الوساطة (بدعوة)','elca'],['المركز الذكي والمكتبة','la'],['بيانات المحامين وقضاياهم','la'],['الأكاديمية','velca'],['شراء مقاعد تدريب للموظفين','ca'],['نشر الوظائف','ca'],['ملف الموظف المهني','ea'],['مؤشر بيئة العمل','vea'],['الاشتراك والسداد برفع الإيصال','elca'],['اعتماد التوثيق والمدفوعات','a'],['التوثيق ولوحة الإدارة','a']];
 $('#permTable').innerHTML='<thead><tr><th>الخدمة</th>'+['v','e','l','c','a'].map(r=>`<th>${ROLES[r]}</th>`).join('')+'</tr></thead><tbody>'+permRows.map(r=>'<tr><td>'+r[0]+'</td>'+['v','e','l','c','a'].map(x=>`<td class="${r[1].includes(x)?'yes':'no'}">${r[1].includes(x)?'✓':'—'}</td>`).join('')+'</tr>').join('')+'</tbody>';
 buildNav();
 route();
